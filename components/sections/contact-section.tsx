@@ -6,21 +6,21 @@ import { ArrowUpRight, Briefcase, GitBranch, Mail } from "lucide-react"
 const channels = [
   {
     label: "E-mail",
-    value: "luis@exemplo.com",
-    href: "mailto:luis@exemplo.com",
+    value: "contato@luisfellype.dev",
+    href: "mailto:contato@luisfellype.dev",
     icon: Mail,
     code: "CH.01",
   },
   {
     label: "GitHub",
-    value: "github.com/luis",
-    href: "https://github.com",
+    value: "github.com/luis-botelho",
+    href: "https://github.com/luis-botelho",
     icon: GitBranch,
     code: "CH.02",
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/luis",
+    value: "linkedin.com/in/luisfellype",
     href: "https://linkedin.com",
     icon: Briefcase,
     code: "CH.03",
@@ -53,7 +53,7 @@ export function ContactSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 + i * 0.1, type: "spring", stiffness: 80 }}
-            className="hud-glass group flex flex-col gap-4 rounded-lg p-5 transition-all hover:border-primary/50 hover:box-glow"
+            className="hud-glass group flex flex-col gap-4 rounded-lg p-5 transition-all duration-300 hover:border-primary/50 hover:box-glow hover:scale-[1.025]"
           >
             <div className="flex items-center justify-between">
               <span className="grid h-10 w-10 place-items-center rounded-md border border-border bg-secondary/40 text-primary transition-colors group-hover:border-primary/60">

@@ -60,7 +60,7 @@ export function SkillsSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 + gi * 0.1, type: "spring", stiffness: 80 }}
-            className="hud-glass rounded-lg p-5 transition-colors hover:border-primary/40"
+            className="hud-glass rounded-lg p-5 transition-all duration-300 hover:border-primary/50 hover:box-glow hover:scale-[1.015]"
           >
             <div className="mb-4 flex items-center justify-between border-b border-border pb-3">
               <h3 className="font-mono text-sm font-medium uppercase tracking-[0.15em] text-foreground">

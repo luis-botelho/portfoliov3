@@ -141,7 +141,7 @@ export function ProjectsSection() {
                 {project.stack.map((tech) => (
                   <span
                     key={tech.name}
-                    className="inline-flex items-center gap-1.5 rounded-sm border border-border bg-secondary/40 px-2.5 py-1.5 font-mono text-[0.625rem] uppercase tracking-[0.12em] text-foreground transition-colors hover:border-primary/60 hover:text-primary"
+                    className="inline-flex items-center gap-1.5 rounded-sm border border-border bg-secondary/40 px-2.5 py-1.5 font-mono text-[0.625rem] uppercase tracking-[0.12em] text-foreground transition-all duration-200 hover:border-primary/60 hover:text-primary hover:scale-[1.04]"
                   >
                     <tech.icon className="h-3.5 w-3.5 text-primary" strokeWidth={1.75} />
                     {tech.name}

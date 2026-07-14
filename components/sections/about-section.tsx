@@ -87,7 +87,7 @@ export function AboutSection({
               {stack.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-sm border border-border bg-secondary/40 px-2.5 py-1 font-mono text-[0.625rem] uppercase tracking-[0.12em] text-foreground transition-colors hover:border-primary/60 hover:text-primary"
+                  className="rounded-sm border border-border bg-secondary/40 px-2.5 py-1 font-mono text-[0.625rem] uppercase tracking-[0.12em] text-foreground transition-all duration-200 hover:border-primary/60 hover:text-primary hover:scale-[1.04]"
                 >
                   {tech}
                 </span>
