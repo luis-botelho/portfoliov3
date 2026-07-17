@@ -17,44 +17,44 @@ import { SonarVisual, NeuralVisual } from "./project-visuals"
 
 const projects = [
   {
-    id: "safeanchor",
-    codename: "SafeAnchor",
+    id: "liahona",
+    codename: "Liahona",
     dossier: "CASE STUDY // AX-01",
-    tagline: "Solução de missão crítica",
+    tagline: "Plataforma de gestão organizacional",
     summary:
-      "Plataforma de ancoragem de dados para o setor marítimo, projetada para manter a integridade das informações sob picos de tráfego e falhas de rede. Construída com NestJS e PostgreSQL via Prisma, com camada de cache em Redis.",
+      "Plataforma de gestão organizacional em desenvolvimento; primeira funcionalidade entregue é o fluxo completo de autenticação (cadastro e login), com arquitetura em camadas por feature isolando comunicação HTTP da interface.",
     stack: [
-      { name: "NestJS", icon: Server },
-      { name: "PostgreSQL", icon: Database },
-      { name: "Prisma", icon: Boxes },
-      { name: "Redis", icon: Layers },
-    ],
-    metrics: [
-      { k: "Uptime", v: "99.98%" },
-      { k: "Latência p99", v: "< 40ms" },
-      { k: "Status", v: "Produção" },
-    ],
-    visual: "sonar" as const,
-  },
-  {
-    id: "lia",
-    codename: "LIA",
-    dossier: "CASE STUDY // AX-02",
-    tagline: "Mentoria potencializada por IA",
-    summary:
-      "Assistente de mentoria que conecta desenvolvedores a trilhas de aprendizado personalizadas. Uma rede neural adaptativa que interpreta objetivos e recomenda o próximo passo com precisão.",
-    stack: [
-      { name: "React", icon: Layers },
-      { name: "Prisma", icon: Boxes },
-      { name: "AI SDK", icon: Sparkles },
+      { name: "TypeScript", icon: Layers },
+      { name: "Fastify", icon: Server },
+      { name: "Prisma ORM", icon: Boxes },
       { name: "PostgreSQL", icon: Database },
     ],
     metrics: [
-      { k: "Usuários", v: "8.4k+" },
-      { k: "Precisão", v: "92%" },
-      { k: "Status", v: "Beta ativo" },
+      { k: "Status", v: "MVP local" },
+      { k: "Endpoints", v: "2 (register/login)" },
+      { k: "Banco", v: "PostgreSQL" },
     ],
     visual: "neural" as const,
+  },
+  {
+    id: "safeanchor",
+    codename: "SafeAnchor",
+    dossier: "CASE STUDY // AX-02",
+    tagline: "Gestão de embarcações",
+    summary:
+      "Sistema de gestão de embarcações para proprietários e pequenas frotas. Centraliza cadastro de embarcações e histórico de manutenções, substituindo controle informal por planilha. Arquitetura MVVM (View → ViewModel → Service → API).",
+    stack: [
+      { name: "React", icon: Layers },
+      { name: "Node.js", icon: Server },
+      { name: "Express", icon: Boxes },
+      { name: "Git", icon: GitBranch },
+    ],
+    metrics: [
+      { k: "Status", v: "MVP local" },
+      { k: "Módulos", v: "2 concluídos" },
+      { k: "Arquitetura", v: "MVVM" },
+    ],
+    visual: "sonar" as const,
   },
 ]
 
@@ -164,6 +164,7 @@ export function ProjectsSection() {
             </dl>
 
             <div className="flex flex-wrap items-center gap-3">
+              {/* TODO: substituir por link real do GitHub/deploy quando disponível */}
               <a
                 href="#"
                 className="group inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 font-mono text-xs uppercase tracking-[0.2em] text-primary-foreground transition-all hover:scale-[1.02] hover:box-glow"
@@ -171,6 +172,7 @@ export function ProjectsSection() {
                 Launch Demo
                 <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
+              {/* TODO: substituir por link real do GitHub/deploy quando disponível */}
               <a
                 href="#"
                 className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 font-mono text-xs uppercase tracking-[0.2em] text-foreground transition-colors hover:border-primary/60 hover:text-primary"

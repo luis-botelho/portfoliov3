@@ -12,7 +12,7 @@ export function HudNavbar({
   onNavigate: (id: SectionId) => void
 }) {
   return (
-    <header className="pointer-events-auto absolute inset-x-0 top-0 z-40 px-[3vw] pt-[2.2vh]">
+    <header className="pointer-events-auto relative z-40 shrink-0 px-[3vw] pt-4">
       <div className="hud-glass flex items-center justify-between gap-4 rounded-md px-4 py-2.5">
         {/* Brand */}
         <div className="flex items-center gap-3">

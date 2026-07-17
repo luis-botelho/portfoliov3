@@ -7,30 +7,30 @@ const groups = [
     title: "Backend",
     code: "SYS.A",
     skills: [
-      { name: "Node.js / NestJS", level: 94 },
-      { name: "PostgreSQL", level: 90 },
-      { name: "Prisma ORM", level: 88 },
-      { name: "REST / GraphQL", level: 86 },
+      { name: "Node.js", tier: "Aprendendo" },
+      { name: "Fastify", tier: "Aprendendo" },
+      { name: "Prisma ORM", tier: "Aprendendo" },
+      { name: "PostgreSQL", tier: "Aprendendo" },
     ],
   },
   {
     title: "Frontend",
     code: "SYS.B",
     skills: [
-      { name: "TypeScript", level: 95 },
-      { name: "React / Next.js", level: 96 },
-      { name: "Tailwind CSS", level: 92 },
-      { name: "Acessibilidade (a11y)", level: 84 },
+      { name: "TypeScript", tier: "Aprendendo" },
+      { name: "React 19", tier: "Aprendendo" },
+      { name: "Tailwind CSS v4", tier: "Aprendendo" },
+      { name: "shadcn/ui", tier: "Aprendendo" },
     ],
   },
   {
-    title: "Infra & Ferramentas",
+    title: "Ferramentas & Padrões",
     code: "SYS.C",
     skills: [
-      { name: "Docker", level: 87 },
-      { name: "CI / CD", level: 85 },
-      { name: "Redis", level: 80 },
-      { name: "Testes automatizados", level: 82 },
+      { name: "Express", tier: "Aprendendo" },
+      { name: "React Router", tier: "Aprendendo" },
+      { name: "Git / GitHub", tier: "Aprendendo" },
+      { name: "Vite", tier: "Aprendendo" },
     ],
   },
 ]
@@ -48,8 +48,8 @@ export function SkillsSection() {
           </h2>
         </div>
         <p className="hidden max-w-xs text-right text-sm leading-relaxed text-muted-foreground md:block">
-          Níveis de calibração por domínio técnico. Todos os módulos
-          operacionais e em uso ativo.
+          Categorias de familiaridade em vez de métricas fixas. Reflete o uso
+          em projetos reais e minha confiança atual em cada tecnologia.
         </p>
       </div>
 
@@ -72,27 +72,15 @@ export function SkillsSection() {
             </div>
 
             <ul className="flex flex-col gap-4">
-              {group.skills.map((skill, si) => (
+              {group.skills.map((skill) => (
                 <li key={skill.name}>
-                  <div className="mb-1.5 flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-3">
                     <span className="text-sm text-foreground">
                       {skill.name}
                     </span>
-                    <span className="font-mono text-[0.625rem] text-primary">
-                      {skill.level}%
+                    <span className="rounded-full border border-border bg-secondary/40 px-2.5 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-primary">
+                      {skill.tier}
                     </span>
-                  </div>
-                  <div className="h-1.5 w-full overflow-hidden rounded-full bg-secondary/60">
-                    <motion.div
-                      className="h-full rounded-full bg-primary shadow-[0_0_8px_var(--glow)]"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${skill.level}%` }}
-                      transition={{
-                        delay: 0.3 + gi * 0.1 + si * 0.08,
-                        duration: 0.7,
-                        ease: "easeOut",
-                      }}
-                    />
                   </div>
                 </li>
               ))}

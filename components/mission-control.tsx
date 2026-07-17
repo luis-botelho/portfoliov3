@@ -39,7 +39,7 @@ export function MissionControl() {
   }, [active, booted])
 
   return (
-    <main className="relative h-[100dvh] w-[100vw] overflow-hidden bg-background">
+    <main className="relative flex h-[100dvh] w-[100vw] flex-col overflow-hidden bg-background">
       {/* backdrop layers */}
       <div className="grid-backdrop absolute inset-0" aria-hidden="true" />
       <Starfield />
@@ -73,7 +73,7 @@ export function MissionControl() {
                 animate={{ opacity: 1, scale: 1, z: 0, rotateX: 0 }}
                 exit={{ opacity: 0, scale: 0.65, z: -300 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute inset-0 [transform-style:preserve-3d]"
+                className="relative inset-0 [transform-style:preserve-3d]"
               >
                 {active === "about" && <AboutSection onNavigate={navigate} />}
                 {active === "skills" && <SkillsSection />}
