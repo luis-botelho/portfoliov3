@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   title: 'LUIS // Mission Control',
   description:
     'Centro de comando de engenharia de software — Luis. Soluções confiáveis em um mar de dados.',
-  generator: 'v0.app',
 }
 
 export const viewport: Viewport = {
