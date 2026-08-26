@@ -1,0 +1,9 @@
+@use 'tokens' as *;
+@use 'reset';
+
+:root { color-scheme: dark; }
+body { font-family: var(--font-space-grotesk), sans-serif; line-height: 1.5; }
+::selection { background: $terracotta; color: $ink; }
+:focus-visible { outline: 2px solid $terracotta; outline-offset: 4px; }
+.skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 20; padding: .7rem 1rem; background: $terracotta; color: $ink; }
+.skip-link:focus { top: 1rem; }

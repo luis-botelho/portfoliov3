@@ -1,0 +1,3 @@
+import { describe, expect, it } from 'vitest'
+import { filterProjects, getProject, projects } from './projects'
+describe('project catalog', () => { it('contains only declared statuses', () => { const statuses = ['Em produção', 'MVP concluído', 'Em construção', 'Fundação', 'Laboratório', 'Arquivado']; expect(projects.every((project) => statuses.includes(project.status))).toBe(true) }); it('finds a case study by slug', () => { expect(getProject('mini-kanban-veritas')?.name).toBe('Mini Kanban Veritas') }); it('filters by visible status', () => { expect(filterProjects('Em produção')).toHaveLength(1); expect(filterProjects('Fundação').map((project) => project.name)).toContain('Itera') }) })

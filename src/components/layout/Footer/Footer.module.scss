@@ -1,0 +1,1 @@
+@use '@/styles/tokens' as *; .footer { max-width:$max-width; margin:auto; padding:2rem; display:flex; justify-content:space-between; color:$muted; font: .7rem var(--font-jetbrains-mono),monospace; border-top:1px solid $line; } @media(max-width:600px){ .footer { flex-direction:column; gap:.5rem; } }

@@ -1,0 +1,7 @@
+@use 'tokens' as *;
+
+@mixin content-width {
+  max-width: $max-width;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
