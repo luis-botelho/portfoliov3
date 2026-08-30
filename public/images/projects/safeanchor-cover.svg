@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">SafeAnchor — carta editorial</title>
+  <desc id="desc">Carta náutica abstrata com âncora, embarcação, rota e marcações de checklist.</desc>
+  <rect width="1600" height="900" fill="#20372D"/>
+  <path d="M0 170C230 80 420 250 650 158S1060 34 1600 160M0 716c260-122 420 70 706-44s507-111 894-14" fill="none" stroke="#2F493C" stroke-width="74"/>
+  <g fill="none" stroke="#F6F2E9" stroke-width="4" opacity=".9">
+    <path d="M112 570C278 430 414 628 590 462S932 250 1150 374s260 86 360-4" stroke-dasharray="14 18"/>
+    <circle cx="590" cy="462" r="14" fill="#B85C3B" stroke="#B85C3B"/>
+    <circle cx="1150" cy="374" r="14" fill="#B85C3B" stroke="#B85C3B"/>
+  </g>
+  <g transform="translate(760 290)" fill="none" stroke="#F6F2E9" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="40" cy="24" r="25"/>
+    <path d="M40 50v270M-76 112H156M-108 270c54 104 240 104 296 0M-108 270l42 18M188 270l-42 18"/>
+  </g>
+  <g transform="translate(1120 560)" fill="#B85C3B" stroke="#F6F2E9" stroke-width="4">
+    <path d="M0 52h214l-44 62H38z"/>
+    <path d="M74 52V0h67l39 52" fill="#2F493C"/>
+  </g>
+  <g transform="translate(126 126)" fill="none" stroke="#F6F2E9" stroke-width="5">
+    <rect width="300" height="210" rx="10" fill="#2F493C"/>
+    <path d="m34 52 13 13 25-30M34 108l13 13 25-30M34 164l13 13 25-30" stroke="#B85C3B" stroke-width="9"/>
+    <path d="M96 53h160M96 109h126M96 165h150"/>
+  </g>
+  <path d="M1295 122v130M1230 187h130" stroke="#B85C3B" stroke-width="8"/>
+</svg>

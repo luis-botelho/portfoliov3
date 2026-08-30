@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">LIA — território conectado</title>
+  <desc id="desc">Caminhos ligam pessoas, oportunidades e território ao redor de uma bússola sutil.</desc>
+  <rect width="1600" height="900" fill="#20372D"/>
+  <path d="M0 706c210-124 392-50 574-158s352-277 540-206 298 45 486-61v619H0z" fill="#2F493C"/>
+  <g fill="none" stroke="#F6F2E9" stroke-width="5">
+    <path d="M176 220C410 222 438 412 660 426s273-201 502-158 226 225 318 332"/>
+    <path d="M224 690c182-178 332-72 456-189s271-24 396 82 240 20 340-40" stroke-dasharray="12 18"/>
+  </g>
+  <g fill="#B85C3B" stroke="#F6F2E9" stroke-width="6">
+    <circle cx="176" cy="220" r="28"/><circle cx="660" cy="426" r="28"/><circle cx="1162" cy="268" r="28"/><circle cx="224" cy="690" r="28"/><circle cx="1076" cy="583" r="28"/><circle cx="1480" cy="600" r="28"/>
+  </g>
+  <g transform="translate(800 446)" fill="none" stroke="#F6F2E9">
+    <circle r="150" stroke-width="5"/>
+    <circle r="112" stroke-width="2"/>
+    <path d="M0-122 38-24 0 122-38 24z" fill="#B85C3B" stroke-width="5"/>
+    <circle r="17" fill="#F6F2E9" stroke-width="0"/>
+    <path d="M0-175v34M0 141v34M-175 0h34M141 0h34" stroke="#B85C3B" stroke-width="8"/>
+  </g>
+  <g fill="#F6F2E9">
+    <circle cx="380" cy="354" r="15"/><circle cx="418" cy="354" r="15"/><path d="M350 408c4-38 96-38 100 0z"/>
+    <circle cx="1280" cy="430" r="15"/><circle cx="1318" cy="430" r="15"/><path d="M1250 484c4-38 96-38 100 0z"/>
+  </g>
+</svg>

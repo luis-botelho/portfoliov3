@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">FrostyCamp — comunidades em circulação</title>
+  <desc id="desc">Comunidades conectadas por trajetórias de circulação e crescimento orgânico.</desc>
+  <rect width="1600" height="900" fill="#20372D"/>
+  <g fill="none" stroke="#2F493C" stroke-width="72">
+    <circle cx="310" cy="452" r="190"/><circle cx="805" cy="282" r="150"/><circle cx="1260" cy="545" r="210"/>
+  </g>
+  <g fill="none" stroke="#F6F2E9" stroke-width="5">
+    <path d="M462 350C584 235 648 223 674 239M930 332c110 40 155 92 172 116M472 556c174 137 371 157 600 75" stroke-dasharray="16 18"/>
+    <path d="M634 221l40 18-17 41M1074 424l28 24-36 29M1036 602l36 29-41 24" stroke="#B85C3B" stroke-width="10"/>
+  </g>
+  <g fill="#F6F2E9">
+    <circle cx="246" cy="397" r="24"/><circle cx="324" cy="377" r="24"/><circle cx="381" cy="433" r="24"/>
+    <path d="M198 493c8-66 104-69 111 0zM275 478c8-66 104-69 111 0zM334 532c8-66 104-69 111 0z"/>
+    <circle cx="757" cy="252" r="22"/><circle cx="839" cy="252" r="22"/><path d="M710 344c8-70 110-70 117 0zM790 344c8-70 110-70 117 0z"/>
+    <circle cx="1188" cy="501" r="24"/><circle cx="1266" cy="467" r="24"/><circle cx="1340" cy="521" r="24"/>
+    <path d="M1138 597c8-66 104-69 111 0zM1217 565c8-66 104-69 111 0zM1292 618c8-66 104-69 111 0z"/>
+  </g>
+  <g fill="#B85C3B">
+    <circle cx="310" cy="452" r="13"/><circle cx="805" cy="282" r="13"/><circle cx="1260" cy="545" r="13"/>
+    <path d="M742 708h126v18H742zM766 674h78v18h-78zM789 640h32v18h-32z"/>
+  </g>
+</svg>
