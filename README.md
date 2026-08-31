@@ -18,3 +18,7 @@ Next.js App Router, React, TypeScript, Sass/CSS Modules, next/font, Vercel Analy
 O portfólio distingue produto publicado, MVP, construção e fundação. Imagens e informações sem confirmação não são inventadas: os assets editoriais precisam ser adicionados quando estiverem disponíveis.
 
 Defina `NEXT_PUBLIC_SITE_URL` no deploy para gerar canonical, sitemap e robots com a URL pública real.
+
+## Produção
+
+O portfólio está publicado em [portfoliov3-zeta-eight.vercel.app](https://portfoliov3-zeta-eight.vercel.app). A branch `production` é acompanhada pela Vercel e cada push nela gera um novo deploy de produção; as demais branches geram previews.
