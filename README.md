@@ -55,3 +55,17 @@ O pacote original é preservado localmente e ignorado pelo Git. Contém variante
 Fluxo: desenvolver em `develop`, executar as verificações, revisar e integrar em `main`. O push em `main` publica pela Vercel. Commits são organizados por mudança, com datas reais.
 
 Defina `NEXT_PUBLIC_SITE_URL=https://portfoliov3-zeta-eight.vercel.app` na Vercel para canonical, sitemap e robots. O projeto existente `portfoliov3` está vinculado pelo diretório local `.vercel`, que não é versionado.
+
+## Apresentação profissional e currículo
+
+`/sobre` apresenta a trajetória profissional e `/curriculo` oferece a versão legível no navegador. O PDF de uma página está em `/cv/luis-botelho-curriculo.pdf`, com texto selecionável e links clicáveis.
+
+Os dados profissionais ficam em `src/data/profile.ts`. Critérios de fonte e informações ainda não datadas estão em `docs/professional-history.md`. O documento pessoal de origem permanece fora do repositório e não é publicado.
+
+Após editar o perfil ou a página do currículo, inicie o servidor local e regenere o PDF:
+
+```sh
+node scripts/generate-resume.mjs
+```
+
+O script usa Playwright e a página `/curriculo`. A variável opcional `RESUME_BASE_URL` permite indicar outro servidor. Confira a paginação e o texto do PDF antes de publicar. A versão online e o PDF devem ser atualizados juntos.
