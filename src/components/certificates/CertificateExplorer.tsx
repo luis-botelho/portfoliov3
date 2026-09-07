@@ -36,9 +36,10 @@ export function CertificateExplorer({ cards }: { cards: Record<string, ReactNode
             placeholder="React, segurança, lógica…"
           />
         </label>
-        <label>
+        <label htmlFor="certificate-issuer">
           Instituição
           <select
+            id="certificate-issuer"
             value={issuer}
             onChange={(event) => setIssuer(event.target.value)}
           >
@@ -60,6 +61,7 @@ export function CertificateExplorer({ cards }: { cards: Record<string, ReactNode
         {filtered.length} de {certificates.length} certificados · mais recentes
         primeiro
       </p>
+      <h2 className={styles.catalogTitle}>Acervo de certificados</h2>
       <div className={styles.grid}>
         {filtered.map((certificate) => (
           <div key={certificate.id} className={styles.result}>{cards[certificate.id]}</div>

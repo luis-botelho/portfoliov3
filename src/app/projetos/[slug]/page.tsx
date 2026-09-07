@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { Header } from '@/components/layout/Header'
@@ -113,7 +114,7 @@ export default async function CaseStudy({
             <List items={project.stack} />
           </CaseSection>
         </div>
-        {project.readme && <ReadmeViewer source={project.readme} />}
+        {project.readme && <Suspense fallback={<p>Carregando documentação do repositório…</p>}><ReadmeViewer source={project.readme} /></Suspense>}
       </main>
       <Footer />
     </>

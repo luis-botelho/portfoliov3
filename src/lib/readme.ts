@@ -14,7 +14,7 @@ export async function getReadme(source: ReadmeSource) {
   const url = `https://raw.githubusercontent.com/${source.repository}/${source.branch}/${source.path}`
 
   try {
-    const response = await fetch(url, { next: { revalidate: 86400 } })
+    const response = await fetch(url, { next: { revalidate: 86400 }, signal: AbortSignal.timeout(8000) })
     if (!response.ok) return null
     return await response.text()
   } catch {
