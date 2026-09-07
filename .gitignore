@@ -13,3 +13,9 @@ __v0_jsx-dev-runtime.ts
 node_modules
 .next/
 .DS_Store
+
+# Pacote original: contém inventários de e-mail e variantes não publicáveis
+luis-botelho-certificados-portfolio-v1/
+playwright-report/
+test-results/
+*.tsbuildinfo

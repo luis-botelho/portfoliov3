@@ -1,0 +1,392 @@
+[
+  {
+    "id": "dio-TOA8DRBH",
+    "issuer": "DIO",
+    "title": "Aceleração Santander - Boas Práticas de Segurança em Vibe Coding",
+    "date": "2026-09-03",
+    "hours": null,
+    "technologies": [
+      "Security",
+      "Vibe Coding"
+    ],
+    "highlight": false,
+    "introductory": false,
+    "url": "https://www.dio.me/certificate/TOA8DRBH/share",
+    "format": "Credencial",
+    "sha256": null
+  },
+  {
+    "id": "dio-TRRJJWQV",
+    "issuer": "DIO",
+    "title": "Boas vindas à Aceleração Santander - Cibersegurança do Zero à Prática",
+    "date": "2026-09-03",
+    "hours": null,
+    "technologies": [
+      "Cybersecurity"
+    ],
+    "highlight": false,
+    "introductory": true,
+    "url": "https://www.dio.me/certificate/TRRJJWQV/share",
+    "format": "Credencial",
+    "sha256": null
+  },
+  {
+    "id": "dio-I5UOYPLM",
+    "issuer": "DIO",
+    "title": "Segurança e Boas Práticas em Projetos Feitos com Vibe Code",
+    "date": "2026-09-03",
+    "hours": null,
+    "technologies": [
+      "Security",
+      "Vibe Coding"
+    ],
+    "highlight": false,
+    "introductory": false,
+    "url": "https://www.dio.me/certificate/I5UOYPLM/share",
+    "format": "Credencial",
+    "sha256": null
+  },
+  {
+    "id": "dio-HSG8KJ9G",
+    "issuer": "DIO",
+    "title": "Boas Vindas ao Bootcamp Corpay - Back-end do Zero a Prática",
+    "date": "2026-06-02",
+    "hours": null,
+    "technologies": [
+      "Back-end"
+    ],
+    "highlight": false,
+    "introductory": true,
+    "url": "https://www.dio.me/certificate/HSG8KJ9G/share",
+    "format": "Credencial",
+    "sha256": null
+  },
+  {
+    "id": "dio-9LHM5KQH",
+    "issuer": "DIO",
+    "title": "Introdução ao Bootcamp TOTVS - Fundamentos de Engenharia de Dados e Machine Learning",
+    "date": "2026-02-27",
+    "hours": null,
+    "technologies": [
+      "Data Engineering",
+      "Machine Learning"
+    ],
+    "highlight": false,
+    "introductory": true,
+    "url": "https://www.dio.me/certificate/9LHM5KQH/share",
+    "format": "Credencial",
+    "sha256": null
+  },
+  {
+    "id": "dio-7W6JLE6H",
+    "issuer": "DIO",
+    "title": "Introdução a Experiência Decola Tech",
+    "date": "2025-03-27",
+    "hours": null,
+    "technologies": [],
+    "highlight": false,
+    "introductory": true,
+    "url": "https://www.dio.me/certificate/7W6JLE6H/share",
+    "format": "Credencial",
+    "sha256": null
+  },
+  {
+    "id": "growdev-0000356",
+    "issuer": "Growdev",
+    "title": "Introdução a Programação Web - Codaí 2.0",
+    "date": "2024-05-21",
+    "hours": null,
+    "technologies": [
+      "Web Development"
+    ],
+    "highlight": false,
+    "introductory": true,
+    "url": "https://growdev.eadplataforma.app/certificate/view/0000356/2024-05-21",
+    "format": "Credencial",
+    "sha256": null
+  },
+  {
+    "id": "blue-2021-bootcamp",
+    "issuer": "Blue EdTech",
+    "title": "Módulo Bootcamp - Destaque",
+    "date": "2021-11-26",
+    "hours": 100,
+    "technologies": [
+      "JavaScript"
+    ],
+    "highlight": true,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-11-26_modulo-bootcamp-destaque_100h.pdf",
+    "format": "PDF",
+    "sha256": "ff9c86034d9f60a4ded07127552b5b1455b556e611fd3777a28ae5d281b958c8"
+  },
+  {
+    "id": "blue-2021-backend-final",
+    "issuer": "Blue EdTech",
+    "title": "Backend - Projeto Final",
+    "date": "2021-11-04",
+    "hours": 50,
+    "technologies": [
+      "JavaScript",
+      "TypeScript",
+      "SQL",
+      "Prisma"
+    ],
+    "highlight": false,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-11-04_backend-projeto-final_50h.pdf",
+    "format": "PDF",
+    "sha256": "e26fd4ad3ca57524251290103dcb3a13e92f7963d9a859fdc9692600aeb6aabb"
+  },
+  {
+    "id": "blue-2021-frontend-final",
+    "issuer": "Blue EdTech",
+    "title": "Frontend - Projeto Final",
+    "date": "2021-11-04",
+    "hours": 50,
+    "technologies": [
+      "JavaScript",
+      "ReactJS"
+    ],
+    "highlight": false,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-11-04_frontend-projeto-final_50h.pdf",
+    "format": "PDF",
+    "sha256": "c01f0a7fec94ddee00ce296e6b47b850246ad82e4cc1001ce941e8665e2d5efc"
+  },
+  {
+    "id": "blue-2021-fullstack-ii",
+    "issuer": "Blue EdTech",
+    "title": "Módulo Fullstack II",
+    "date": "2021-11-04",
+    "hours": 100,
+    "technologies": [
+      "JavaScript"
+    ],
+    "highlight": false,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-11-04_modulo-fullstack-ii_100h.pdf",
+    "format": "PDF",
+    "sha256": "99dd930bcf04753c6f2c46dfd03ced422910a288e79d4eac0e141041d8af994d"
+  },
+  {
+    "id": "blue-2021-backend-tasks",
+    "issuer": "Blue EdTech",
+    "title": "Backend - Lista de Tarefas - Destaque",
+    "date": "2021-09-30",
+    "hours": 25,
+    "technologies": [
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "MongoDB"
+    ],
+    "highlight": true,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-09-30_backend-lista-de-tarefas-DESTAQUE_25h.pdf",
+    "format": "PDF",
+    "sha256": "11baf6cde0448674c0164940d97bffa86eebc0a11f13c69a18453a93e120a88e"
+  },
+  {
+    "id": "blue-2021-components-usestate",
+    "issuer": "Blue EdTech",
+    "title": "Componentes e useState - Tema Livre - Destaque",
+    "date": "2021-09-30",
+    "hours": 10,
+    "technologies": [
+      "JavaScript",
+      "ReactJS"
+    ],
+    "highlight": true,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-09-30_componentes-useState-tema-livre-DESTAQUE_10h.pdf",
+    "format": "PDF",
+    "sha256": "22d0825d9221be7f18a51946f1f867ebe22f6e4bc1bb553fca5f4521ec387bc1"
+  },
+  {
+    "id": "blue-2021-crud-filmes",
+    "issuer": "Blue EdTech",
+    "title": "CRUD API Projeto Filmes - Destaque",
+    "date": "2021-09-30",
+    "hours": 20,
+    "technologies": [
+      "JavaScript",
+      "Node.js",
+      "Express"
+    ],
+    "highlight": true,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-09-30_crud-api-filmes-DESTAQUE_20h.pdf",
+    "format": "PDF",
+    "sha256": "4f5e66bd7cfa14410525f38631f3baf045a0a28a6c130abc6f2e26d05bccfcca"
+  },
+  {
+    "id": "blue-2021-crud-games",
+    "issuer": "Blue EdTech",
+    "title": "CRUD API Projeto Games - Destaque",
+    "date": "2021-09-30",
+    "hours": 10,
+    "technologies": [
+      "JavaScript",
+      "Node.js",
+      "Express"
+    ],
+    "highlight": true,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-09-30_crud-api-games-DESTAQUE_10h.pdf",
+    "format": "PDF",
+    "sha256": "8da6bf4d2390ee7ef008a55b3252db78768c4b8d2a48b84d6ea6e9e71895aded"
+  },
+  {
+    "id": "blue-2021-frontend-tasks",
+    "issuer": "Blue EdTech",
+    "title": "Frontend - Lista de Tarefas - Destaque",
+    "date": "2021-09-30",
+    "hours": 25,
+    "technologies": [
+      "JavaScript",
+      "ReactJS"
+    ],
+    "highlight": true,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-09-30_frontend-lista-de-tarefas-DESTAQUE_25h.pdf",
+    "format": "PDF",
+    "sha256": "9fd818888c85d29b6a310a92795404ccc94acfa2eea79e65a6f253967a467561"
+  },
+  {
+    "id": "blue-2021-fullstack-i",
+    "issuer": "Blue EdTech",
+    "title": "Módulo Fullstack I - Destaque",
+    "date": "2021-09-30",
+    "hours": 100,
+    "technologies": [
+      "JavaScript"
+    ],
+    "highlight": true,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-09-30_modulo-fullstack-i-DESTAQUE_100h.pdf",
+    "format": "PDF",
+    "sha256": "514bb132f89f2159080d5204858db19be7f2482abcaead58342a7b188ed0f6ba"
+  },
+  {
+    "id": "blue-2021-web-db-cloud",
+    "issuer": "Blue EdTech",
+    "title": "Módulo Web, Banco de Dados, Cloud - Destaque",
+    "date": "2021-08-26",
+    "hours": 100,
+    "technologies": [
+      "Python",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "highlight": true,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-08-26_web-banco-dados-cloud-DESTAQUE_100h.pdf",
+    "format": "PDF",
+    "sha256": "be826bf5d208e112321d35a4d196875db600437e969a66202ec6551ea5ec1915"
+  },
+  {
+    "id": "blue-2021-catalogo",
+    "issuer": "Blue EdTech",
+    "title": "Projeto Catálogo - Destaque",
+    "date": "2021-08-26",
+    "hours": 34,
+    "technologies": [
+      "Python",
+      "Flask",
+      "MVC"
+    ],
+    "highlight": true,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-08-26_projeto-catalogo-DESTAQUE_34h.pdf",
+    "format": "PDF",
+    "sha256": "760960d492ba62c70cd819fcb51fcaea1c2aae8d9773a2ff0897d07374075fe0"
+  },
+  {
+    "id": "blue-2021-jogo-humor",
+    "issuer": "Blue EdTech",
+    "title": "Projeto Jogo do Humor - Destaque",
+    "date": "2021-08-26",
+    "hours": 33,
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "highlight": true,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-08-26_projeto-jogo-do-humor-DESTAQUE_33h.pdf",
+    "format": "PDF",
+    "sha256": "b01418e736b077487d2342780a12eb7ffb7ecf109618011cefd18a47c9fa5253"
+  },
+  {
+    "id": "blue-2021-portfolio",
+    "issuer": "Blue EdTech",
+    "title": "Projeto Portfólio - Destaque",
+    "date": "2021-08-26",
+    "hours": 33,
+    "technologies": [
+      "Python",
+      "Flask",
+      "MVC"
+    ],
+    "highlight": true,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-08-26_projeto-portfolio-DESTAQUE_33h.pdf",
+    "format": "PDF",
+    "sha256": "bbdb414f06421ce8cf8438e937e356917a69d9e280b4399422b9a8ea3eab36ba"
+  },
+  {
+    "id": "blue-2021-ficcao-interativa",
+    "issuer": "Blue EdTech",
+    "title": "Jogo de Ficção Interativa — Aluno Destaque",
+    "date": "2021-07-09",
+    "hours": 25,
+    "technologies": [],
+    "highlight": true,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-07-09_projeto-06-jogo-de-ficcao-interativa_25h.pdf",
+    "format": "PDF",
+    "sha256": "f33678c4ce6484755199bb5620cbdae472c02965d19a2801364e0e5017e88638"
+  },
+  {
+    "id": "blue-2021-logica",
+    "issuer": "Blue EdTech",
+    "title": "Módulo 1 - Lógica de programação",
+    "date": "2021-07-09",
+    "hours": 100,
+    "technologies": [],
+    "highlight": false,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-07-09_modulo-1-logica-de-programacao_100h.pdf",
+    "format": "PDF",
+    "sha256": "a872e873c453dc5a11ea0c804c50b158cc97ba323ab01aaaa11ae9a3a76963f7"
+  },
+  {
+    "id": "blue-2021-simulador-votacao",
+    "issuer": "Blue EdTech",
+    "title": "Projeto 03 - Simulador de votação",
+    "date": "2021-06-29",
+    "hours": 25,
+    "technologies": [],
+    "highlight": false,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-06-29_projeto-simulador-de-votacao_25h.pdf",
+    "format": "PDF",
+    "sha256": "006b7ec8418bcc0689626d75296e1ae3302dba8c5666f74127f081855aea5a1c"
+  },
+  {
+    "id": "blue-2021-detetive",
+    "issuer": "Blue EdTech",
+    "title": "Projeto Detetive",
+    "date": "2021-06-14",
+    "hours": 25,
+    "technologies": [],
+    "highlight": false,
+    "introductory": false,
+    "url": "/certificates/blue-edtech/2021-06-14_projeto-detetive_25h.pdf",
+    "format": "PDF",
+    "sha256": "eebb305387df74e62151ae6db97f8cdb70bb76f66af6205c1f219e24357d12ed"
+  }
+]
