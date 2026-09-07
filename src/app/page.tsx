@@ -1,9 +1,11 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ProjectCard } from '@/components/projects/ProjectCard'
 import { featuredProjects, projects } from '@/data/projects'
 import { CertificateSection } from '@/components/certificates/CertificateSection'
+import { profile } from '@/data/profile'
 import styles from './page.module.scss'
 
 export default function HomePage() {
@@ -12,61 +14,105 @@ export default function HomePage() {
       <Header />
       <main id="conteudo">
         <section className={styles.hero}>
-          <div className={styles.route} aria-hidden="true" />
-          <p className="eyebrow">Luis Fellype Botelho / Angra dos Reis, RJ</p>
-          <h1>Construo produtos digitais para problemas reais.</h1>
-          <p className={styles.lede}>
-            Sou Luis Botelho, desenvolvedor Full-Stack e estudante de Engenharia
-            de Software. Trabalho com React, TypeScript, Go, Node.js e
-            PostgreSQL para transformar ideias em MVPs documentados, testáveis e
-            utilizáveis.
-          </p>
-          <p className={styles.note}>
-            Minha trajetória passou por atendimento, vendas e gestão antes da
-            engenharia. Isso influencia como trabalho: começo pelo problema,
-            pelo usuário e pelas restrições, não pela framework.
-          </p>
-          <div className={styles.actions}>
-            <a className={styles.primary} href="#projetos">
-              Ver projetos
-            </a>
-            <a
-              href="https://github.com/luis-botelho"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub ↗
-            </a>
-            <a
-              href="https://linkedin.com/in/luis-botelho"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn ↗
-            </a>
+          <div>
+            <p className="eyebrow">
+              Luis Botelho · Desenvolvedor Front-end / Full-Stack
+            </p>
+            <h1>Construo produtos digitais para problemas reais.</h1>
+            <p className={styles.lede}>
+              Experiência em desenvolvimento na OSF Digital, vivência em
+              atendimento e um olhar próximo do negócio. Hoje, transformo esse
+              repertório em interfaces, APIs e produtos com propósito.
+            </p>
+            <p className={styles.note}>
+              React · TypeScript · Next.js · Node.js · Go
+            </p>
+            <div className={styles.actions}>
+              <a className={styles.primary} href={profile.resume} download>
+                Baixar currículo PDF ↓
+              </a>
+              <a href="#projetos">Ver projetos ↗</a>
+              <a href={`mailto:${profile.email}`}>Entrar em contato ↗</a>
+            </div>
           </div>
+          <aside
+            className={styles.profileCard}
+            aria-label="Resumo profissional"
+          >
+            <p className="eyebrow">Experiência + direção</p>
+            <p className={styles.monogram} aria-hidden="true">
+              LB<span>.</span>
+            </p>
+            <h2>{profile.shortName}</h2>
+            <p>{profile.location}</p>
+            <dl>
+              <div>
+                <dt>Experiência em tecnologia</dt>
+                <dd>
+                  Front-end Jr · OSF Digital
+                  <br />
+                  <span>jan–jun/2022 · ambiente Salesforce</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Formação</dt>
+                <dd>
+                  Engenharia de Software
+                  <br />
+                  <span>Graduação em andamento</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Interesse profissional</dt>
+                <dd>Front-end e Full-Stack</dd>
+              </div>
+            </dl>
+            <Link href="/sobre">Conheça minha trajetória ↗</Link>
+          </aside>
         </section>
-        <section className={styles.evidence} aria-labelledby="evidencias">
-          <p className="eyebrow">01 / Evidências</p>
-          <h2 id="evidencias">Produto, interface e sistema no mesmo mapa.</h2>
-          <div className={styles.evidenceGrid}>
-            <p>
-              <strong>Problema primeiro</strong>
-              <br />
-              Entendo contexto, usuário e restrições antes de escolher a
-              solução.
+        <section className={styles.spotlight} aria-labelledby="destaque-titulo">
+          <div className={styles.spotlightCopy}>
+            <p className="eyebrow">01 / Produto publicado</p>
+            <h2 id="destaque-titulo">Caminhos de Mambucaba.</h2>
+            <p className={styles.spotlightLead}>
+              Tecnologia para descobrir um território e aproximar sua
+              comunidade.
             </p>
             <p>
-              <strong>Full-stack de verdade</strong>
-              <br />
-              Interfaces, APIs, persistência e documentação conectados.
+              Uma plataforma que reúne experiências, mapas e participação
+              comunitária. Desenvolvimento full-stack, da organização do
+              conteúdo à persistência dos formulários e publicação.
             </p>
-            <p>
-              <strong>Honestidade técnica</strong>
-              <br />
-              Cada projeto mostra o que existe hoje e o que ainda falta.
-            </p>
+            <ul className={styles.tags}>
+              <li>Next.js + React</li>
+              <li>TypeScript</li>
+              <li>PostgreSQL</li>
+            </ul>
+            <div className={styles.actions}>
+              <Link href="/projetos/caminhos-de-mambucaba">
+                Conhecer o case ↗
+              </Link>
+              <a
+                href="https://caminhosdemambucaba.live"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visitar o site ↗
+              </a>
+            </div>
           </div>
+          <figure>
+            <Image
+              src="/images/projects/mambucaba-live.jpg"
+              alt="Página inicial publicada do Caminhos de Mambucaba, plataforma de descoberta territorial"
+              width={1440}
+              height={1000}
+              sizes="(max-width: 760px) 100vw, 50vw"
+            />
+            <figcaption>
+              Interface do produto publicado · caminhosdemambucaba.live
+            </figcaption>
+          </figure>
         </section>
         <section
           id="projetos"
@@ -75,45 +121,70 @@ export default function HomePage() {
         >
           <div className={styles.sectionHead}>
             <div>
-              <p className="eyebrow">02 / Projetos em destaque</p>
-              <h2 id="projetos-titulo">Caminhos percorridos.</h2>
+              <p className="eyebrow">02 / Projetos selecionados</p>
+              <h2 id="projetos-titulo">Da interface às regras de negócio.</h2>
             </div>
-            <Link href="/projetos">Ver todos ↗</Link>
+            <Link href="/projetos">
+              Explorar os {projects.length} projetos ↗
+            </Link>
           </div>
+          <p className={styles.intro}>
+            Escopo, decisões e resultados de cada etapa. Produtos em construção
+            e estudos aparecem com seu contexto.
+          </p>
           <div className={styles.projectGrid}>
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
+            {featuredProjects
+              .filter((project) => project.slug !== 'caminhos-de-mambucaba')
+              .map((project) => (
+                <ProjectCard key={project.slug} project={project} />
+              ))}
           </div>
         </section>
         <section className={styles.journey} aria-labelledby="jornada">
           <div>
-            <p className="eyebrow">03 / Minha jornada</p>
-            <h2 id="jornada">
-              Experiência de produto também nasce fora do código.
-            </h2>
+            <p className="eyebrow">03 / Trajetória profissional</p>
+            <h2 id="jornada">Experiência que vai além do código.</h2>
+            <p>
+              Minha trajetória conecta desenvolvimento, suporte de TI, turismo e
+              atendimento. São perspectivas que ajudam a fazer perguntas
+              melhores antes de construir uma solução.
+            </p>
+            <Link href="/sobre">Ver experiência completa ↗</Link>
           </div>
-          <p>
-            Antes da engenharia, passei por atendimento, vendas e gestão. Essa
-            trajetória me ensinou a ouvir, organizar prioridades e comunicar
-            decisões. Hoje, levo esse repertório para construir software com
-            mais contexto e menos suposição.
-          </p>
+          <ol>
+            <li>
+              <span>2021–2022 / Tecnologia</span>
+              <h3>Do suporte ao desenvolvimento.</h3>
+              <p>
+                Suporte ao usuário na Virtua Max e atuação como front-end júnior
+                na OSF Digital, com ajustes de interface e catálogo em
+                Salesforce.
+              </p>
+            </li>
+            <li>
+              <span>2022–2026 / Repertório de negócio</span>
+              <h3>Turismo, operação e atendimento.</h3>
+              <p>
+                Concepção de uma agência de turismo, experiência como
+                encarregado de loja e atendimento ao público, incluindo serviço
+                de salão.
+              </p>
+            </li>
+            <li>
+              <span>Hoje / Direção</span>
+              <h3>Produtos digitais e atuação institucional.</h3>
+              <p>
+                Projetos de software, estudo de Engenharia de Software e atuação
+                como diretor financeiro do ICPT.
+              </p>
+            </li>
+          </ol>
         </section>
         <section className={styles.stack} aria-labelledby="stack">
-          <p className="eyebrow">04 / Stack em projetos</p>
-          <h2 id="stack">Tecnologias que aparecem no trabalho.</h2>
-          <ul>
-            {[
-              'React',
-              'TypeScript',
-              'Next.js',
-              'Go',
-              'Node.js',
-              'PostgreSQL',
-              'Prisma',
-              'Sass',
-            ].map((item) => (
+          <p className="eyebrow">04 / Competências em prática</p>
+          <h2 id="stack">Uma base técnica conectada às entregas.</h2>
+          <ul className={styles.tags}>
+            {profile.skills.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
@@ -124,42 +195,30 @@ export default function HomePage() {
           id="contato"
           aria-labelledby="contato-titulo"
         >
-          <p className="eyebrow">06 / Contato</p>
-          <h2 id="contato-titulo">Tem um problema que merece virar produto?</h2>
-          <p>
-            Vamos conversar sobre contexto, escopo e o próximo passo possível.
-          </p>
-          <a
-            className={styles.primary}
-            href="https://github.com/luis-botelho"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Falar pelo GitHub ↗
-          </a>
-          <a
-            href="https://linkedin.com/in/luis-botelho"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn ↗
-          </a>
-        </section>
-        <section className={styles.archive} aria-labelledby="arquivo">
-          <p className="eyebrow">Arquivo de aprendizagem</p>
-          <h2 id="arquivo">Estudos, experimentos e projetos antigos.</h2>
-          <p>
-            Nem tudo precisa parecer produto profissional. O arquivo aponta para
-            o GitHub e preserva o contexto de aprendizagem.
-          </p>
-          <a
-            href="https://github.com/luis-botelho?tab=repositories"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Explorar GitHub ↗
-          </a>
-          <span>{projects.length} registros catalogados</span>
+          <div>
+            <p className="eyebrow">06 / Vamos conversar</p>
+            <h2 id="contato-titulo">
+              Sua próxima contratação pode começar por uma conversa.
+            </h2>
+            <p>
+              Interesse em oportunidades de desenvolvimento front-end e
+              full-stack. Conheça meus projetos e entre em contato diretamente.
+            </p>
+          </div>
+          <div className={styles.contactLinks}>
+            <a className={styles.email} href={`mailto:${profile.email}`}>
+              {profile.email} ↗
+            </a>
+            <a href={profile.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn ↗
+            </a>
+            <a href={profile.github} target="_blank" rel="noreferrer">
+              GitHub ↗
+            </a>
+            <a href={profile.resume} download>
+              Baixar currículo PDF ↓
+            </a>
+          </div>
         </section>
       </main>
       <Footer />

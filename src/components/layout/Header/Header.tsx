@@ -12,15 +12,12 @@ export function Header() {
         </Link>
         <nav aria-label="Navegação principal">
           <Link href="/#projetos">Projetos</Link>
+          <Link href="/sobre">Sobre</Link>
           <Link href="/certificados">Certificados</Link>
           <Link href="/#contato">Contato</Link>
-          <Link
-            href="https://github.com/luis-botelho"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub ↗
-          </Link>
+          <a href="/cv/luis-botelho-curriculo.pdf" download>
+            Currículo PDF ↓
+          </a>
         </nav>
       </header>
     </>

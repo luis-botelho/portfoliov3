@@ -20,22 +20,34 @@ export function CertificateSection() {
           <p className="eyebrow">05 / Formação em prática</p>
           <h2 id="certificados-titulo">Aprender. Construir. Conectar.</h2>
           <p>
-            Uma trajetória de formação contínua, dos fundamentos de programação
-            à segurança. Cada conexão mostra onde esse conhecimento encontra os
-            projetos.
+            Formação complementar, dos fundamentos de programação à segurança.
+            Cada conexão mostra onde esse conhecimento encontra os projetos.
           </p>
         </div>
         <Link href="/certificados">Explorar certificados ↗</Link>
       </div>
       <div className={styles.stats}>
         <p>
-          <strong>{certificates.length}</strong>credenciais
+          <strong>
+            {certificates.filter((item) => item.hours !== null).length}
+          </strong>
+          certificados com carga horária
         </p>
         <p>
-          <strong>3</strong>instituições
+          <strong>
+            {
+              certificates.filter(
+                (item) => !item.introductory && item.hours === null,
+              ).length
+            }
+          </strong>
+          formações em segurança
         </p>
         <p>
-          <strong>2021–2026</strong>trajetória de formação
+          <strong>
+            {certificates.filter((item) => item.introductory).length}
+          </strong>
+          conteúdos introdutórios
         </p>
       </div>
       <div className={styles.grid}>
