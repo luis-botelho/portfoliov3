@@ -1,0 +1,135 @@
+.main {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sheet {
+  background: #fff;
+  color: #17251e;
+  padding: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.sheet h1 {
+  font-size: 30px;
+  margin: 0 0 0.2rem;
+  line-height: 1.15;
+}
+
+.sheet .title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #355b46;
+  margin-bottom: 0.6rem;
+}
+
+.sheet h2 {
+  font-size: 14px;
+  color: #355b46;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #cbd5cf;
+  padding-bottom: 0.25rem;
+  margin: 1.2rem 0 0.45rem;
+}
+
+.sheet h3 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.sheet p {
+  margin: 0.2rem 0;
+}
+
+.sheet a {
+  color: #244c37;
+  overflow-wrap: anywhere;
+}
+
+.entry {
+  margin-bottom: 0.65rem;
+}
+
+.operations {
+  padding-left: 1rem;
+  margin: 0.4rem 0;
+}
+
+.operations li {
+  margin-bottom: 0.25rem;
+}
+
+@media (width <= 600px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .sheet {
+    padding: 1.5rem;
+  }
+
+  .sheet h1 {
+    font-size: 25px;
+  }
+}
+
+@media print {
+  @page {
+    size: a4;
+    margin: 12mm;
+  }
+
+  .main {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tools {
+    display: none;
+  }
+
+  .sheet {
+    padding: 0;
+    font-size: 9.5pt;
+    line-height: 1.32;
+  }
+
+  .sheet h1 {
+    font-size: 22pt;
+  }
+
+  .sheet .title {
+    font-size: 12pt;
+  }
+
+  .sheet h2 {
+    font-size: 10pt;
+    margin-top: 0.85rem;
+  }
+
+  .sheet h3 {
+    font-size: 9.5pt;
+  }
+
+  .sheet section,
+  .entry {
+    break-inside: avoid;
+  }
+
+  .sheet a {
+    text-decoration: none;
+  }
+}

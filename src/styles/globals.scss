@@ -40,3 +40,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+@media print {
+  :root { color-scheme: light; background: #fff; }
+  body { background: #fff; color: #17251e; }
+}
