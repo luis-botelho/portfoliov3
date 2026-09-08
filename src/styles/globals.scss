@@ -45,3 +45,5 @@ body {
   :root { color-scheme: light; background: #fff; }
   body { background: #fff; color: #17251e; }
 }
+
+@media print { .site-chrome { display: none !important; } }

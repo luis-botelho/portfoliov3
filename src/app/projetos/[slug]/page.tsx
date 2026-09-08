@@ -2,8 +2,6 @@ import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
 import { ReadmeViewer } from '@/components/projects/ReadmeViewer'
 import { getProject, projects } from '@/data/projects'
 import { getProjectCertificates } from '@/data/certificates'
@@ -18,7 +16,17 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const project = getProject((await params).slug)
-  return { title: project?.name ?? 'Projeto', description: project?.summary }
+  return {
+    title: project?.name ?? 'Projeto',
+    description: project?.summary,
+    alternates: { canonical: `/projetos/${project?.slug}` },
+    openGraph: {
+      title: project?.name,
+      description: project?.summary,
+      url: `/projetos/${project?.slug}`,
+      type: 'article',
+    },
+  }
 }
 export default async function CaseStudy({
   params,
@@ -29,7 +37,6 @@ export default async function CaseStudy({
   if (!project) notFound()
   return (
     <>
-      <Header />
       <main id="conteudo" className={styles.main}>
         <header className={styles.hero}>
           <p className="eyebrow">Case study / {project.status}</p>
@@ -114,9 +121,12 @@ export default async function CaseStudy({
             <List items={project.stack} />
           </CaseSection>
         </div>
-        {project.readme && <Suspense fallback={<p>Carregando documentação do repositório…</p>}><ReadmeViewer source={project.readme} /></Suspense>}
+        {project.readme && (
+          <Suspense fallback={<p>Carregando documentação do repositório…</p>}>
+            <ReadmeViewer source={project.readme} />
+          </Suspense>
+        )}
       </main>
-      <Footer />
     </>
   )
 }

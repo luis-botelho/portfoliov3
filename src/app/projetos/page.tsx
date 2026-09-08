@@ -1,6 +1,4 @@
 import type { Metadata } from 'next'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
 import { ProjectCard } from '@/components/projects/ProjectCard'
 import { projects } from '@/data/projects'
 import styles from './page.module.scss'
@@ -8,11 +6,11 @@ export const metadata: Metadata = {
   title: 'Projetos',
   description: 'Projetos e estudos de Luis Botelho.',
   alternates: { canonical: '/projetos' },
+  openGraph: { title: 'Projetos de Luis Botelho', description: 'Cases de desenvolvimento e arquitetura: Caminhos de Mambucaba, Liahona, FrostyCamp e outros projetos.', url: '/projetos', type: 'website' },
 }
 export default function ProjectsPage() {
   return (
     <>
-      <Header />
       <main id="conteudo" className={styles.main}>
         <p className="eyebrow">Projetos / catálogo</p>
         <h1>O que existe no mapa.</h1>
@@ -26,7 +24,6 @@ export default function ProjectsPage() {
           ))}
         </div>
       </main>
-      <Footer />
     </>
   )
 }

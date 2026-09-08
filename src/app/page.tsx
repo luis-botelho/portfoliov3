@@ -1,7 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
 import { ProjectCard } from '@/components/projects/ProjectCard'
 import { featuredProjects, projects } from '@/data/projects'
 import { CertificateSection } from '@/components/certificates/CertificateSection'
@@ -11,7 +9,6 @@ import styles from './page.module.scss'
 export default function HomePage() {
   return (
     <>
-      <Header />
       <main id="conteudo">
         <section className={styles.hero}>
           <div>
@@ -207,21 +204,25 @@ export default function HomePage() {
           </div>
           <div className={styles.contactLinks}>
             <a className={styles.email} href={`mailto:${profile.email}`}>
-              {profile.email} ↗
+              Conversar por e-mail ↗
             </a>
-            <a href={profile.linkedin} target="_blank" rel="noreferrer">
+            <a
+              href="https://linkedin.com/in/luis-botelho"
+              target="_blank"
+              rel="noreferrer"
+            >
               LinkedIn ↗
             </a>
-            <a href={profile.github} target="_blank" rel="noreferrer">
-              GitHub ↗
-            </a>
-            <a href={profile.resume} download>
-              Baixar currículo PDF ↓
+            <a
+              href="https://wa.me/5524992772357"
+              target="_blank"
+              rel="noreferrer"
+            >
+              WhatsApp ↗
             </a>
           </div>
         </section>
       </main>
-      <Footer />
     </>
   )
 }

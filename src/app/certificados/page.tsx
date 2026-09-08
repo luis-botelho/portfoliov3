@@ -1,6 +1,4 @@
 import type { Metadata } from 'next'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
 import { CertificateExplorer } from '@/components/certificates/CertificateExplorer'
 import { certificates } from '@/data/certificates'
 import { CertificateCard } from '@/components/certificates/CertificateCard'
@@ -11,11 +9,11 @@ export const metadata: Metadata = {
   description:
     '25 credenciais de Luis Botelho, organizadas por instituição e conectadas às competências dos projetos.',
   alternates: { canonical: '/certificados' },
+  openGraph: { title: 'Certificados e formação', description: 'Formação em React, backend e segurança, com credenciais verificáveis e conexões com projetos de Luis Botelho.', url: '/certificados', type: 'website' },
 }
 export default function CertificatesPage() {
   return (
     <>
-      <Header />
       <main id="conteudo" className={styles.main}>
         <header className={styles.hero}>
           <p className="eyebrow">Formação / Evidências de aprendizagem</p>
@@ -31,7 +29,6 @@ export default function CertificatesPage() {
         </header>
         <CertificateExplorer cards={Object.fromEntries(certificates.map(certificate => [certificate.id, <CertificateCard key={certificate.id} certificate={certificate} />]))} />
       </main>
-      <Footer />
     </>
   )
 }

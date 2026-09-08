@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
 import { ExperienceTimeline } from '@/components/profile/ExperienceTimeline'
 import { profile, institutionalExperience } from '@/data/profile'
 import styles from './page.module.scss'
@@ -11,11 +9,11 @@ export const metadata: Metadata = {
   description:
     'A trajetória de Luis Botelho: desenvolvimento front-end na OSF Digital, suporte de TI, operações e projetos de software.',
   alternates: { canonical: '/sobre' },
+  openGraph: { title: 'Sobre Luis Botelho', description: 'Experiência profissional, formação e trajetória de Luis Botelho no desenvolvimento de produtos digitais.', url: '/sobre', type: 'website' },
 }
 export default function AboutPage() {
   return (
     <>
-      <Header />
       <main id="conteudo" className={styles.main}>
         <header className={styles.hero}>
           <p className="eyebrow">Sobre / Experiência e direção</p>
@@ -114,7 +112,6 @@ export default function AboutPage() {
           <a href={`mailto:${profile.email}`}>{profile.email}</a>
         </section>
       </main>
-      <Footer />
     </>
   )
 }

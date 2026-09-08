@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     'Currículo profissional de Luis Botelho, desenvolvedor front-end e full-stack.',
   alternates: { canonical: '/curriculo' },
+  openGraph: { title: 'Currículo de Luis Botelho', description: 'Currículo de Luis Botelho: experiência front-end, formação e projetos. Versão online e PDF para download.', url: '/curriculo', type: 'website' },
 }
 export default function ResumePage() {
   return (
