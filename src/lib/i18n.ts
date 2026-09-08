@@ -16,6 +16,17 @@ export function pageMetadata(
 ): Metadata {
   return {
     metadataBase: new URL(siteUrl),
+    icons: {
+      icon: [
+        {
+          url: '/favicon.ico',
+          sizes: '16x16 32x32 48x48',
+          type: 'image/x-icon',
+        },
+        { url: '/favicon.svg', sizes: 'any', type: 'image/svg+xml' },
+      ],
+      apple: '/apple-touch-icon.png',
+    },
     title:
       path === '/'
         ? { default: title, template: '%s | Luis Botelho' }
