@@ -10,7 +10,7 @@ export const projects: Project[] = [
     },
     name: 'Formulário Dinâmico · GetNinjas',
     status: 'Laboratório',
-    featured: true,
+    featured: false,
     eyebrow: 'Interface orientada por dados',
     summary:
       'Formulário por etapas gerado a partir de JSON, com validação, recuperação de erros e servidor Node.js nativo.',
@@ -284,7 +284,7 @@ export const projects: Project[] = [
     slug: 'itera',
     name: 'Itera',
     status: 'MVP concluído',
-    featured: true,
+    featured: false,
     eyebrow: 'Companion para MMORPG',
     summary:
       'MVP web que compara rotas de progressão e explica o próximo passo de um personagem com regras auditáveis.',
@@ -399,17 +399,20 @@ export const projects: Project[] = [
   },
   {
     slug: 'lia',
-    name: 'LIA — Local Intelligence for Assistance',
+    name: 'Liahona — LIA',
     status: 'Fundação',
-    featured: false,
+    featured: true,
     eyebrow: 'Empregabilidade e serviços locais',
     summary:
-      'Foundation documental concluída para uma visão de produto que conecta pessoas, oportunidades e serviços em Mambucaba.',
+      'Da necessidade local à arquitetura: visão de produto, jornadas, modelo de dados e decisões técnicas para conectar talentos e oportunidades em Mambucaba.',
     problem:
       'Conectar oportunidades, serviços e pessoas exige entender o território, suas relações de confiança e os talentos locais antes de construir uma plataforma.',
     role: 'Pesquisa, visão de produto, modelagem do domínio e documentação da Foundation.',
     scope: [
-      'Visão de produto para Mambucaba',
+      'Visão de produto, personas e indicadores para Mambucaba',
+      'Nove fluxos de usuário: cadastro, serviços, vagas, avaliações e comunicação',
+      'Modelo de dados, especificação de API e dez registros de decisão arquitetural',
+      'Épicos, histórias de usuário e planejamento do sprint de fundação',
       'Empregabilidade comunitária',
       'Serviços locais',
       'Confiança entre participantes',
@@ -454,7 +457,7 @@ export const projects: Project[] = [
     slug: 'frostycamp-home',
     name: 'FrostyCamp Home',
     status: 'Legado',
-    featured: false,
+    featured: true,
     eyebrow: 'Landing page e comunidades digitais',
     summary:
       'Landing page institucional criada para apresentar a proposta, os serviços e a metodologia da FrostyCamp.',
@@ -481,7 +484,7 @@ export const projects: Project[] = [
     validation:
       'Revisão do código, dos componentes responsivos e dos fluxos presentes no repositório. Não há afirmação de cobertura de testes automatizados.',
     currentState:
-      'Projeto frontend de 2023 preservado como parte da trajetória. Não há afirmação de deploy ativo atualmente.',
+      'Landing page de 2023 com endereço público ativo, verificado em setembro de 2026. Preservada como projeto legado; o envio do formulário ainda precisa de revisão.',
     limitations: [
       'README original ainda possui pouca documentação',
       'Mídias externas podem deixar de funcionar',
@@ -490,7 +493,6 @@ export const projects: Project[] = [
     ],
     nextSteps: [
       'Melhorar o README do repositório',
-      'Preservar uma captura local da interface',
       'Substituir mídias externas por assets locais',
     ],
     stack: [
@@ -501,6 +503,7 @@ export const projects: Project[] = [
       'react-slick',
       'EmailJS',
     ],
+    demo: 'https://frosty-camp-home.vercel.app',
     repository: 'https://github.com/luis-botelho/frosty-camp-home',
     readme: {
       repository: 'luis-botelho/frosty-camp-home',
@@ -508,10 +511,10 @@ export const projects: Project[] = [
       path: 'README.md',
     },
     cover: {
-      src: '/images/projects/frostycamp-cover.svg',
-      alt: 'Ilustração editorial de comunidades conectadas por trajetórias de crescimento e circulação entre grupos.',
+      src: '/images/projects/frostycamp-live.jpg',
+      alt: 'Página publicada da FrostyCamp, com o título Impulsionando comunidades, conectando mundos.',
       caption:
-        'Rede editorial da FrostyCamp: comunidades, circulação e crescimento orgânico.',
+        'Captura da landing page publicada, verificada em setembro de 2026.',
     },
   },
   {
@@ -543,7 +546,7 @@ export const projects: Project[] = [
   },
 ]
 
-const featuredOrder = ['caminhos-de-mambucaba', 'safeanchor', 'mini-kanban-veritas', 'itera', 'formulario-dinamico']
+const featuredOrder = ['caminhos-de-mambucaba', 'lia', 'frostycamp-home', 'safeanchor', 'mini-kanban-veritas']
 export const featuredProjects = featuredOrder.map(slug => projects.find(project => project.slug === slug)!)
 export const getProject = (slug: string) =>
   projects.find((project) => project.slug === slug)
