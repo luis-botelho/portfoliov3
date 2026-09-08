@@ -23,7 +23,7 @@ test('contato, destaques, formação e canonical refletem a revisão', async ({ 
   expect(headings.some(text => /Itera/i.test(text))).toBe(false)
   for (const slug of ['lia', 'goomer-menu-api']) {
     await page.goto(`/projetos/${slug}`)
-    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://luis-techie.tech/projetos/${slug}`)
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://luis-botelho.tech/projetos/${slug}`)
   }
   await expect(page.getByText('Case study / Em construção')).toBeVisible()
   await expect(page.getByRole('link', { name: 'Backend - Projeto Final' })).toBeVisible()
