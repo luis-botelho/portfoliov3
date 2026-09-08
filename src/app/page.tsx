@@ -13,7 +13,8 @@ export default function HomePage() {
         <section className={styles.hero}>
           <div>
             <p className="eyebrow">
-              Luis Botelho · Desenvolvedor Front-end / Full-Stack
+              Luis Fellype Botelho (Luiz Maia) · Desenvolvedor Front-end /
+              Full-Stack
             </p>
             <h1>Construo produtos digitais para problemas reais.</h1>
             <p className={styles.lede}>

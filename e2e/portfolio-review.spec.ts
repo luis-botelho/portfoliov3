@@ -12,6 +12,9 @@ test('navegação e rodapé globais também aparecem em cases, currículo e 404'
 
 test('contato, destaques, formação e canonical refletem a revisão', async ({ page }) => {
   await page.goto('/')
+  await expect(page).toHaveTitle(/Luis Fellype Botelho \(Luiz Maia\)/)
+  const identity = JSON.parse(await page.locator('script[type="application/ld+json"]').innerText())
+  expect(identity['@graph'][0].alternateName).toContain('Luiz Maia')
   await expect(page.locator('#contato a')).toHaveText(['Conversar por e-mail ↗', 'LinkedIn ↗', 'WhatsApp ↗'])
   await expect(page.locator('#contato a').nth(2)).toHaveAttribute('href', 'https://wa.me/5524992772357')
   const headings = await page.locator('#projetos h3').allTextContents()
@@ -20,7 +23,7 @@ test('contato, destaques, formação e canonical refletem a revisão', async ({ 
   expect(headings.some(text => /Itera/i.test(text))).toBe(false)
   for (const slug of ['lia', 'goomer-menu-api']) {
     await page.goto(`/projetos/${slug}`)
-    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://portfoliov3-zeta-eight.vercel.app/projetos/${slug}`)
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://luis-techie.tech/projetos/${slug}`)
   }
   await expect(page.getByText('Case study / Em construção')).toBeVisible()
   await expect(page.getByRole('link', { name: 'Backend - Projeto Final' })).toBeVisible()

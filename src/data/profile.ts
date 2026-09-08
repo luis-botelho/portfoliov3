@@ -1,3 +1,5 @@
+import { siteUrl } from '@/lib/site'
+
 export const profile = {
   name: 'Luis Fellype Botelho',
   shortName: 'Luis Botelho',
@@ -6,7 +8,7 @@ export const profile = {
   email: 'luisfellypebotelho@gmail.com',
   github: 'https://github.com/luis-botelho',
   linkedin: 'https://www.linkedin.com/in/luis-botelho',
-  site: 'https://portfoliov3-zeta-eight.vercel.app',
+  site: siteUrl,
   resume: '/cv/luis-botelho-curriculo.pdf',
   summary:
     'Desenvolvedor com experiência como Front-end Dev. Júnior na OSF Digital em 2022 e passagem por suporte de TI. Estudante de Engenharia de Software, com projetos em React, TypeScript, Next.js, Node.js e Go. Minha trajetória em atendimento, operação de loja e apoio administrativo amplia o contexto que levo para o desenvolvimento de produtos digitais.',

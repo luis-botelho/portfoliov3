@@ -30,7 +30,7 @@ export default function ResumePage() {
           </p>
           <p>
             <a href={profile.github}>github.com/luis-botelho</a> ·{' '}
-            <a href={profile.site}>portfoliov3-zeta-eight.vercel.app</a>
+            <a href={profile.site}>{new URL(profile.site).hostname}</a>
           </p>
         </header>
         <section>
@@ -119,7 +119,7 @@ export default function ResumePage() {
           </p>
           <a href={`${profile.site}/certificados`}>
             Certificados e documentos:
-            portfoliov3-zeta-eight.vercel.app/certificados
+            {new URL(profile.site).hostname}/certificados
           </a>
         </section>
         <section>

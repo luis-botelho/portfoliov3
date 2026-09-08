@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { siteUrl } from '@/lib/site'
 import { Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -15,21 +16,18 @@ const mono = JetBrains_Mono({
   variable: '--font-jetbrains-mono',
 })
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  'https://portfoliov3-zeta-eight.vercel.app'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   robots: { index: process.env.VERCEL_ENV !== 'preview', follow: true },
   title: {
-    default: 'Luis Fellype Botelho | Desenvolvedor Full-Stack',
+    default: 'Luis Fellype Botelho (Luiz Maia) | Desenvolvedor',
     template: '%s | Luis Botelho',
   },
   description:
-    'Luis Botelho: desenvolvedor com experiência front-end na OSF Digital, projetos full-stack e formação em Engenharia de Software. Conheça a trajetória e baixe o currículo.',
+    'Luis Fellype Botelho (Luiz Maia), desenvolvedor front-end e full-stack. Experiência na OSF Digital, projetos em React e TypeScript, currículo e contato.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Luis Fellype Botelho | Desenvolvedor Full-Stack',
+    title: 'Luis Fellype Botelho (Luiz Maia) | Desenvolvedor',
     description: 'Produtos digitais para problemas reais.',
     url: '/',
     locale: 'pt_BR',
@@ -45,7 +43,7 @@ const identity = {
       '@type': 'Person',
       '@id': `${siteUrl}/#person`,
       name: 'Luis Fellype Botelho',
-      alternateName: 'Luis Botelho',
+      alternateName: ['Luis Botelho', 'Luiz Maia'],
       url: siteUrl,
       jobTitle: 'Desenvolvedor Front-end e Full-stack',
       sameAs: [
@@ -67,7 +65,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html data-scroll-behavior="smooth" lang="pt-BR" className={`${space.variable} ${mono.variable}`}>
+    <html
+      data-scroll-behavior="smooth"
+      lang="pt-BR"
+      className={`${space.variable} ${mono.variable}`}
+    >
       <body>
         <script
           type="application/ld+json"

@@ -2,7 +2,7 @@
 
 Portfólio de Luis Fellype Botelho: produtos digitais, estudos de caso e formação conectada à prática.
 
-**Online:** https://portfoliov3-zeta-eight.vercel.app
+**Online:** https://luis-techie.tech
 
 ## Conteúdo
 
@@ -54,7 +54,7 @@ O pacote original é preservado localmente e ignorado pelo Git. Contém variante
 
 Fluxo: desenvolver em `develop`, executar as verificações, revisar e integrar em `main`. O push em `main` publica pela Vercel. Commits são organizados por mudança, com datas reais.
 
-Defina `NEXT_PUBLIC_SITE_URL=https://portfoliov3-zeta-eight.vercel.app` na Vercel para canonical, sitemap e robots. O projeto existente `portfoliov3` está vinculado pelo diretório local `.vercel`, que não é versionado.
+Defina `NEXT_PUBLIC_SITE_URL=https://luis-techie.tech` na Vercel para canonical, sitemap e robots. O projeto existente `portfoliov3` está vinculado pelo diretório local `.vercel`, que não é versionado.
 
 ## Apresentação profissional e currículo
 

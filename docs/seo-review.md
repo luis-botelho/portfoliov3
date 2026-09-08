@@ -9,13 +9,14 @@
 - FrostyCamp confirmada no navegador em https://frosty-camp-home.vercel.app; captura local e link publicados. O formulário não foi enviado nem certificado como funcional.
 - Credenciais originais preservadas; descrições editoriais separadas do catálogo importado. Destaques técnicos vêm antes de introduções, com alternativa de ordenação por data.
 
-## Quando o domínio estiver disponível
+## Domínio próprio
 
-1. Adicionar o domínio ao projeto Vercel e configurar os registros DNS indicados por ela.
-2. Definir o domínio principal e o redirecionamento permanente das variantes.
-3. Atualizar NEXT_PUBLIC_SITE_URL com a URL HTTPS definitiva e publicar novamente. Atualizar também o endereço do perfil e os fallbacks de layout, sitemap e robots.
-4. Verificar canonical, sitemap, HTTPS e redirecionamentos no domínio definitivo.
-5. Verificar a propriedade no Google Search Console e enviar /sitemap.xml. Acompanhar indexação e consultas reais antes de novas alterações editoriais.
+Domínio: https://luis-techie.tech. A origem canônica é compartilhada por metadados, sitemap e perfil em src/lib/site.ts, com override por NEXT_PUBLIC_SITE_URL.
 
-Não há garantia de primeira posição. A revisão melhora identificação, rastreamento e clareza do conteúdo; resultados dependem também da consulta, concorrência e indexação.
-Referência: https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+O domínio principal e www estão vinculados ao projeto portfoliov3 na Vercel; www redireciona com HTTP 308 para o domínio principal. A delegação no registrador deve usar ns1.vercel-dns.com e ns2.vercel-dns.com.
+
+Após propagação e emissão de HTTPS, verificar canonical, sitemap e redirecionamentos. Cadastrar a propriedade no Google Search Console, verificar por TXT e enviar /sitemap.xml; a verificação exige acesso à conta Google do proprietário. Nenhum envio ao Search Console é presumido.
+
+Luis Fellype Botelho e Luiz Maia aparecem na apresentação visível, no título da home e na identidade estruturada (alternateName), conforme pedido do proprietário.
+
+Não há garantia de indexação ou primeira posição. Referência: https://developers.google.com/search/docs/fundamentals/seo-starter-guide
