@@ -24,7 +24,7 @@ const identity = {
       name: 'Luis Fellype Botelho',
       alternateName: ['Luis Botelho', 'Luiz Maia'],
       url: siteUrl,
-      jobTitle: 'Desenvolvedor Front-end e Full-stack',
+      jobTitle: 'Desenvolvedor Full-stack',
       sameAs: [
         'https://github.com/luis-botelho',
         'https://linkedin.com/in/luis-botelho',

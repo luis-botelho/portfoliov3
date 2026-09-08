@@ -7,7 +7,7 @@ import styles from './page.module.scss'
 export const metadata: Metadata = {
   title: 'Currículo',
   description:
-    'Currículo profissional de Luis Botelho, desenvolvedor front-end e full-stack.',
+    'Currículo profissional de Luis Botelho, desenvolvedor full-stack.',
   alternates: { canonical: '/curriculo', languages: languageAlternates('/curriculo') },
   openGraph: { title: 'Currículo de Luis Botelho', description: 'Currículo de Luis Botelho: experiência front-end, formação e projetos. Versão online e PDF para download.', url: '/curriculo', type: 'website' },
 }

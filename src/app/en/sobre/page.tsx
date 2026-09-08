@@ -107,7 +107,7 @@ export default function AboutPage() {
           <p className="eyebrow">Next conversation</p>
           <h2>Let’s talk about your team.</h2>
           <p>
-            Interested in front-end and full-stack development opportunities.
+            Interested in full-stack development opportunities.
           </p>
           <a href={`mailto:${profile.email}`}>{profile.email}</a>
         </section>

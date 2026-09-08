@@ -13,12 +13,11 @@ export default function HomePage() {
         <section className={styles.hero}>
           <div>
             <p className="eyebrow">
-              Luis Fellype Botelho (Luiz Maia) · Desenvolvedor Front-end /
-              Full-Stack
+              Luis Fellype Botelho (Luiz Maia) · Desenvolvedor Full-stack
             </p>
             <h1>Construo produtos digitais para problemas reais.</h1>
             <p className={styles.lede}>
-              Experiência em desenvolvimento na OSF Digital, vivência em
+              Experiência em desenvolvimento, vivência em
               atendimento e um olhar próximo do negócio. Hoje, transformo esse
               repertório em interfaces, APIs e produtos com propósito.
             </p>
@@ -62,7 +61,7 @@ export default function HomePage() {
               </div>
               <div>
                 <dt>Interesse profissional</dt>
-                <dd>Front-end e Full-Stack</dd>
+                <dd>Full-stack</dd>
               </div>
             </dl>
             <Link href="/sobre">Conheça minha trajetória ↗</Link>
@@ -199,8 +198,7 @@ export default function HomePage() {
               Sua próxima contratação pode começar por uma conversa.
             </h2>
             <p>
-              Interesse em oportunidades de desenvolvimento front-end e
-              full-stack. Conheça meus projetos e entre em contato diretamente.
+              Interesse em oportunidades de desenvolvimento full-stack. Conheça meus projetos e entre em contato diretamente.
             </p>
           </div>
           <div className={styles.contactLinks}>

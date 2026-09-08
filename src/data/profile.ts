@@ -3,7 +3,7 @@ import { siteUrl } from '@/lib/site'
 export const profile = {
   name: 'Luis Fellype Botelho',
   shortName: 'Luis Botelho',
-  title: 'Desenvolvedor Front-end / Full-Stack',
+  title: 'Desenvolvedor Full-stack',
   location: 'Angra dos Reis, RJ · Brasil',
   email: 'luisfellypebotelho@gmail.com',
   github: 'https://github.com/luis-botelho',

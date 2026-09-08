@@ -3,8 +3,8 @@ import { pageMetadata } from '@/lib/i18n'
 export const metadata = pageMetadata(
   'en',
   '/',
-  'Luis Fellype Botelho (Luiz Maia) | Developer',
-  'Luis Fellype Botelho (Luiz Maia), front-end and full-stack developer. Experience at OSF Digital, React and TypeScript projects, resume and contact.',
+  'Luis Fellype Botelho (Luiz Maia) | Full-stack Developer',
+  'Luis Fellype Botelho (Luiz Maia), full-stack developer. Software development experience, React and TypeScript projects, resume and contact.',
 )
 export default function Layout({ children }: { children: React.ReactNode }) {
   return <SiteDocument english>{children}</SiteDocument>

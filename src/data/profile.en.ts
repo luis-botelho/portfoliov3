@@ -1,7 +1,7 @@
 import { profile, experience, institutionalExperience } from './profile'
 export const englishProfile = {
   ...profile,
-  title: 'Front-end / Full-stack Developer',
+  title: 'Full-stack Developer',
   location: 'Angra dos Reis, RJ · Brazil',
   resume: '/cv/luis-botelho-resume-en.pdf',
   summary:

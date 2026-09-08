@@ -13,8 +13,8 @@ import styles from '@/app/(pt)/page.module.scss'
 export const metadata = pageMetadata(
   'en',
   '/',
-  'Luis Fellype Botelho (Luiz Maia) | Developer',
-  'Front-end and full-stack developer with experience at OSF Digital. Explore projects, certificates, professional background and resume.',
+  'Luis Fellype Botelho (Luiz Maia) | Full-stack Developer',
+  'Full-stack developer with software development experience. Explore projects, certificates, professional background and resume.',
 )
 export default function HomePage() {
   return (
@@ -23,12 +23,11 @@ export default function HomePage() {
         <section className={styles.hero}>
           <div>
             <p className="eyebrow">
-              Luis Fellype Botelho (Luiz Maia) · Front-end / Full-stack
-              Developer
+              Luis Fellype Botelho (Luiz Maia) · Full-stack Developer
             </p>
             <h1>I build digital products for real problems.</h1>
             <p className={styles.lede}>
-              Development experience at OSF Digital, a background in customer
+              Development experience, a background in customer
               service and a close understanding of business. Today, I bring that
               perspective to interfaces, APIs and purposeful products.
             </p>
@@ -72,7 +71,7 @@ export default function HomePage() {
               </div>
               <div>
                 <dt>Professional interests</dt>
-                <dd>Front-end and Full-stack</dd>
+                <dd>Full-stack</dd>
               </div>
             </dl>
             <Link href="/en/sobre">Explore my background ↗</Link>
@@ -207,7 +206,7 @@ export default function HomePage() {
               Your next hire could start with a conversation.
             </h2>
             <p>
-              Interested in front-end and full-stack development opportunities.
+              Interested in full-stack development opportunities.
               Explore my projects and get in touch directly.
             </p>
           </div>
