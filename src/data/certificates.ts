@@ -11,6 +11,12 @@ export type CertificateRelation = {
 // Relações editoriais por competência; não representam certificação do produto.
 export const certificateRelations: CertificateRelation[] = [
   {
+    certificateId: 'dio-TOA8DRBH',
+    projectSlug: 'goomer-menu-api',
+    reason:
+      'Documentar arquitetura (user-flow, data-flow, ERD) antes de escrever código é a prática oposta ao vibe coding sem controle — disciplina que este certificado reforça.',
+  },
+  {
     certificateId: 'blue-2021-frontend-tasks',
     projectSlug: 'mini-kanban-veritas',
     reason:

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { certificateDescriptions } from '@/data/certificate-editorial'
 import {
   certificateRelations,
   formatCertificateDate,
@@ -24,6 +25,7 @@ export function CertificateCard({ certificate }: { certificate: Certificate }) {
         {certificate.introductory && <span>Conteúdo introdutório</span>}
       </div>
       <h3>{certificate.title}</h3>
+      <p>{certificateDescriptions[certificate.id]}</p>
       <p className={styles.details}>
         {certificate.hours ? `${certificate.hours} horas · ` : ''}
         {certificate.format === 'PDF'

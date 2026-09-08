@@ -14,6 +14,7 @@ export function CertificateExplorer({
 }: {
   cards: Record<string, ReactNode>
 }) {
+  const [order, setOrder] = useState('relevance')
   const [query, setQuery] = useState('')
   const [issuer, setIssuer] = useState('Todos')
   const [relatedOnly, setRelatedOnly] = useState(false)
@@ -28,6 +29,23 @@ export function CertificateExplorer({
           (relation) => relation.certificateId === item.id,
         )),
   )
+  const priorities = [
+    'blue-2021-frontend-final',
+    'blue-2021-backend-final',
+    'blue-2021-frontend-tasks',
+    'dio-TOA8DRBH',
+    'dio-I5UOYPLM',
+  ]
+  filtered.sort((a, b) => {
+    if (order === 'recent') return b.date.localeCompare(a.date)
+    const rank = (id: string) =>
+      priorities.includes(id) ? priorities.indexOf(id) : priorities.length
+    return (
+      rank(a.id) - rank(b.id) ||
+      Number(b.highlight) - Number(a.highlight) ||
+      b.date.localeCompare(a.date)
+    )
+  })
   return (
     <>
       <div className={styles.filters}>
@@ -52,6 +70,16 @@ export function CertificateExplorer({
             ))}
           </select>
         </label>
+        <label>
+          Ordenar por
+          <select
+            value={order}
+            onChange={(event) => setOrder(event.target.value)}
+          >
+            <option value="relevance">Destaques da formação</option>
+            <option value="recent">Mais recentes</option>
+          </select>
+        </label>
         <label className={styles.checkbox}>
           <input
             type="checkbox"
@@ -62,8 +90,11 @@ export function CertificateExplorer({
         </label>
       </div>
       <p className={styles.count} role="status">
-        {filtered.length} de {certificates.length} certificados · mais recentes
-        primeiro em cada grupo
+        {filtered.length} de {certificates.length} certificados ·{' '}
+        {order === 'recent'
+          ? 'mais recentes primeiro'
+          : 'destaques da formação primeiro'}{' '}
+        em cada grupo
       </p>
       {[false, true].map((introductory) => {
         const group = filtered.filter(
