@@ -27,6 +27,9 @@ export function Header() {
           <Link href={localizedPath(locale, '/certificados')}>
             {english ? 'Certificates' : 'Certificados'}
           </Link>
+          <Link href={localizedPath(locale, '/#artigos')}>
+            {english ? 'Articles' : 'Artigos'}
+          </Link>
           <Link href={localizedPath(locale, '/#contato')}>
             {english ? 'Contact' : 'Contato'}
           </Link>

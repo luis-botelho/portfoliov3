@@ -1,0 +1,102 @@
+@use '@/styles/tokens' as *;
+@use '@/styles/mixins' as *;
+
+.section {
+  @include content-width;
+
+  padding-block: 5rem;
+  scroll-margin-top: 2rem;
+  color: #f3efe7;
+}
+
+.section h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.intro {
+  max-width: 42rem;
+  color: $muted;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: #151915;
+  border: 1px solid $line;
+  border-radius: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.card h3 {
+  font-size: 1.35rem;
+  line-height: 1.4;
+  margin-block: 1.25rem 1rem;
+}
+
+.card h3 a {
+  text-decoration: none;
+}
+
+.card h3 a:hover {
+  color: #d8774d;
+}
+
+.card p {
+  color: $muted;
+  line-height: 1.7;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.meta time {
+  color: $muted;
+}
+
+.badge {
+  color: #d8774d;
+  border: 1px solid currentcolor;
+  border-radius: 2rem;
+  padding: 0.2rem 0.65rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  margin-top: 1rem;
+  list-style: none;
+  font-size: 0.8rem;
+  color: #7e9a75;
+}
+
+.profiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  color: #d8774d;
+}
+
+@media (width <= 700px) {
+  .section {
+    padding-inline: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

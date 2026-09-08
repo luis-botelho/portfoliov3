@@ -1,3 +1,4 @@
+import { ArticleSection } from '@/components/articles/ArticleSection'
 import { pageMetadata } from '@/lib/i18n'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -16,6 +17,8 @@ export const metadata = pageMetadata(
   'Luis Fellype Botelho (Luiz Maia) | Full-stack Developer',
   'Full-stack developer with software development experience. Explore projects, certificates, professional background and resume.',
 )
+export const revalidate = 21600
+
 export default function HomePage() {
   return (
     <>
@@ -195,13 +198,14 @@ export default function HomePage() {
           </ul>
         </section>
         <CertificateSection locale="en" />
+        <ArticleSection locale="en" />
         <section
           className={styles.contact}
           id="contato"
           aria-labelledby="contato-titulo"
         >
           <div>
-            <p className="eyebrow">06 / Let’s talk</p>
+            <p className="eyebrow">07 / Let’s talk</p>
             <h2 id="contato-titulo">
               Your next hire could start with a conversation.
             </h2>

@@ -1,3 +1,4 @@
+import { ArticleSection } from '@/components/articles/ArticleSection'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ProjectCard } from '@/components/projects/ProjectCard'
@@ -5,6 +6,8 @@ import { featuredProjects, projects } from '@/data/projects'
 import { CertificateSection } from '@/components/certificates/CertificateSection'
 import { profile } from '@/data/profile'
 import styles from './page.module.scss'
+
+export const revalidate = 21600
 
 export default function HomePage() {
   return (
@@ -187,13 +190,14 @@ export default function HomePage() {
           </ul>
         </section>
         <CertificateSection />
+        <ArticleSection />
         <section
           className={styles.contact}
           id="contato"
           aria-labelledby="contato-titulo"
         >
           <div>
-            <p className="eyebrow">06 / Vamos conversar</p>
+            <p className="eyebrow">07 / Vamos conversar</p>
             <h2 id="contato-titulo">
               Sua próxima contratação pode começar por uma conversa.
             </h2>
