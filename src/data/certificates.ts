@@ -106,8 +106,8 @@ export const getProjectCertificates = (slug: string) =>
       )!,
     }))
 
-export const formatCertificateDate = (date: string) =>
-  new Intl.DateTimeFormat('pt-BR', {
+export const formatCertificateDate = (date: string, locale: 'pt' | 'en' = 'pt') =>
+  new Intl.DateTimeFormat(locale === 'en' ? 'en' : 'pt-BR', {
     month: 'short',
     year: 'numeric',
     timeZone: 'UTC',

@@ -1,3 +1,4 @@
+import { languageAlternates } from '@/lib/i18n'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExperienceTimeline } from '@/components/profile/ExperienceTimeline'
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Sobre e experiência',
   description:
     'A trajetória de Luis Botelho: desenvolvimento front-end na OSF Digital, suporte de TI, operações e projetos de software.',
-  alternates: { canonical: '/sobre' },
+  alternates: { canonical: '/sobre', languages: languageAlternates('/sobre') },
   openGraph: { title: 'Sobre Luis Botelho', description: 'Experiência profissional, formação e trajetória de Luis Botelho no desenvolvimento de produtos digitais.', url: '/sobre', type: 'website' },
 }
 export default function AboutPage() {

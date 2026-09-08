@@ -1,16 +1,28 @@
 import { siteUrl } from '@/lib/site'
+import { languageAlternates, localizedPath, type Locale } from '@/lib/i18n'
 import type { MetadataRoute } from 'next'
 import { projects } from '@/data/projects'
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    { url: siteUrl, lastModified: new Date('2026-09-08') },
-    { url: `${siteUrl}/projetos`, lastModified: new Date('2026-09-08') },
-    { url: `${siteUrl}/certificados`, lastModified: new Date('2026-09-08') },
-    { url: `${siteUrl}/sobre`, lastModified: new Date('2026-09-08') },
-    { url: `${siteUrl}/curriculo`, lastModified: new Date('2026-09-08') },
-    ...projects.map(({ slug }) => ({
-      url: `${siteUrl}/projetos/${slug}`,
-      lastModified: new Date('2026-09-08'),
-    })),
+  const paths = [
+    '/',
+    '/projetos',
+    '/certificados',
+    '/sobre',
+    '/curriculo',
+    ...projects.map(({ slug }) => `/projetos/${slug}`),
   ]
+  return paths.flatMap((path) =>
+    (['pt', 'en'] as Locale[]).map((locale) => ({
+      url: `${siteUrl}${localizedPath(locale, path)}`,
+      lastModified: new Date('2026-09-08'),
+      alternates: {
+        languages: Object.fromEntries(
+          Object.entries(languageAlternates(path)).map(([lang, value]) => [
+            lang,
+            `${siteUrl}${value}`,
+          ]),
+        ),
+      },
+    })),
+  )
 }

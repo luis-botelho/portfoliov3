@@ -1,10 +1,17 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { localizedPath, englishStatus, type Locale } from '@/lib/i18n'
 import type { Project } from '@/types/project'
 import { getProjectCertificates } from '@/data/certificates'
 import styles from './ProjectCard.module.scss'
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({
+  project,
+  locale = 'pt',
+}: {
+  project: Project
+  locale?: Locale
+}) {
   const connections = getProjectCertificates(project.slug).length
   return (
     <article className={styles.card}>
@@ -20,7 +27,9 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       )}
       <div className={styles.meta}>
-        <span>{project.status}</span>
+        <span>
+          {locale === 'en' ? englishStatus[project.status] : project.status}
+        </span>
         <span>{project.eyebrow}</span>
       </div>
       <h3>{project.name}</h3>
@@ -33,13 +42,18 @@ export function ProjectCard({ project }: { project: Project }) {
       {connections > 0 && (
         <span className={styles.connections}>
           {connections}{' '}
-          {connections === 1
-            ? 'conexão com a formação'
-            : 'conexões com a formação'}
+          {locale === 'en'
+            ? connections === 1
+              ? 'training connection'
+              : 'training connections'
+            : connections === 1
+              ? 'conexão com a formação'
+              : 'conexões com a formação'}
         </span>
       )}
-      <Link href={`/projetos/${project.slug}`}>
-        Ler case study <span aria-hidden="true">↗</span>
+      <Link href={localizedPath(locale, `/projetos/${project.slug}`)}>
+        {locale === 'en' ? 'Read case study' : 'Ler case study'}{' '}
+        <span aria-hidden="true">↗</span>
       </Link>
     </article>
   )

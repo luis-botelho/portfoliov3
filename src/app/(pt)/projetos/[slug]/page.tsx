@@ -1,3 +1,4 @@
+import { languageAlternates } from '@/lib/i18n'
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import Image from 'next/image'
@@ -19,7 +20,7 @@ export async function generateMetadata({
   return {
     title: project?.name ?? 'Projeto',
     description: project?.summary,
-    alternates: { canonical: `/projetos/${project?.slug}` },
+    alternates: { canonical: `/projetos/${project?.slug}`, languages: languageAlternates(`/projetos/${project?.slug}`) },
     openGraph: {
       title: project?.name,
       description: project?.summary,

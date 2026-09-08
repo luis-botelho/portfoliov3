@@ -1,3 +1,4 @@
+import { languageAlternates } from '@/lib/i18n'
 import type { Metadata } from 'next'
 import { ProjectCard } from '@/components/projects/ProjectCard'
 import { projects } from '@/data/projects'
@@ -5,7 +6,7 @@ import styles from './page.module.scss'
 export const metadata: Metadata = {
   title: 'Projetos',
   description: 'Projetos e estudos de Luis Botelho.',
-  alternates: { canonical: '/projetos' },
+  alternates: { canonical: '/projetos', languages: languageAlternates('/projetos') },
   openGraph: { title: 'Projetos de Luis Botelho', description: 'Cases de desenvolvimento e arquitetura: Caminhos de Mambucaba, Liahona, FrostyCamp e outros projetos.', url: '/projetos', type: 'website' },
 }
 export default function ProjectsPage() {

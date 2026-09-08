@@ -3,6 +3,9 @@
 import { useState, type ReactNode } from 'react'
 import { certificates, certificateRelations } from '@/data/certificates'
 import styles from './Certificates.module.scss'
+import { englishCertificates } from '@/data/certificates.en'
+import { englishUI } from '@/lib/ui-translations'
+import { type Locale } from '@/lib/i18n'
 
 const normalize = (value: string) =>
   value
@@ -11,9 +14,13 @@ const normalize = (value: string) =>
     .toLowerCase()
 export function CertificateExplorer({
   cards,
+  locale = 'pt',
 }: {
+  locale?: Locale
   cards: Record<string, ReactNode>
 }) {
+  const english = locale === 'en'
+  const t = (text: string) => (english ? (englishUI[text] ?? text) : text)
   const [order, setOrder] = useState('relevance')
   const [query, setQuery] = useState('')
   const [issuer, setIssuer] = useState('Todos')
@@ -22,7 +29,12 @@ export function CertificateExplorer({
     (item) =>
       (issuer === 'Todos' || item.issuer === issuer) &&
       normalize(
-        [item.title, item.issuer, ...item.technologies].join(' '),
+        [
+          item.title,
+          english ? englishCertificates[item.id].title : '',
+          item.issuer,
+          ...item.technologies,
+        ].join(' '),
       ).includes(normalize(query.trim())) &&
       (!relatedOnly ||
         certificateRelations.some(
@@ -50,34 +62,38 @@ export function CertificateExplorer({
     <>
       <div className={styles.filters}>
         <label>
-          Buscar formação ou tecnologia
+          {t('Buscar formação ou tecnologia')}
           <input
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="React, segurança, lógica…"
+            placeholder={
+              english ? 'React, security, logic…' : 'React, segurança, lógica…'
+            }
           />
         </label>
         <label htmlFor="certificate-issuer">
-          Instituição
+          {t('Instituição')}
           <select
             id="certificate-issuer"
             value={issuer}
             onChange={(event) => setIssuer(event.target.value)}
           >
             {['Todos', 'Blue EdTech', 'DIO', 'Growdev'].map((value) => (
-              <option key={value}>{value}</option>
+              <option key={value} value={value}>
+                {t(value)}
+              </option>
             ))}
           </select>
         </label>
         <label>
-          Ordenar por
+          {t('Ordenar por')}
           <select
             value={order}
             onChange={(event) => setOrder(event.target.value)}
           >
-            <option value="relevance">Destaques da formação</option>
-            <option value="recent">Mais recentes</option>
+            <option value="relevance">{t('Destaques da formação')}</option>
+            <option value="recent">{t('Mais recentes')}</option>
           </select>
         </label>
         <label className={styles.checkbox}>
@@ -86,15 +102,20 @@ export function CertificateExplorer({
             checked={relatedOnly}
             onChange={(event) => setRelatedOnly(event.target.checked)}
           />
-          Com projetos relacionados
+          {t('Com projetos relacionados')}
         </label>
       </div>
       <p className={styles.count} role="status">
-        {filtered.length} de {certificates.length} certificados ·{' '}
+        {filtered.length} {english ? 'of' : 'de'} {certificates.length}{' '}
+        {english ? 'certificates' : 'certificados'} ·{' '}
         {order === 'recent'
-          ? 'mais recentes primeiro'
-          : 'destaques da formação primeiro'}{' '}
-        em cada grupo
+          ? english
+            ? 'most recent first'
+            : 'mais recentes primeiro'
+          : english
+            ? 'training highlights first'
+            : 'destaques da formação primeiro'}{' '}
+        {english ? 'in each group' : 'em cada grupo'}
       </p>
       {[false, true].map((introductory) => {
         const group = filtered.filter(
@@ -106,20 +127,21 @@ export function CertificateExplorer({
               key={String(introductory)}
               aria-label={
                 introductory
-                  ? 'Conteúdos introdutórios'
-                  : 'Formação técnica e projetos'
+                  ? t('Conteúdos introdutórios')
+                  : t('Formação técnica e projetos')
               }
             >
               <h2 className={styles.catalogTitle}>
                 {introductory
-                  ? 'Conteúdos introdutórios'
-                  : 'Formação técnica e projetos'}{' '}
+                  ? t('Conteúdos introdutórios')
+                  : t('Formação técnica e projetos')}{' '}
                 <span>({group.length})</span>
               </h2>
               {introductory && (
                 <p className={styles.count}>
-                  Introduções e boas-vindas. Estas credenciais não representam a
-                  conclusão integral dos bootcamps.
+                  {t(
+                    'Introduções e boas-vindas. Estas credenciais não representam a conclusão integral dos bootcamps.',
+                  )}
                 </p>
               )}
               <div className={styles.grid}>
@@ -135,8 +157,8 @@ export function CertificateExplorer({
       })}
       {filtered.length === 0 && (
         <div className={styles.empty}>
-          <h2>Nenhum certificado encontrado.</h2>
-          <p>Tente outra tecnologia ou remova os filtros.</p>
+          <h2>{t('Nenhum certificado encontrado.')}</h2>
+          <p>{t('Tente outra tecnologia ou remova os filtros.')}</p>
           <button
             onClick={() => {
               setQuery('')
@@ -144,7 +166,7 @@ export function CertificateExplorer({
               setRelatedOnly(false)
             }}
           >
-            Limpar filtros
+            {t('Limpar filtros')}
           </button>
         </div>
       )}

@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import { siteUrl } from '@/lib/site'
 import { Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
@@ -15,26 +14,6 @@ const mono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrains-mono',
 })
-
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  robots: { index: process.env.VERCEL_ENV !== 'preview', follow: true },
-  title: {
-    default: 'Luis Fellype Botelho (Luiz Maia) | Desenvolvedor',
-    template: '%s | Luis Botelho',
-  },
-  description:
-    'Luis Fellype Botelho (Luiz Maia), desenvolvedor front-end e full-stack. Experiência na OSF Digital, projetos em React e TypeScript, currículo e contato.',
-  alternates: { canonical: '/' },
-  openGraph: {
-    title: 'Luis Fellype Botelho (Luiz Maia) | Desenvolvedor',
-    description: 'Produtos digitais para problemas reais.',
-    url: '/',
-    locale: 'pt_BR',
-    siteName: 'Luis Botelho',
-    type: 'website',
-  },
-}
 
 const identity = {
   '@context': 'https://schema.org',
@@ -61,20 +40,28 @@ const identity = {
     },
   ],
 }
-export default function RootLayout({
+export function SiteDocument({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  english = false,
+}: Readonly<{ children: React.ReactNode; english?: boolean }>) {
   return (
     <html
       data-scroll-behavior="smooth"
-      lang="pt-BR"
+      lang={english ? 'en' : 'pt-BR'}
       className={`${space.variable} ${mono.variable}`}
     >
       <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(identity).replace(/</g, '\\u003c'),
+            __html: JSON.stringify({
+              ...identity,
+              '@graph': identity['@graph'].map((item) =>
+                item['@type'] === 'WebSite'
+                  ? { ...item, inLanguage: ['pt-BR', 'en'] }
+                  : item,
+              ),
+            }).replace(/</g, '\\u003c'),
           }}
         />
         <div className="site-chrome">
@@ -82,7 +69,7 @@ export default function RootLayout({
         </div>
         {children}
         <div className="site-chrome">
-          <Footer />
+          <Footer english={english} />
         </div>
         <Analytics />
         <SpeedInsights />

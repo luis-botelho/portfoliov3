@@ -1,3 +1,4 @@
+import { languageAlternates } from '@/lib/i18n'
 import type { Metadata } from 'next'
 import { CertificateExplorer } from '@/components/certificates/CertificateExplorer'
 import { certificates } from '@/data/certificates'
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Certificados e formação',
   description:
     '25 credenciais de Luis Botelho, organizadas por instituição e conectadas às competências dos projetos.',
-  alternates: { canonical: '/certificados' },
+  alternates: { canonical: '/certificados', languages: languageAlternates('/certificados') },
   openGraph: { title: 'Certificados e formação', description: 'Formação em React, backend e segurança, com credenciais verificáveis e conexões com projetos de Luis Botelho.', url: '/certificados', type: 'website' },
 }
 export default function CertificatesPage() {

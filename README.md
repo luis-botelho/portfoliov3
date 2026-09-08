@@ -2,7 +2,7 @@
 
 Portfólio de Luis Fellype Botelho: produtos digitais, estudos de caso e formação conectada à prática.
 
-**Online:** https://luis-techie.tech
+**Online:** https://luis-botelho.tech
 
 ## Conteúdo
 
@@ -54,7 +54,7 @@ O pacote original é preservado localmente e ignorado pelo Git. Contém variante
 
 Fluxo: desenvolver em `develop`, executar as verificações, revisar e integrar em `main`. O push em `main` publica pela Vercel. Commits são organizados por mudança, com datas reais.
 
-Defina `NEXT_PUBLIC_SITE_URL=https://luis-techie.tech` na Vercel para canonical, sitemap e robots. O projeto existente `portfoliov3` está vinculado pelo diretório local `.vercel`, que não é versionado.
+Defina `NEXT_PUBLIC_SITE_URL=https://luis-botelho.tech` na Vercel para canonical, sitemap e robots. O projeto existente `portfoliov3` está vinculado pelo diretório local `.vercel`, que não é versionado.
 
 ## Apresentação profissional e currículo
 
@@ -69,3 +69,9 @@ node scripts/generate-resume.mjs
 ```
 
 O script usa Playwright e a página `/curriculo`. A variável opcional `RESUME_BASE_URL` permite indicar outro servidor. Confira a paginação e o texto do PDF antes de publicar. A versão online e o PDF devem ser atualizados juntos.
+
+## Idiomas
+
+Português é o idioma principal (`/`). Inglês está disponível em `/en`, incluindo cases, certificados e currículo. O seletor de idioma mantém a página correspondente. O conteúdo português está em `src/app/(pt)`, e o inglês em `src/app/en`; componentes, estilos e dados de evidências são compartilhados.
+
+Gere os dois PDFs com `node scripts/generate-resume.mjs` enquanto o site estiver rodando em localhost:3000, ou configure `RESUME_BASE_URL` para outro servidor. O domínio canônico é definido por `NEXT_PUBLIC_SITE_URL` e centralizado em `src/lib/site.ts`.

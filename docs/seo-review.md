@@ -11,7 +11,7 @@
 
 ## Domínio próprio
 
-Domínio: https://luis-techie.tech. A origem canônica é compartilhada por metadados, sitemap e perfil em src/lib/site.ts, com override por NEXT_PUBLIC_SITE_URL.
+Domínio: https://luis-botelho.tech. A origem canônica é compartilhada por metadados, sitemap e perfil em src/lib/site.ts, com override por NEXT_PUBLIC_SITE_URL.
 
 O domínio principal e www estão vinculados ao projeto portfoliov3 na Vercel; www redireciona com HTTP 308 para o domínio principal. A delegação no registrador deve usar ns1.vercel-dns.com e ns2.vercel-dns.com.
 
@@ -20,3 +20,11 @@ Após propagação e emissão de HTTPS, verificar canonical, sitemap e redirecio
 Luis Fellype Botelho e Luiz Maia aparecem na apresentação visível, no título da home e na identidade estruturada (alternateName), conforme pedido do proprietário.
 
 Não há garantia de indexação ou primeira posição. Referência: https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+
+## Português e inglês
+
+Português permanece no endereço raiz, sem redirecionamento automático pelo idioma do navegador. A versão inglesa usa /en e cobre home, histórico, catálogo, 11 cases, certificados e currículo. Cada página tem canonical próprio, hreflang recíproco e idioma HTML correspondente. O sitemap inclui as duas versões.
+
+Os layouts compartilham navegação, rodapé e identidade visual. As traduções dos projetos e das credenciais ficam nos arquivos src/data/*.en.ts. Títulos oficiais e documentos dos emissores são preservados no idioma de origem; a página inglesa identifica os títulos originais. Documentação externa dos repositórios permanece na língua original.
+
+Os PDFs são gerados por scripts/generate-resume.mjs a partir de /curriculo e /en/curriculo. O CI testa o build de produção. Atualizações editoriais devem manter as versões portuguesa e inglesa coerentes quanto a escopo, datas e status.

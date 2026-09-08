@@ -1,9 +1,10 @@
+import { englishExperience, englishCategory } from '@/data/profile.en'
 import { experience } from '@/data/profile'
 import styles from './Profile.module.scss'
 
-export function ExperienceTimeline() {
-  const chronological = [...experience].sort((a, b) =>
-    b.start.localeCompare(a.start),
+export function ExperienceTimeline({ english = false }: { english?: boolean }) {
+  const chronological = [...(english ? englishExperience : experience)].sort(
+    (a, b) => b.start.localeCompare(a.start),
   )
   return (
     <ol className={styles.timeline}>
@@ -15,7 +16,10 @@ export function ExperienceTimeline() {
           }
         >
           <p className={styles.period}>
-            {item.period} <span>{item.category}</span>
+            {item.period}{' '}
+            <span>
+              {english ? englishCategory[item.category] : item.category}
+            </span>
           </p>
           <h3>{item.role}</h3>
           <p>{item.company}</p>

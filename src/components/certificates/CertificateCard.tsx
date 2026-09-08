@@ -6,9 +6,23 @@ import {
   type Certificate,
 } from '@/data/certificates'
 import { getProject } from '@/data/projects'
+import { englishCertificates, englishRelations } from '@/data/certificates.en'
 import styles from './Certificates.module.scss'
+import { englishUI } from '@/lib/ui-translations'
+import { localizedPath, type Locale } from '@/lib/i18n'
 
-export function CertificateCard({ certificate }: { certificate: Certificate }) {
+export function CertificateCard({
+  certificate,
+  locale = 'pt',
+}: {
+  certificate: Certificate
+  locale?: Locale
+}) {
+  const english = locale === 'en'
+  const title = english
+    ? englishCertificates[certificate.id].title
+    : certificate.title
+  const t = (text: string) => (english ? (englishUI[text] ?? text) : text)
   const relations = certificateRelations.filter(
     (item) => item.certificateId === certificate.id,
   )
@@ -17,23 +31,36 @@ export function CertificateCard({ certificate }: { certificate: Certificate }) {
       <div className={styles.meta}>
         <span>{certificate.issuer}</span>
         <time dateTime={certificate.date}>
-          {formatCertificateDate(certificate.date)}
+          {formatCertificateDate(certificate.date, locale)}
         </time>
       </div>
       <div className={styles.badges}>
-        {certificate.highlight && <span>Reconhecimento de destaque</span>}
-        {certificate.introductory && <span>Conteúdo introdutório</span>}
+        {certificate.highlight && (
+          <span>{t('Reconhecimento de destaque')}</span>
+        )}
+        {certificate.introductory && <span>{t('Conteúdo introdutório')}</span>}
       </div>
-      <h3>{certificate.title}</h3>
-      <p>{certificateDescriptions[certificate.id]}</p>
+      <h3>{title}</h3>
+      {english && (
+        <p className={styles.details} lang="pt-BR">
+          {certificate.title}
+        </p>
+      )}
+      <p>
+        {english
+          ? englishCertificates[certificate.id].description
+          : certificateDescriptions[certificate.id]}
+      </p>
       <p className={styles.details}>
-        {certificate.hours ? `${certificate.hours} horas · ` : ''}
+        {certificate.hours
+          ? `${certificate.hours} ${english ? 'hours' : 'horas'} · `
+          : ''}
         {certificate.format === 'PDF'
-          ? 'Documento original'
-          : 'Validação no emissor'}
+          ? t('Documento original')
+          : t('Validação no emissor')}
       </p>
       {certificate.technologies.length > 0 && (
-        <ul className={styles.tags} aria-label="Competências">
+        <ul className={styles.tags} aria-label={t('Competências')}>
           {certificate.technologies.map((technology) => (
             <li key={technology}>{technology}</li>
           ))}
@@ -41,13 +68,24 @@ export function CertificateCard({ certificate }: { certificate: Certificate }) {
       )}
       {relations.length > 0 && (
         <div className={styles.related}>
-          <p>Conexões com a prática</p>
+          <p>{t('Conexões com a prática')}</p>
           {relations.map((relation) => (
             <div key={relation.projectSlug}>
-              <Link href={`/projetos/${relation.projectSlug}`}>
+              <Link
+                href={localizedPath(
+                  locale,
+                  `/projetos/${relation.projectSlug}`,
+                )}
+              >
                 {getProject(relation.projectSlug)?.name} ↗
               </Link>
-              <p>{relation.reason}</p>
+              <p>
+                {english
+                  ? englishRelations[
+                      `${relation.certificateId}:${relation.projectSlug}`
+                    ]
+                  : relation.reason}
+              </p>
             </div>
           ))}
         </div>
@@ -57,11 +95,11 @@ export function CertificateCard({ certificate }: { certificate: Certificate }) {
         href={certificate.url}
         target="_blank"
         rel="noreferrer"
-        aria-label={`${certificate.format === 'PDF' ? 'Ver PDF' : 'Validar credencial'}: ${certificate.title}`}
+        aria-label={`${certificate.format === 'PDF' ? t('Ver PDF') : t('Validar credencial')}: ${title}`}
       >
         {certificate.format === 'PDF'
-          ? 'Ver PDF original'
-          : 'Validar credencial'}{' '}
+          ? t('Ver PDF original')
+          : t('Validar credencial')}{' '}
         <span aria-hidden="true">↗</span>
       </a>
     </article>
