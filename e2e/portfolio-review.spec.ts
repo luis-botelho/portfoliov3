@@ -5,7 +5,7 @@ test('navegação e rodapé globais também aparecem em cases, currículo e 404'
     await page.goto(route)
     const nav = page.getByRole('navigation', { name: 'Navegação principal' })
     await expect(nav).toHaveCount(1)
-    await expect(nav.getByRole('link')).toHaveText(['Projetos', 'Sobre', 'Certificados', 'Artigos', 'Contato', 'Currículo PDF ↓'])
+    await expect(nav.getByRole('link')).toHaveText(['Projetos', 'Sobre', 'Artigos', 'Certificados', 'Contato', 'Currículo PDF ↓'])
     await expect(page.getByRole('contentinfo').getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', 'https://linkedin.com/in/luis-botelho')
   }
 })

@@ -197,8 +197,8 @@ export default function HomePage() {
             ))}
           </ul>
         </section>
-        <CertificateSection locale="en" />
         <ArticleSection locale="en" />
+        <CertificateSection locale="en" />
         <section
           className={styles.contact}
           id="contato"

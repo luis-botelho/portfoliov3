@@ -23,7 +23,7 @@ export const englishUI: Record<string, string> = {
   'Limpar filtros': 'Clear filters',
   'Introduções e boas-vindas. Estas credenciais não representam a conclusão integral dos bootcamps.':
     'Introductions and welcome sessions. These credentials do not represent completion of the full bootcamps.',
-  '05 / Formação em prática': '05 / Learning in practice',
+  '06 / Formação em prática': '06 / Learning in practice',
   'Aprender. Construir. Conectar.': 'Learn. Build. Connect.',
   'Formação complementar, dos fundamentos de programação à segurança. Cada conexão mostra onde esse conhecimento encontra os projetos.':
     'Complementary training, from programming fundamentals to security. Each connection shows where this knowledge meets the projects.',

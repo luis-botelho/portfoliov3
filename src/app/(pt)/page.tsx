@@ -189,8 +189,8 @@ export default function HomePage() {
             ))}
           </ul>
         </section>
-        <CertificateSection />
         <ArticleSection />
+        <CertificateSection />
         <section
           className={styles.contact}
           id="contato"

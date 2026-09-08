@@ -18,7 +18,7 @@ export async function ArticleSection({ locale = 'pt' }: { locale?: Locale }) {
       aria-labelledby="artigos-titulo"
     >
       <p className="eyebrow">
-        06 / {english ? 'Writing & learning' : 'Escrita e aprendizado'}
+        05 / {english ? 'Writing & learning' : 'Escrita e aprendizado'}
       </p>
       <h2 id="artigos-titulo">{english ? 'Articles' : 'Artigos'}</h2>
       <p className={styles.intro}>

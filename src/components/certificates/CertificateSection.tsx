@@ -21,7 +21,7 @@ export function CertificateSection({ locale = 'pt' }: { locale?: Locale }) {
     >
       <div className={styles.heading}>
         <div>
-          <p className="eyebrow">{t('05 / Formação em prática')}</p>
+          <p className="eyebrow">{t('06 / Formação em prática')}</p>
           <h2 id="certificados-titulo">
             {t('Aprender. Construir. Conectar.')}
           </h2>
