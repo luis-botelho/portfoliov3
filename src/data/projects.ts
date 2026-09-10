@@ -338,11 +338,11 @@ export const projects: Project[] = [
   {
     slug: 'safeanchor',
     name: 'SafeAnchor',
-    status: 'Em construção',
+    status: 'MVP concluído',
     featured: true,
     eyebrow: 'Manutenção de embarcações',
     summary:
-      'Sistema em desenvolvimento para organizar embarcações, manutenções e rotinas de inspeção.',
+      'Sistema para organizar embarcações, manutenções e rotinas de inspeção com demonstração web publicada.',
     problem:
       'Informações de manutenção e inspeção dispersas tornam a rotina de proprietários e pequenas frotas mais frágil.',
     role: 'Desenho do produto e implementação do frontend, backend e persistência.',
@@ -355,10 +355,9 @@ export const projects: Project[] = [
       'Seed de desenvolvimento reproduzível',
     ],
     constraints: [
-      'Projeto ainda em desenvolvimento',
+      'Demonstração estática/SPA publicada no GitHub Pages',
       'Autenticação completa, gestão de documentos e academia marítima ainda não foram entregues',
       'Aplicação mobile e recursos de IA não existem nesta etapa',
-      'Não afirmar disponibilidade em produção',
     ],
     architecture:
       'Frontend React 19 com Vite e arquitetura MVVM; API Node.js com Express 5 em camadas de controllers e services; PostgreSQL no Supabase com Prisma 7.',
@@ -367,7 +366,7 @@ export const projects: Project[] = [
     validation:
       'Testes da API com o runner nativo do Node.js, smoke test de persistência, validação e geração do Prisma e build do frontend.',
     currentState:
-      'Fluxos web de embarcações, manutenção e checklists estão em construção no repositório; o produto não está em produção.',
+      'Aplicação web publicada no GitHub Pages para demonstração; fluxos de embarcações, manutenção e checklists integrados.',
     limitations: [
       'A experiência final e a cobertura funcional ainda estão em evolução.',
       'A arquitetura Next.js/NestJS documentada no projeto representa uma direção futura, não a implementação atual.',
@@ -385,6 +384,7 @@ export const projects: Project[] = [
       'Prisma 7',
     ],
     repository: 'https://github.com/luis-botelho/safeanchor-monorepo',
+    demo: 'https://luis-botelho.github.io/safeanchor-monorepo',
     readme: {
       repository: 'luis-botelho/safeanchor-monorepo',
       branch: 'main',

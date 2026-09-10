@@ -233,7 +233,7 @@ const translations: Record<string, Translation> = {
   safeanchor: {
     eyebrow: 'Vessel maintenance',
     summary:
-      'A system under development to organize vessels, maintenance and inspection routines.',
+      'A system to organize vessels, maintenance and inspection routines with a live web demonstration.',
     problem:
       'Scattered maintenance and inspection records make operations less reliable for owners and small fleets.',
     role: 'Product design and implementation of the frontend, backend and persistence.',
@@ -246,10 +246,9 @@ const translations: Record<string, Translation> = {
       'Reproducible development seed',
     ],
     constraints: [
-      'Project still under development',
+      'Static/SPA demonstration published on GitHub Pages',
       'Complete authentication, document management and the maritime academy have not been delivered',
       'No mobile application or AI features at this stage',
-      'No production availability is claimed',
     ],
     architecture:
       'React 19 frontend with Vite and MVVM architecture; Node.js API with Express 5, controllers and services; PostgreSQL on Supabase with Prisma 7.',
@@ -258,7 +257,7 @@ const translations: Record<string, Translation> = {
     validation:
       'API tests with the native Node.js runner, persistence smoke test, Prisma validation and generation, and frontend build.',
     currentState:
-      'Web flows for vessels, maintenance and checklists are under construction in the repository; the product is not in production.',
+      'Web application published on GitHub Pages for demonstration; vessel, maintenance, and checklist workflows integrated.',
     limitations: [
       'The final experience and functional coverage are still evolving.',
       'The documented Next.js/NestJS architecture is a future direction, not the current implementation.',
