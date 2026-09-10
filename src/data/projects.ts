@@ -546,7 +546,7 @@ export const projects: Project[] = [
   },
 ]
 
-const featuredOrder = ['caminhos-de-mambucaba', 'lia', 'frostycamp-home', 'safeanchor', 'mini-kanban-veritas']
+const featuredOrder = ['caminhos-de-mambucaba', 'safeanchor', 'mini-kanban-veritas', 'lia', 'frostycamp-home']
 export const featuredProjects = featuredOrder.map(slug => projects.find(project => project.slug === slug)!)
 export const getProject = (slug: string) =>
   projects.find((project) => project.slug === slug)
