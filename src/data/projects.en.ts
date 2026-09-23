@@ -54,32 +54,41 @@ const translations: Record<string, Translation> = {
   'goomer-menu-api': {
     eyebrow: 'Backend and domain modeling',
     summary:
-      'The foundation of a menu API in TypeScript and Fastify, with a health check and architecture documentation.',
+      'A complete RESTful API to manage a restaurant menu: products, promotions with schedules, and a consolidated menu endpoint with real-time active promotions.',
     problem:
       'Represent products, promotions and availability in a restaurant menu.',
-    role: 'Implementation of the technical foundation and documentation of its evolution.',
+    role: 'Backend development and documentation of its evolution.',
     scope: [
-      'Fastify server with a /health endpoint',
-      'TypeScript configuration',
-      'Data and flow diagrams',
-      'Initial Prisma configuration',
+      'Full product CRUD (name, price, category, visible)',
+      'Full promotion CRUD with schedules per weekday',
+      'GET /menu endpoint that returns only visible products plus the best currently active promotion (LEFT JOIN LATERAL)',
+      'Schema validation with TypeBox',
+      'PostgreSQL transactions when creating/updating promotions',
+      'Layered architecture (Routes → Controllers → Services → Repositories)',
+      'Prisma used only for schema and migrations; queries in raw SQL',
+      'Service unit tests',
+      'Docker Compose for the database',
+      'Health check',
     ],
     constraints: [
-      'CRUD, promotions and persistence are not yet implemented on main.',
-      'Vitest is configured, but the reviewed tree contains no tests.',
+      'Technical-challenge MVP scope.',
+      'No authentication or authorization in this version.',
+      'Local demonstration, not deployed to production.',
     ],
     architecture:
-      'Fastify initializes the HTTP server. PostgreSQL and raw SQL are planned for queries; the Prisma configuration has no entities yet.',
+      'Fastify organizes HTTP in layers (Routes → Controllers → Services → Repositories). Prisma handles only the schema and migrations; product, promotion and menu queries are written in raw SQL on the PostgreSQL pool.',
     decisions:
-      'Separate the runnable foundation from the product and promotion rules planned for subsequent stages.',
-    validation: reviewed,
+      'I keep Prisma (schema and migrations) separate from raw SQL queries for full control and performance. The LEFT JOIN LATERAL picks the best active promotion in a single query. Manual pg transactions keep promotion and schedule creation atomic. Validation happens in two layers: TypeBox on the schema and business rules in the service (15-minute minimum window, end after start).',
+    validation:
+      'Service unit tests for products, promotions and menu with Vitest, plus a review of public code and documentation on September 22, 2026. Running this project is outside the portfolio validation scope.',
     currentState:
-      'The foundation of a menu API in TypeScript and Fastify, with a health check and architecture documentation.',
+      'Completed MVP with full product and promotion CRUD, a /menu endpoint with real-time active promotions and service unit tests.',
     limitations: [
-      'CRUD, promotions and persistence are not yet implemented on main.',
-      'Vitest is configured, but the reviewed tree contains no tests.',
+      'No authentication or authorization in this version.',
+      'No pagination on list endpoints.',
+      'Local demonstration environment (not deployed to production).',
     ],
-    nextSteps: next,
+    nextSteps: ['Authentication', 'Pagination and filters', 'Deployment + CI'],
   },
   'jogo-do-humor': {
     name: 'Mood Game',
