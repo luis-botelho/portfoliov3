@@ -1,50 +1,119 @@
 import { profile, experience, institutionalExperience } from './profile'
+import { curriculo } from '@/content/curriculo'
+
 export const englishProfile = {
   ...profile,
-  title: 'Full-stack Developer',
-  location: 'Angra dos Reis, RJ · Brazil',
-  resume: '/cv/luis-botelho-resume-en.pdf',
-  summary:
-    'Developer with experience as a Junior Front-end Developer at OSF Digital in 2022 and a background in IT support. Software Engineering student with projects in React, TypeScript, Next.js, Node.js and Go. My experience in customer service, store operations and administrative support adds business context to the digital products I build.',
+  title: 'Junior Full-stack Developer',
+  location: 'Angra dos Reis, RJ, Brazil',
+  resume: '/cv/luis-botelho-resume.pdf',
+  summary: curriculo.summary.en,
+  skills: [
+    'TypeScript',
+    'JavaScript',
+    'Go',
+    'SQL',
+    'React',
+    'Next.js',
+    'HTML',
+    'CSS / Sass',
+    'Node.js',
+    'Fastify',
+    'PostgreSQL',
+    'MySQL',
+    'Prisma',
+    'Supabase',
+    'REST APIs',
+    'Docker',
+    'Docker Compose',
+    'Git / GitHub',
+    'n8n',
+    'Vercel',
+    'Excel / spreadsheets',
+    'Salesforce (junior level: catalog and interface)',
+    'Advanced English',
+  ],
 }
-const roles = [
-  'Waiter',
-  'Travel agency conception',
-  'Junior Front-end Developer',
-  'IT User Support Technician HD I',
-  'Call Center Agent',
-  'Store Assistant',
-  'Store Assistant',
-  'Stock Clerk',
-  'Store Supervisor',
-  'Stock replenishment and administrative support',
-]
-const descriptions: Record<number, string> = {
-  0: 'Customer service and experience in day-to-day table service.',
-  1: 'The initiative ended at the concept stage. Exposure to the sector contributed to the perspective applied to Caminhos de Mambucaba.',
-  2: 'Small interface adjustments and product catalog updates in a Salesforce environment.',
+
+type Translation = {
+  role?: string
+  company?: string
+  period?: string
+  description?: string
 }
-export const englishExperience = experience.map((item, index) => ({
+
+const translations: Record<string, Translation> = {
+  'Rede Fortaco Angraluz|2026-10-02': {
+    role: 'Public tenders',
+    period: 'since Oct 2026',
+    description:
+      'Full tender cycle: notice analysis, standard file, bidding and follow-up of construction material deliveries to city governments.',
+  },
+  'Frade Spot Participações|2026-05-18': {
+    role: 'Call Center Agent',
+    period: '18 May 2026 – 01 Jul 2026',
+    description: 'Telephone customer service.',
+  },
+  'Bar do Nelson|2025-08': {
+    role: 'Waiter',
+    company: 'Bar do Nelson (Ilha do Cedro)',
+    period: 'approx. Aug 2025 – May 2026',
+    description:
+      'Busy restaurant and bar floor, with no formal employment registration.',
+  },
+  'KAL Atacado 2|2024-09-18': {
+    role: 'Store Attendant (B2B portfolio)',
+    period: '18 Sep 2024 – 29 Aug 2025',
+    description:
+      'Role in the work card: Store Attendant. In practice, responsible for a business client portfolio with CNPJ, covering pre-sales and after-sales.',
+  },
+  'KAL Atacado 2|2024-01-15': {
+    role: 'Store Attendant (B2B portfolio)',
+    period: '15 Jan 2024 – 24 May 2024',
+    description:
+      'Role in the work card: Store Attendant. In practice, responsible for a business client portfolio with CNPJ, covering pre-sales and after-sales.',
+  },
+  'Santa Rita Serviços Prestados|2023-10-03': {
+    role: 'Stocker',
+    period: '03 Oct 2023 – 31 Oct 2023',
+  },
+  'Poupe Areal Comércio de Alimentos|2023-02-16': {
+    role: 'Store Manager (acting as assistant manager)',
+    period: '16 Feb 2023 – 08 Sep 2023',
+    description:
+      'Role in the work card: Store Manager. Handled staff, inventory, indicators and the full store routine.',
+  },
+  'Iniciativa própria em turismo|2022-06': {
+    role: 'Travel agency conception',
+    company: 'Personal initiative',
+    period: 'Jun 2022 – Feb 2023',
+    description:
+      'An entrepreneurial initiative that never left the concept stage. The learning contributed to Caminhos de Mambucaba.',
+  },
+  'Poupe Mais Comércio de Alimentos|2018-05-19': {
+    role: 'Stocker and Office Assistant at the data processing center',
+    period: '19 May 2018 – 12 Jul 2021',
+    description:
+      'Started as a stocker and later worked as an Office Assistant at the data processing center, adjusting procedures and checking data.',
+  },
+}
+
+export const englishExperience = experience.map((item) => ({
   ...item,
-  role: roles[index],
-  company:
-    index === 0
-      ? 'Table service work'
-      : index === 1
-        ? 'Independent tourism initiative'
-        : item.company,
-  period: `${new Intl.DateTimeFormat('en', { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(item.start))}–${new Intl.DateTimeFormat('en', { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(item.end))}`,
-  description: descriptions[index],
+  ...(translations[`${item.company}|${item.start}`] ?? {}),
 }))
+
 export const englishInstitutionalExperience = {
   ...institutionalExperience,
   role: 'Finance Director',
+  period: 'Current',
   description:
-    'Institutional role formalized through appointment minutes and bylaws.',
+    'Financial management and accountability, with appointment recorded in official minutes and bylaws. Responsible for the digital platforms of Caminhos de Mambucaba and for institutional coordination with TurisAngra.',
 }
+
 export const englishCategory: Record<string, string> = {
   Desenvolvimento: 'Development',
   'Suporte de TI': 'IT support',
+  Licitações: 'Public tenders',
   Operações: 'Operations',
   Empreendedorismo: 'Entrepreneurship',
   Atendimento: 'Customer service',
