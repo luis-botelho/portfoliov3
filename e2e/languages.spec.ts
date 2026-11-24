@@ -11,7 +11,7 @@ test('language switch keeps the case and exposes reciprocal SEO metadata', async
     .click()
   await expect(page).toHaveURL(/\/en\/projetos\/goomer-menu-api$/)
   await expect(page.locator('html')).toHaveAttribute('lang', 'en')
-  await expect(page.getByText('Case study / Under construction')).toBeVisible()
+  await expect(page.getByText('Case study / MVP completed')).toBeVisible()
   await expect(
     page.getByRole('heading', { name: 'Related training' }),
   ).toBeVisible()
@@ -31,7 +31,7 @@ test('language switch keeps the case and exposes reciprocal SEO metadata', async
     .getByRole('link', { name: 'Português' })
     .click()
   await expect(page.locator('html')).toHaveAttribute('lang', 'pt-BR')
-  await expect(page.getByText('Case study / Em construção')).toBeVisible()
+  await expect(page.getByText('Case study / MVP concluído')).toBeVisible()
 })
 
 test('English pages, certificate search and resume work on mobile', async ({
@@ -53,7 +53,7 @@ test('English pages, certificate search and resume work on mobile', async ({
       page
         .getByRole('navigation', { name: 'Main navigation' })
         .getByRole('link', { name: 'Resume PDF' }),
-    ).toHaveAttribute('href', '/cv/luis-botelho-resume-en.pdf')
+    ).toHaveAttribute('href', '/cv/luis-botelho-resume.pdf')
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,
@@ -63,10 +63,10 @@ test('English pages, certificate search and resume work on mobile', async ({
   }
   await page.goto('/en/certificados')
   await page.getByRole('searchbox').fill('Programming Logic')
-  await expect(page.getByRole('status')).toContainText('1 of 25 certificates')
+  await expect(page.getByRole('status')).toContainText('1 results')
   await page.getByRole('link', { name: 'Itera ↗', exact: true }).click()
   await expect(page).toHaveURL(/\/en\/projetos\/itera$/)
-  const pdf = await request.get('/cv/luis-botelho-resume-en.pdf')
+  const pdf = await request.get('/cv/luis-botelho-resume.pdf')
   expect(pdf.status()).toBe(200)
   expect((await pdf.body()).subarray(0, 5).toString()).toBe('%PDF-')
 })

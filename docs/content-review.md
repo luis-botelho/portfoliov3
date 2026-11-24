@@ -1,23 +1,32 @@
-# Revisão editorial — 07/09/2026
+# Revisão editorial — 24/11/2026
 
-Fontes: API pública/autenticada do GitHub de luis-botelho, README e árvore de código da branch padrão de cada projeto. Nenhum conteúdo de repositório privado foi publicado.
+Fonte única de fatos: o bloco CONTEXTO fornecido pelo titular. Esta revisão substitui o registro anterior de 07/09/2026, que atribuía aos produtos afirmações não sustentadas pelo CONTEXTO atual. Nenhum cargo, empresa, data, número, ferramenta ou resultado foi acrescentado por inferência. As lacunas estão em `PENDENCIAS.md`.
 
-- `frontend-challenge-solution` (master): implementação própria do formulário; incluída como laboratório. `frontend-challenge` é a referência e não uma segunda entrega.
-- `goomer-backend` (main): src/app.ts contém somente /health; Prisma ainda sem entidades. Incluído como construção, sem atribuir ao código o CRUD descrito no enunciado. `job-dev-backend-1` não foi duplicado.
-- `itera` (main): pathEngine.ts e pathEngine.test.ts comprovam a evolução de mocks para regras locais de elegibilidade e ranking. Status atualizado para MVP concluído, preservando limites de catálogo, ausência de API e IA.
-- `safeanchor-monorepo`: árvore e README confirmam React/Vite, Express e Prisma, manutenção e checklists. Mantido em construção.
-- `liahona`: README confirma Foundation documental; mantida sem alegação de implementação.
-- `instituto-platform`: README confirma MVP territorial e endereço publicado; mantido.
-- `desafio-fullstack-veritas`: README confirma armazenamento em memória e alternativa de teclado ao drag-and-drop; mantido.
-- `SecureAuth-Web3`: código confirma backend Express, JWT e rotas de autenticação. README mistura visão e implementação; não atribuímos frontend ou prontidão de produção.
-- `frosty-camp-home`: preservado como legado.
-- `humor` e `BlueSoul`: incluídos como trajetória educacional, com relações explícitas e prudentes com a formação.
-- `teste-frontend`: contém somente README de requisitos; excluído da seleção de entregas.
+## Projetos
 
-As relações com certificados indicam afinidade de competências. Não significam que os produtos foram certificados pelas instituições. O vínculo de BlueSoul com ficção interativa é temático, não uma identificação confirmada da entrega avaliada.
+Os projetos sólidos aparecem primeiro, com status e limitações explícitos:
 
-## Certificados
+- **Caminhos de Mambucaba** — plataforma territorial em produção, com MVP publicado; experiências e mapa, cadastro de iniciativas e demandas com protocolo, exportação em texto/JSON/PDF, observatório e redirecionamentos do WordPress antigo. Stack declarada: Next.js 16, React 19, TypeScript, Tailwind, Leaflet, Supabase/PostgreSQL com RLS e Vercel. Sem métricas de acesso no case.
+- **Goomer Menu API** — MVP concluído, execução local e sem deploy; sem autenticação e sem paginação. SQL puro, Prisma apenas para migrations, TypeBox, transações manuais, camadas, testes unitários com Vitest e Docker Compose.
+- **Mini Kanban Veritas** — MVP concluído: API em Go com Chi, interface React/TypeScript, Docker, testes de backend e alternativa de teclado ao drag-and-drop.
+- **SafeAnchor** — MVP concluído com demo web publicada; embarcações, manutenções e inspeções, modelagem de domínio documentada e agente de intake experimental com LangGraph, Ollama e Supabase.
+- **Itera** — MVP concluído; companion web de MMORPG com regras auditáveis em React 19, TypeScript, Vite e Sass.
 
-25 credenciais: 18 PDFs Blue EdTech, 6 links DIO e 1 Growdev. PDFs conferidos com os hashes SHA-256 dos inventários fornecidos. Reemissões e o certificado marcado como não recomendado por divergência de nome não foram publicados. O pacote original permanece local e ignorado pelo Git, pois contém metadados de e-mail e variantes.
+Estudos e legado são apresentados em seção separada, sem transformar fundação, laboratório ou projeto antigo em entrega concluída: Liahona, LIA Operating System, Formulário Dinâmico, SecureAuth Web3, FrostyCamp Home, BlueSoul e Jogo do Humor. O LIA Operating System é um estudo documentado e pausado de orquestração com n8n, Docker, PostgreSQL e GitHub Issues.
 
-Não somamos a carga horária: módulos e projetos podem se sobrepor. Cursos de introdução/boas-vindas são identificados e não apresentados como conclusão integral de bootcamp. Links externos são os fornecidos pelo inventário; disponibilidade e autenticação dependem do emissor.
+Links do GitHub foram removidos de FrostyCamp Home, BlueSoul, Jogo do Humor e Formulário Dinâmico, conforme solicitação. Não foi criado case para temas sem descrição concreta no CONTEXTO, nem seção de próximos passos com previsões.
+
+## Formação
+
+O catálogo apresenta as credenciais com o escopo de cada uma. DIO (set/2026) e Blue EdTech (2021) são destacadas nos textos e metadados; conteúdos introdutórios estão identificados e não são descritos como conclusão integral de bootcamp. Não há soma de carga horária nem contagem apresentada como fato externo ao catálogo. Links externos dependem do emissor.
+
+As relações entre credenciais e projetos indicam afinidade de competências; não significam que um produto foi certificado pela instituição.
+
+## Regras de redação
+
+- Nunca escrever “formado”; a Engenharia de Software na Estácio está em andamento.
+- “Full-stack” sempre acompanhado de “Júnior” no título.
+- Quando a CTPS diverge da função real, mostrar as duas, como em “Encarregado de Loja (atuação como subgerente)”.
+- Sem métricas de vendas, acesso, cobertura ou performance sem evidência no CONTEXTO.
+- Temas que o CONTEXTO apresenta apenas como planejamento ficam fora do site e do currículo; a relação está em `PENDENCIAS.md`.
+- Sem “[CONFIRMAR]”, “TBD” ou colchetes em páginas públicas, currículo, PDF ou DOCX; pendências ficam apenas em `PENDENCIAS.md`.

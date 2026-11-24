@@ -1,25 +1,26 @@
 # Histórico profissional para apresentação pública
 
-Atualização: 07/09/2026. A fonte de dados pública é `src/data/profile.ts`.
+Atualização: 24/11/2026. A única fonte de dados do site e dos arquivos do currículo é `src/content/curriculo.json`. `src/data/profile.ts` reaproveita o resumo aprovado e mantém o e-mail do site; a divergência de e-mail está em `PENDENCIAS.md`.
 
 ## Critérios
 
-O documento profissional fornecido pelo titular foi consultado apenas para conferir empregadores, cargos e datas. Não foi copiado para o projeto. Dados de identificação civil, remuneração e endereços não integram este arquivo, o currículo ou o site.
+O CONTEXTO fornecido pelo titular é a única fonte de fatos. Dados de identificação civil, remuneração e endereços não integram este repositório, o currículo ou o site. Nenhuma ocupação é inferida a partir de intervalos entre contratos.
 
-- OSF Digital: Front-end Dev. Júnior, 05/01/2022–23/06/2022.
-- Virtua Max: Técnico de apoio ao usuário de informática HD I, 20/07/2021–20/12/2021.
-- Poupe Mais: vínculo de 19/05/2018–12/07/2021, com funções de reposição e apoio administrativo. Não atribuímos um cargo específico a todo o vínculo.
-- Poupe Areal: Encarregado de Loja, 16/02/2023–08/09/2023.
-- Santa Rita: Repositor, 03/10/2023–31/10/2023.
-- KAL Atacado 2: Atendente de Loja em dois contratos distintos, 15/01/2024–24/05/2024 e 18/09/2024–29/08/2025.
-- Frade Spot: Atendente Call Center, 18/05/2026–01/07/2026.
+- OSF Digital: Desenvolvedor Front-End Júnior, 05/01/2022–23/06/2022; ajustes de interface, atualização de catálogo e correção de bugs em ambiente Salesforce. Primeira experiência formal em tecnologia.
+- Virtua Max Comunicação: Técnico de Apoio ao Usuário de Informática (Help Desk I), 20/07/2021–20/12/2021; suporte de 1º nível com registro de chamados.
+- Poupe Mais Comércio de Alimentos: vínculo de 19/05/2018–12/07/2021; início como Repositor e posterior atuação como Auxiliar de Escritório no CPD, sem data para a mudança.
+- Poupe Areal Comércio de Alimentos: cargo na CTPS de Encarregado de Loja e atuação como subgerente, 16/02/2023–08/09/2023.
+- Santa Rita Serviços Prestados: Repositor, 03/10/2023–31/10/2023.
+- KAL Atacado 2: Atendente de Loja na CTPS, com atuação real na carteira B2B (pré e pós-venda), em 15/01/2024–24/05/2024 e 18/09/2024–29/08/2025.
+- Frade Spot Participações: Atendente de Call Center, 18/05/2026–01/07/2026.
+- Bar do Nelson: garçom, ago/2025–mai/2026, datas aproximadas e sem carteira assinada.
+- Iniciativa própria em turismo: concepção de agência entre jun/2022 e fev/2023, sem operação consolidada.
+- Rede Fortaco Angraluz: licitações desde 02/10/2026, com ciclo de edital, análise de exigências, pasta padronizada, pregão e acompanhamento da entrega a prefeituras. O tipo de vínculo e a continuidade não foram confirmados; por isso não há cargo nem “Atual”.
+- ICPT (Instituto Cidadania e Políticas Territoriais): Diretor Financeiro com posse formalizada por ata e estatuto, gestão financeira, prestação de contas, plataformas digitais do Caminhos de Mambucaba e articulação junto à TurisAngra. Sem data de início.
+- Engenharia de Software na Estácio: cursando. Nunca é apresentada como graduação concluída.
 
-## Informações complementares confirmadas pelo titular nesta conversa
+## Apresentação
 
-- OSF: ajustes de interface e inclusão/atualização de produtos em catálogo, em ambiente Salesforce. Não são atribuídas integrações, arquitetura Salesforce ou tecnologias específicas não informadas.
-- Agência de turismo: tentativa de estruturação de junho/2022 a fevereiro/2023, encerrada na fase de concepção. O aprendizado contribuiu para o Caminhos de Mambucaba. Não é apresentada como empresa com operação consolidada.
-- Garçom: agosto/2025 a maio/2026, experiência de atendimento em serviço de salão.
-- ICPT: diretor financeiro, com ata de posse e estatuto, segundo o titular. A data de início e o caráter voluntário ou remunerado não foram confirmados e não são publicados.
-- Engenharia de Software: em andamento, conforme apresentação já adotada pelo titular. Instituição e previsão de conclusão não foram informadas.
+O resumo aprovado cita Estácio, OSF Digital, suporte de TI, atendimento, vendas B2B, licitações, inglês avançado e a stack declarada. Competências incluem apenas ferramentas afirmadas no CONTEXTO, como Supabase, SQL/MySQL, n8n, Vercel, APIs REST e Excel.
 
-Não inferimos ocupações a partir dos intervalos entre contratos nem utilizamos a frequência de certificados como indicador de atividade profissional. A apresentação destaca a experiência em tecnologia e preserva a trajetória em outras áreas.
+As lacunas que dependem de confirmação — vínculo na Fortaco, data de início no ICPT, data da promoção no Poupe Mais, datas exatas do garçom, e-mail do site e o item 6 de `PENDENCIAS.md` — não foram preenchidas por suposição.
