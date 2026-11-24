@@ -14,8 +14,8 @@ import styles from '@/app/(pt)/page.module.scss'
 export const metadata = pageMetadata(
   'en',
   '/',
-  'Luis Fellype Botelho (Luiz Maia) | Full-stack Developer',
-  'Full-stack developer with software development experience. Explore projects, certificates, professional background and resume.',
+  'Luis Fellype Botelho | Junior Full-stack Developer',
+  'Junior full-stack developer and Software Engineering student. Projects, certificates, background and resume.'
 )
 export const revalidate = 21600
 
@@ -26,7 +26,7 @@ export default function HomePage() {
         <section className={styles.hero}>
           <div>
             <p className="eyebrow">
-              Luis Fellype Botelho (Luiz Maia) · Full-stack Developer
+              Luis Fellype Botelho · Junior Full-stack Developer
             </p>
             <h1>I build digital products for real problems.</h1>
             <p className={styles.lede}>

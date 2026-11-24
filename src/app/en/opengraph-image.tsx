@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og'
-export const alt = 'Luis Fellype Botelho | Full-stack Developer'
+export const alt = 'Luis Fellype Botelho | Junior Full-stack Developer'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 export default function OpenGraphImage() {
@@ -18,10 +18,10 @@ export default function OpenGraphImage() {
       }}
     >
       <div style={{ color: '#D97852', fontSize: 24 }}>
-        LUIS BOTELHO / FULL-STACK
+        LUIS FELLYPE BOTELHO / JUNIOR FULL-STACK
       </div>
       <div style={{ fontSize: 72, lineHeight: 1, marginTop: 24 }}>
-        I build digital products for real problems.
+        Junior Full-stack Developer.
       </div>
       <div style={{ color: '#A9B2AA', fontSize: 28, marginTop: 32 }}>
         Angra dos Reis, RJ / Brazil

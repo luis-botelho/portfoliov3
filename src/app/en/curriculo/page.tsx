@@ -11,7 +11,7 @@ export const metadata = pageMetadata(
   'en',
   '/curriculo',
   'Resume | Luis Botelho',
-  'Professional resume of Luis Botelho, full-stack developer. Online and downloadable PDF.',
+  'Professional resume of Luis Fellype Botelho, Junior Full-stack Developer. PDF and DOCX in Portuguese and English.'
 )
 export default function ResumePage() {
   return (

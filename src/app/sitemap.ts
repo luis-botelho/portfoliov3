@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return paths.flatMap((path) =>
     (['pt', 'en'] as Locale[]).map((locale) => ({
       url: `${siteUrl}${localizedPath(locale, path)}`,
-      lastModified: new Date('2026-09-08'),
+      lastModified: new Date('2026-11-24'),
       alternates: {
         languages: Object.fromEntries(
           Object.entries(languageAlternates(path)).map(([lang, value]) => [

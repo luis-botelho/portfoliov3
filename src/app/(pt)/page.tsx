@@ -16,7 +16,7 @@ export default function HomePage() {
         <section className={styles.hero}>
           <div>
             <p className="eyebrow">
-              Luis Fellype Botelho (Luiz Maia) · Desenvolvedor Full-stack
+              Luis Fellype Botelho · Desenvolvedor Full-stack Júnior
             </p>
             <h1>Construo produtos digitais para problemas reais.</h1>
             <p className={styles.lede}>

@@ -29,7 +29,7 @@ export function pageMetadata(
     },
     title:
       path === '/'
-        ? { default: title, template: '%s | Luis Botelho' }
+        ? { default: title, template: '%s | Luis Fellype Botelho' }
         : { absolute: title },
     description,
     robots: { index: process.env.VERCEL_ENV !== 'preview', follow: true },
@@ -43,7 +43,7 @@ export function pageMetadata(
       url: localizedPath(locale, path),
       locale: locale === 'en' ? 'en_US' : 'pt_BR',
       alternateLocale: locale === 'en' ? ['pt_BR'] : ['en_US'],
-      siteName: 'Luis Botelho',
+      siteName: 'Luis Fellype Botelho',
       type: 'website',
       images: [
         {
@@ -51,6 +51,14 @@ export function pageMetadata(
           width: 1200,
           height: 630,
         },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [
+        locale === 'en' ? '/en/opengraph-image' : '/opengraph-image',
       ],
     },
   }
