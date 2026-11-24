@@ -1,4 +1,4 @@
-@use 'tokens' as *;
+@use '@/styles/tokens' as *;
 
 @mixin content-width {
   max-width: $max-width;
