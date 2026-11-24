@@ -1,4 +1,4 @@
-import { projects, featuredProjects } from './projects'
+import { projects, featuredProjects, studyProjects } from './projects'
 import type { Project } from '@/types/project'
 
 type Translatable =
@@ -13,6 +13,8 @@ type Translatable =
 type ListKey = 'scope' | 'constraints' | 'limitations' | 'stack'
 type Translation = Partial<Pick<Project, Translatable | ListKey>> & {
   name?: string
+  coverAlt?: string
+  coverCaption?: string
 }
 
 const translations: Record<string, Translation> = {
@@ -192,8 +194,14 @@ const translations: Record<string, Translation> = {
   },
   'formulario-dinamico': {
     eyebrow: 'Lab',
-    summary: 'Laboratory project kept among the studies.',
+    summary:
+      'HTML, CSS and JavaScript applied to field construction and step-by-step navigation.',
+    scope: ['Field construction', 'Step-by-step navigation'],
     currentState: 'Laboratory project.',
+    stack: ['HTML', 'CSS', 'JavaScript'],
+    coverAlt:
+      'Editorial illustration of modular fields and step-by-step navigation for the dynamic form lab',
+    coverCaption: 'Editorial cover of the Formulário Dinâmico laboratory project.',
   },
   'secureauth-web3': {
     eyebrow: 'Lab',
@@ -238,8 +246,10 @@ function localize(project: Project): Project {
   result.cover = project.cover
     ? {
         ...project.cover,
-        alt: `${translation.name ?? project.name} — project image`,
-        caption: 'Project image.',
+        alt:
+          translation.coverAlt ??
+          `${translation.name ?? project.name} — project image`,
+        caption: translation.coverCaption ?? 'Project image.',
       }
     : undefined
   return result
@@ -247,6 +257,4 @@ function localize(project: Project): Project {
 
 export const englishProjects: Project[] = projects.map(localize)
 export const englishFeaturedProjects = featuredProjects.map(localize)
-export const englishStudyProjects = englishProjects.filter(
-  (project) => !featuredProjects.some((item) => item.slug === project.slug),
-)
+export const englishStudyProjects = studyProjects.map(localize)

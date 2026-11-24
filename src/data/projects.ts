@@ -260,22 +260,23 @@ export const projects: Project[] = [
     name: 'Formulário Dinâmico',
     status: 'Laboratório',
     cover: {
-      src: '/images/projects/formulario.png',
-      alt: 'Apresentação do formulário dinâmico do projeto de estudo',
-      caption: 'Imagem de apresentação do estudo.',
+      src: '/images/projects/formulario-cover.svg',
+      alt: 'Ilustração editorial de campos modulares e navegação por etapas do Formulário Dinâmico',
+      caption: 'Capa editorial do laboratório Formulário Dinâmico.',
     },
     eyebrow: 'Laboratório',
-    summary: 'Projeto de laboratório mantido entre os estudos.',
+    summary:
+      'HTML, CSS e JavaScript aplicados à construção de campos e à navegação por etapas.',
     problem: '',
     role: '',
-    scope: [],
+    scope: ['Construção de campos', 'Navegação por etapas'],
     constraints: [],
     architecture: '',
     decisions: '',
     validation: '',
     currentState: 'Projeto de laboratório.',
     limitations: [],
-    stack: [],
+    stack: ['HTML', 'CSS', 'JavaScript'],
   },
   {
     slug: 'secureauth-web3',
@@ -354,11 +355,20 @@ const solidSlugs = [
   'safeanchor',
   'itera',
 ]
+const studySlugs = [
+  'formulario-dinamico',
+  'lia',
+  'lia-operating-system',
+  'secureauth-web3',
+  'frostycamp-home',
+  'bluesoul',
+  'jogo-do-humor',
+]
 export const featuredProjects = solidSlugs.map(
   (slug) => projects.find((project) => project.slug === slug)!,
 )
-export const studyProjects = projects.filter(
-  (project) => !solidSlugs.includes(project.slug),
+export const studyProjects = studySlugs.map(
+  (slug) => projects.find((project) => project.slug === slug)!,
 )
 export const getProject = (slug: string) =>
   projects.find((project) => project.slug === slug)

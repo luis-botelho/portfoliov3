@@ -19,6 +19,9 @@ export default function HomePage() {
               Luis Fellype Botelho · Desenvolvedor Full-stack Júnior
             </p>
             <h1>Desenvolvedor Full-stack Júnior.</h1>
+            <p className={styles.statement}>
+              Construo produtos digitais para problemas reais.
+            </p>
             <p className={styles.lede}>
               Estudante de Engenharia de Software na Estácio. Atuei como
               front-end júnior na OSF Digital, em suporte de TI e em atendimento,
@@ -134,6 +137,36 @@ export default function HomePage() {
             MVPs concluídos, uma plataforma em produção e estudos de arquitetura,
             cada um com o que existe e o que não existe.
           </p>
+          <article
+            className={styles.labHighlight}
+            aria-labelledby="destaque-laboratorio-titulo"
+          >
+            <figure>
+              <Image
+                src="/images/projects/formulario-cover.svg"
+                alt="Ilustração editorial de campos modulares e navegação por etapas do Formulário Dinâmico"
+                width={1600}
+                height={900}
+                sizes="(max-width: 760px) 100vw, 50vw"
+              />
+            </figure>
+            <div>
+              <p className="eyebrow">Destaque / Laboratório</p>
+              <h3 id="destaque-laboratorio-titulo">Formulário Dinâmico.</h3>
+              <p>
+                HTML, CSS e JavaScript aplicados à construção de campos e à
+                navegação por etapas.
+              </p>
+              <ul className={styles.tags}>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <Link href="/projetos/formulario-dinamico">
+                Ver o laboratório ↗
+              </Link>
+            </div>
+          </article>
           <div className={styles.projectGrid}>
             {featuredProjects
               .filter((project) => project.slug !== 'caminhos-de-mambucaba')

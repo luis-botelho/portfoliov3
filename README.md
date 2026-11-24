@@ -8,6 +8,7 @@ Portfólio de Luis Fellype Botelho: produtos digitais, estudos de caso e formaç
 
 - Projetos sólidos com escopo, decisões, validação e limitações explícitas: Caminhos de Mambucaba, Goomer Menu API, Mini Kanban Veritas, SafeAnchor e Itera.
 - Seção separada de estudos e legado, com status próprio e sem atribuir entrega concluída onde o projeto está em fundação, laboratório ou legado.
+- Formulário Dinâmico em destaque na home e no início dos estudos, com capa editorial e o mesmo status de laboratório.
 - Catálogo de certificados com busca, filtro por instituição, destaque para conteúdos introdutórios e relações editoriais com os projetos.
 - Currículo online e arquivos PDF/DOCX em português e inglês, gerados a partir de uma única fonte de dados.
 

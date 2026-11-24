@@ -26,6 +26,9 @@ export default function HomePage() {
               Luis Fellype Botelho · Junior Full-stack Developer
             </p>
             <h1>Junior Full-stack Developer.</h1>
+            <p className={styles.statement}>
+              I build digital products for real problems.
+            </p>
             <p className={styles.lede}>
               Software Engineering student at Estácio. Worked as a junior
               front-end developer at OSF Digital, in IT support, and in customer
@@ -139,6 +142,36 @@ export default function HomePage() {
             Completed MVPs, one platform in production and architecture studies,
             each with what exists and what does not.
           </p>
+          <article
+            className={styles.labHighlight}
+            aria-labelledby="destaque-laboratorio-titulo"
+          >
+            <figure>
+              <Image
+                src="/images/projects/formulario-cover.svg"
+                alt="Editorial illustration of modular fields and step-by-step navigation for the dynamic form lab"
+                width={1600}
+                height={900}
+                sizes="(max-width: 760px) 100vw, 50vw"
+              />
+            </figure>
+            <div>
+              <p className="eyebrow">Highlight / Lab</p>
+              <h3 id="destaque-laboratorio-titulo">Formulário Dinâmico.</h3>
+              <p>
+                HTML, CSS and JavaScript applied to field construction and
+                step-by-step navigation.
+              </p>
+              <ul className={styles.tags}>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <Link href="/en/projetos/formulario-dinamico">
+                Explore the lab ↗
+              </Link>
+            </div>
+          </article>
           <div className={styles.projectGrid}>
             {featuredProjects
               .filter((project) => project.slug !== 'caminhos-de-mambucaba')
