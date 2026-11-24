@@ -54,6 +54,43 @@
   letter-spacing: -0.03em;
 }
 
+.entries {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.entry {
+  border-bottom: 1px solid $line;
+  padding-bottom: 1.5rem;
+}
+
+.entry:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.entry h3 {
+  font-size: 1.15rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.entry ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: $muted;
+}
+
+.entry li + li {
+  margin-top: 0.4rem;
+}
+
+.story .entry .meta {
+  color: $green;
+  font:
+    0.75rem var(--font-jetbrains-mono),
+    monospace;
+}
+
 .story p:not(:first-child),
 .story div > p,
 .contact p {

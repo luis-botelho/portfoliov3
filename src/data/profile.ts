@@ -135,6 +135,26 @@ export const experience: Experience[] = [
       'Empreendedorismo que não saiu da fase de concepção. O aprendizado contribuiu para o Caminhos de Mambucaba.',
   },
   {
+    company: 'OSF Digital',
+    role: 'Desenvolvedor Front-End Júnior',
+    period: '05/01/2022–23/06/2022',
+    start: '2022-01-05',
+    end: '2022-06-23',
+    category: 'Desenvolvimento',
+    description:
+      'Ambiente Salesforce (CRM): ajustes de interface, atualização de catálogo de produtos e correção de bugs. Primeira experiência formal em tecnologia.',
+  },
+  {
+    company: 'Virtua Max Comunicação',
+    role: 'Técnico de Apoio ao Usuário de Informática (Help Desk I)',
+    period: '20/07/2021–20/12/2021',
+    start: '2021-07-20',
+    end: '2021-12-20',
+    category: 'Suporte de TI',
+    description:
+      'Suporte de 1º nível: diagnóstico e solução de problemas em sistemas, equipamentos e infraestrutura, com registro de chamados.',
+  },
+  {
     company: 'Poupe Mais Comércio de Alimentos',
     role: 'Repositor e Auxiliar de Escritório no CPD',
     period: '19/05/2018–12/07/2021',

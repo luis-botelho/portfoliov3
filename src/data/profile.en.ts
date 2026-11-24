@@ -89,6 +89,18 @@ const translations: Record<string, Translation> = {
     description:
       'An entrepreneurial initiative that never left the concept stage. The learning contributed to Caminhos de Mambucaba.',
   },
+  'OSF Digital|2022-01-05': {
+    role: 'Junior Front-End Developer',
+    period: '05 Jan 2022 – 23 Jun 2022',
+    description:
+      'Salesforce CRM environment: interface adjustments, product catalog updates and bug fixes. First formal role in technology.',
+  },
+  'Virtua Max Comunicação|2021-07-20': {
+    role: 'IT User Support Technician (Help Desk I)',
+    period: '20 Jul 2021 – 20 Dec 2021',
+    description:
+      'First-level support: diagnosis and resolution of issues with systems, equipment and infrastructure, with ticket logging.',
+  },
   'Poupe Mais Comércio de Alimentos|2018-05-19': {
     role: 'Stocker and Office Assistant at the data processing center',
     period: '19 May 2018 – 12 Jul 2021',

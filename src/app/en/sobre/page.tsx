@@ -1,117 +1,105 @@
 import { pageMetadata } from '@/lib/i18n'
 import Link from 'next/link'
 import { ExperienceTimeline } from '@/components/profile/ExperienceTimeline'
-import {
-  englishProfile as profile,
-  englishInstitutionalExperience as institutionalExperience,
-} from '@/data/profile.en'
+import { englishProfile as profile } from '@/data/profile.en'
+import { curriculo } from '@/content/curriculo'
 import styles from '@/app/(pt)/sobre/page.module.scss'
 
 export const metadata = pageMetadata(
   'en',
   '/sobre',
-  'About and experience | Luis Botelho',
-  'Luis Botelho’s background: front-end development at OSF Digital, IT support, operations and software projects.',
+  'About and experience | Luis Fellype Botelho',
+  'Luis Fellype Botelho’s background: Software Engineering at Estácio, OSF Digital, IT support, customer service, B2B sales and public tenders.',
 )
+
 export default function AboutPage() {
+  const [icpt, osf, virtua] = curriculo.experience
+  const [tenders] = curriculo.other.en
+
   return (
-    <>
-      <main id="conteudo" className={styles.main}>
-        <header className={styles.hero}>
-          <p className="eyebrow">About / Experience and direction</p>
-          <h1>Software informed by experience on the other side.</h1>
-          <p>{profile.summary}</p>
-          <div className={styles.actions}>
-            <a className={styles.primary} href={profile.resume} download>
-              Download resume PDF ↓
-            </a>
-            <Link href="/en/curriculo">View resume online ↗</Link>
-            <a href={`mailto:${profile.email}`}>Talk by email ↗</a>
-          </div>
-        </header>
-        <section className={styles.story} aria-labelledby="trajetoria-titulo">
-          <div>
-            <p className="eyebrow">A background with different perspectives</p>
-            <h2 id="trajetoria-titulo">
-              Technology, customer service and operations.
-            </h2>
-          </div>
-          <div>
-            <p>
-              My technology experience includes user support at Virtua Max in
-              2021 and work as a Junior Front-end Developer at OSF Digital
-              between January and June 2022.
-            </p>
-            <p>
-              Between June 2022 and February 2023, I tried to establish a travel
-              agency. The initiative ended at the concept stage, but what I
-              learned about the area and the sector contributed to Caminhos de
-              Mambucaba. In the following years, I also worked in store
-              operations and customer service, including as a waiter between
-              August 2025 and May 2026.
-            </p>
-            <p>
-              Today, my focus is software development. This portfolio presents a
-              published local platform, full-stack applications and engineering
-              studies, with documented scope and decisions.
-            </p>
-          </div>
-        </section>
-        <section className={styles.story} aria-labelledby="experiencia-titulo">
-          <div>
-            <p className="eyebrow">Professional history</p>
-            <h2 id="experiencia-titulo">
-              Experiences that shape my perspective.
-            </h2>
-            <p>
-              From the most recent role to the start of my career. Both periods
-              at KAL are listed separately.
-            </p>
-          </div>
-          <ExperienceTimeline english />
-        </section>
-        <section className={styles.story} aria-labelledby="icpt-titulo">
-          <div>
-            <p className="eyebrow">Current institutional role</p>
-            <h2 id="icpt-titulo">
-              {institutionalExperience.role} at{' '}
-              {institutionalExperience.company}.
-            </h2>
-          </div>
-          <div>
-            <p>{institutionalExperience.description}</p>
-            <p>
-              An organizational and institutional perspective that complements
-              my background in technology and customer service.
-            </p>
-          </div>
-        </section>
-        <section className={styles.story} aria-labelledby="formacao-titulo">
-          <div>
-            <p className="eyebrow">Education and practice</p>
-            <h2 id="formacao-titulo">Learning applied to projects.</h2>
-          </div>
-          <div>
-            <h3>Software Engineering</h3>
-            <p>Degree in progress.</p>
-            <h3>Complementary training</h3>
-            <p>
-              Blue EdTech: fundamentals, web and full-stack development. DIO:
-              security and best practices. The catalog preserves each
-              credential’s issuer, date and scope.
-            </p>
-            <Link href="/en/certificados">Browse certificates ↗</Link>
-          </div>
-        </section>
-        <section className={styles.contact}>
-          <p className="eyebrow">Next conversation</p>
-          <h2>Let’s talk about your team.</h2>
+    <main id="conteudo" className={styles.main}>
+      <header className={styles.hero}>
+        <p className="eyebrow">About / Background</p>
+        <h1>Technology informed by operations and customer service.</h1>
+        <p>{curriculo.summary.en}</p>
+        <div className={styles.actions}>
+          <a className={styles.primary} href={profile.resume} download>
+            Download resume PDF ↓
+          </a>
+          <Link href="/en/curriculo">View resume online ↗</Link>
+          <a href={`mailto:${profile.email}`}>Get in touch by email ↗</a>
+        </div>
+      </header>
+      <section className={styles.story} aria-labelledby="tecnologia-titulo">
+        <div>
+          <p className="eyebrow">Technology experience</p>
+          <h2 id="tecnologia-titulo">What I have done with software.</h2>
+        </div>
+        <div className={styles.entries}>
+          {[icpt, osf, virtua].map((item) => (
+            <article key={item.company} className={styles.entry}>
+              <p className={styles.meta}>
+                {item.period.en} · {item.location.en}
+              </p>
+              <h3>
+                {item.role.en} — {item.company}
+              </h3>
+              <ul>
+                {item.bullets.en.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className={styles.story} aria-labelledby="licitacoes-titulo">
+        <div>
+          <p className="eyebrow">Public tenders</p>
+          <h2 id="licitacoes-titulo">Rede Fortaco Angraluz.</h2>
+        </div>
+        <div>
+          <p className={styles.meta}>since Oct 2026 · Angra dos Reis</p>
+          {tenders.bullets.map((bullet) => (
+            <p key={bullet}>{bullet}</p>
+          ))}
+        </div>
+      </section>
+      <section className={styles.story} aria-labelledby="experiencia-titulo">
+        <div>
+          <p className="eyebrow">Professional history</p>
+          <h2 id="experiencia-titulo">
+            Customer service, operations and entrepreneurship.
+          </h2>
           <p>
-            Interested in full-stack development opportunities.
+            From the most recent record to the start of my career. Both spells at
+            KAL appear with their own periods, and the travel agency attempt is
+            described as a concept, not an operating business.
           </p>
-          <a href={`mailto:${profile.email}`}>{profile.email}</a>
-        </section>
-      </main>
-    </>
+        </div>
+        <ExperienceTimeline english />
+      </section>
+      <section className={styles.story} aria-labelledby="formacao-titulo">
+        <div>
+          <p className="eyebrow">Education</p>
+          <h2 id="formacao-titulo">Study and practice.</h2>
+        </div>
+        <div className={styles.entries}>
+          {curriculo.education.en.map((item) => (
+            <article key={item.title} className={styles.entry}>
+              <h3>{item.title}</h3>
+              {item.detail && <p>{item.detail}</p>}
+            </article>
+          ))}
+          <Link href="/en/certificados">View certificates ↗</Link>
+        </div>
+      </section>
+      <section className={styles.contact}>
+        <p className="eyebrow">Contact</p>
+        <h2>Professional contact.</h2>
+        <p>Resume, projects and background are available on this site.</p>
+        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      </section>
+    </main>
   )
 }
