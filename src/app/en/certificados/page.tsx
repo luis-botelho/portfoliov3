@@ -7,8 +7,8 @@ import styles from '@/app/(pt)/certificados/page.module.scss'
 export const metadata = pageMetadata(
   'en',
   '/certificados',
-  'Certificates and education | Luis Botelho',
-  'Verified learning credentials in React, backend and security, connected to Luis Botelho’s projects.',
+  'Certificates and education | Luis Fellype Botelho',
+  'Complementary training in web and full-stack development at Blue EdTech (2021), security at DIO (Sep 2026) and introductory bootcamp content.',
 )
 export default function CertificatesPage() {
   return (
@@ -18,9 +18,9 @@ export default function CertificatesPage() {
           <p className="eyebrow">Education / Evidence of learning</p>
           <h1>Knowledge that meets practice.</h1>
           <p>
-            Certificates from Blue EdTech, DIO and Growdev. Explore the
-            training, view the documents and discover connections to the
-            projects.
+            Certificates from Blue EdTech and DIO, plus introductory bootcamp
+            content. Explore the training, view the documents and see the
+            connections to the projects.
           </p>
           <p className={styles.note}>
             Connections indicate related skills. Introductory courses are

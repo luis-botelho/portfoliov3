@@ -28,7 +28,4 @@ export const englishUI: Record<string, string> = {
   'Formação complementar, dos fundamentos de programação à segurança. Cada conexão mostra onde esse conhecimento encontra os projetos.':
     'Complementary training, from programming fundamentals to security. Each connection shows where this knowledge meets the projects.',
   'Explorar certificados ↗': 'Explore certificates ↗',
-  'certificados com carga horária': 'certificates with stated hours',
-  'formações em segurança': 'security courses',
-  'conteúdos introdutórios': 'introductory courses',
 }

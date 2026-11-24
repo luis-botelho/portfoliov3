@@ -106,8 +106,7 @@ export function CertificateExplorer({
         </label>
       </div>
       <p className={styles.count} role="status">
-        {filtered.length} {english ? 'of' : 'de'} {certificates.length}{' '}
-        {english ? 'certificates' : 'certificados'} ·{' '}
+        {filtered.length} {english ? 'results' : 'resultados'} ·{' '}
         {order === 'recent'
           ? english
             ? 'most recent first'

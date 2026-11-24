@@ -37,26 +37,22 @@ export function CertificateSection({ locale = 'pt' }: { locale?: Locale }) {
       </div>
       <div className={styles.stats}>
         <p>
-          <strong>
-            {certificates.filter((item) => item.hours !== null).length}
-          </strong>
-          {t('certificados com carga horária')}
+          <strong>2021</strong>
+          {locale === 'en'
+            ? ' Blue EdTech · web and full-stack development'
+            : ' Blue EdTech · desenvolvimento web e full-stack'}
         </p>
         <p>
-          <strong>
-            {
-              certificates.filter(
-                (item) => !item.introductory && item.hours === null,
-              ).length
-            }
-          </strong>
-          {t('formações em segurança')}
+          <strong>{locale === 'en' ? 'Sep 2026' : 'set/2026'}</strong>
+          {locale === 'en'
+            ? ' DIO · security and best practices'
+            : ' DIO · segurança e boas práticas'}
         </p>
         <p>
-          <strong>
-            {certificates.filter((item) => item.introductory).length}
-          </strong>
-          {t('conteúdos introdutórios')}
+          <strong>{locale === 'en' ? 'Introductions' : 'Introduções'}</strong>
+          {locale === 'en'
+            ? ' bootcamp content, not full bootcamp completion'
+            : ' conteúdos de bootcamp, sem conclusão integral'}
         </p>
       </div>
       <div className={styles.grid}>
