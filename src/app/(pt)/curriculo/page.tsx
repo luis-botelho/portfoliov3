@@ -1,131 +1,110 @@
-import { languageAlternates } from '@/lib/i18n'
-import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/i18n'
 import Link from 'next/link'
-import { profile, experience, institutionalExperience } from '@/data/profile'
+import { curriculo } from '@/content/curriculo'
 import styles from './page.module.scss'
 
-export const metadata: Metadata = {
-  title: 'Currículo',
-  description:
-    'Currículo profissional de Luis Fellype Botelho, Desenvolvedor Full-stack Júnior. PDF e DOCX em português e inglês.',
-  alternates: { canonical: '/curriculo', languages: languageAlternates('/curriculo') },
-  openGraph: { title: 'Currículo de Luis Botelho', description: 'Currículo de Luis Botelho: experiência front-end, formação e projetos. Versão online e PDF para download.', url: '/curriculo', type: 'website' },
-}
+export const metadata = pageMetadata(
+  'pt',
+  '/curriculo',
+  'Currículo | Luis Fellype Botelho',
+  'Currículo profissional de Luis Fellype Botelho, Desenvolvedor Full-stack Júnior. PDF e DOCX em português e inglês.',
+)
+
 export default function ResumePage() {
+  const { identity, summary, experience, projects, skills, education, other } =
+    curriculo
+  const contact = identity.contacts
+
   return (
     <main id="conteudo" className={styles.main}>
       <nav className={styles.tools} aria-label="Ações do currículo">
         <Link href="/sobre">← Voltar ao portfólio</Link>
-        <a href={profile.resume} download>
+        <a href="/cv/luis-botelho-curriculo.pdf" download>
           Baixar PDF ↓
+        </a>
+        <a href="/cv/luis-botelho-curriculo.docx" download>
+          Baixar DOCX ↓
         </a>
       </nav>
       <article className={styles.sheet}>
         <header>
-          <h1>{profile.name}</h1>
-          <p className={styles.title}>{profile.title}</p>
-          <p>{profile.location}</p>
+          <h1>{identity.name}</h1>
+          <p className={styles.title}>{identity.tagline.pt}</p>
           <p>
-            <a href={`mailto:${profile.email}`}>{profile.email}</a> ·{' '}
-            <a href={profile.linkedin}>linkedin.com/in/luis-botelho</a>
+            {contact.phone} · {contact.email} · {contact.city.pt}
           </p>
           <p>
-            <a href={profile.github}>github.com/luis-botelho</a> ·{' '}
-            <a href={profile.site}>{new URL(profile.site).hostname}</a>
+            <a href={`https://${contact.linkedin}`}>{contact.linkedin}</a> ·{' '}
+            <a href={`https://${contact.github}`}>{contact.github}</a> ·{' '}
+            <a href={`https://${contact.site}`}>{contact.site}</a>
           </p>
         </header>
         <section>
-          <h2>Perfil profissional</h2>
-          <p>{profile.summary}</p>
+          <h2>Resumo</h2>
+          <p>{summary.pt}</p>
         </section>
         <section>
           <h2>Experiência em tecnologia</h2>
-          {experience
-            .filter((item) =>
-              ['Desenvolvimento', 'Suporte de TI'].includes(item.category),
-            )
-            .map((item) => (
-              <div className={styles.entry} key={item.company}>
-                <h3>
-                  {item.role} · {item.company}
-                </h3>
-                <p>{item.period}</p>
-                {item.description && <p>{item.description}</p>}
-              </div>
-            ))}
+          {experience.map((item) => (
+            <div className={styles.entry} key={item.company}>
+              <h3>
+                {item.role.pt} · {item.company}
+              </h3>
+              <p>
+                {item.period.pt} · {item.location.pt}
+              </p>
+              <ul className={styles.operations}>
+                {item.bullets.pt.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </section>
         <section>
-          <h2>Projetos selecionados</h2>
-          <div className={styles.entry}>
-            <h3>Caminhos de Mambucaba · plataforma publicada</h3>
-            <p>
-              Desenvolvimento full-stack de experiências, mapas e formulários de
-              participação comunitária. Next.js, React, TypeScript e
-              PostgreSQL/Supabase.
+          <h2>Projetos</h2>
+          {projects.map((project) => (
+            <div className={styles.entry} key={project.name}>
+              <h3>
+                {project.name} · {project.status.pt}
+              </h3>
+              <ul className={styles.operations}>
+                {project.bullets.pt.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </section>
+        <section>
+          <h2>Competências</h2>
+          {skills.pt.map((group) => (
+            <p key={group.group}>
+              <strong>{group.group}:</strong> {group.items.join(', ')}
             </p>
-            <a href="https://caminhosdemambucaba.live">
-              caminhosdemambucaba.live
-            </a>{' '}
-            ·{' '}
-            <a href="https://github.com/luis-botelho/instituto-platform">
-              Código no GitHub
-            </a>
-          </div>
-          <div className={styles.entry}>
-            <h3>Mini Kanban Veritas · MVP full-stack</h3>
-            <p>
-              CRUD de tarefas, API REST em Go/Chi, interface React/TypeScript e
-              Docker. Dados em memória, testes de backend e alternativa de
-              teclado ao drag-and-drop.
-            </p>
-            <a href="https://github.com/luis-botelho/desafio-fullstack-veritas">
-              github.com/luis-botelho/desafio-fullstack-veritas
-            </a>
-          </div>
-        </section>
-        <section>
-          <h2>Experiências em negócio e atendimento</h2>
-          <ul className={styles.operations}>
-            {experience
-              .filter(
-                (item) =>
-                  !['Desenvolvimento', 'Suporte de TI'].includes(item.category),
-              )
-              .sort((a, b) => b.start.localeCompare(a.start))
-              .map((item) => (
-                <li key={`${item.company}-${item.start}`}>
-                  <strong>{item.company}</strong> · {item.role} · {item.period}
-                </li>
-              ))}
-          </ul>
-        </section>
-        <section>
-          <h2>Atuação institucional</h2>
-          <p>
-            <strong>
-              {institutionalExperience.role} · {institutionalExperience.company}
-            </strong>{' '}
-            · Atuação atual, formalizada por ata de posse.
-          </p>
+          ))}
         </section>
         <section>
           <h2>Formação</h2>
-          <p>
-            <strong>Engenharia de Software</strong> · Graduação em andamento.
-          </p>
-          <p>
-            <strong>Blue EdTech</strong> · Formação complementar em programação,
-            web e full-stack (2021). <strong>DIO</strong> · Segurança e boas
-            práticas (2026).
-          </p>
-          <a href={`${profile.site}/certificados`}>
-            Certificados e documentos:
-            {new URL(profile.site).hostname}/certificados
-          </a>
+          {education.pt.map((item) => (
+            <div className={styles.entry} key={item.title}>
+              <h3>{item.title}</h3>
+              {item.detail && <p>{item.detail}</p>}
+            </div>
+          ))}
         </section>
         <section>
-          <h2>Competências presentes nos projetos</h2>
-          <p>{profile.skills.join(' · ')}</p>
+          <h2>Outras experiências</h2>
+          {other.pt.map((item) => (
+            <div className={styles.entry} key={item.title}>
+              <h3>{item.title}</h3>
+              <ul className={styles.operations}>
+                {item.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </section>
       </article>
     </main>

@@ -1,133 +1,110 @@
 import { pageMetadata } from '@/lib/i18n'
 import Link from 'next/link'
-import {
-  englishProfile as profile,
-  englishExperience as experience,
-  englishInstitutionalExperience as institutionalExperience,
-} from '@/data/profile.en'
+import { curriculo } from '@/content/curriculo'
 import styles from '@/app/(pt)/curriculo/page.module.scss'
 
 export const metadata = pageMetadata(
   'en',
   '/curriculo',
-  'Resume | Luis Botelho',
-  'Professional resume of Luis Fellype Botelho, Junior Full-stack Developer. PDF and DOCX in Portuguese and English.'
+  'Resume | Luis Fellype Botelho',
+  'Professional resume of Luis Fellype Botelho, Junior Full-stack Developer. PDF and DOCX in Portuguese and English.',
 )
+
 export default function ResumePage() {
+  const { identity, summary, experience, projects, skills, education, other } =
+    curriculo
+  const contact = identity.contacts
+
   return (
     <main id="conteudo" className={styles.main}>
       <nav className={styles.tools} aria-label="Resume actions">
         <Link href="/en/sobre">← Back to portfolio</Link>
-        <a href={profile.resume} download>
+        <a href="/cv/luis-botelho-resume.pdf" download>
           Download PDF ↓
+        </a>
+        <a href="/cv/luis-botelho-resume.docx" download>
+          Download DOCX ↓
         </a>
       </nav>
       <article className={styles.sheet}>
         <header>
-          <h1>{profile.name}</h1>
-          <p className={styles.title}>{profile.title}</p>
-          <p>{profile.location}</p>
+          <h1>{identity.name}</h1>
+          <p className={styles.title}>{identity.tagline.en}</p>
           <p>
-            <a href={`mailto:${profile.email}`}>{profile.email}</a> ·{' '}
-            <a href={profile.linkedin}>linkedin.com/in/luis-botelho</a>
+            {contact.phone} · {contact.email} · {contact.city.en}
           </p>
           <p>
-            <a href={profile.github}>github.com/luis-botelho</a> ·{' '}
-            <a href={profile.site}>{new URL(profile.site).hostname}</a>
+            <a href={`https://${contact.linkedin}`}>{contact.linkedin}</a> ·{' '}
+            <a href={`https://${contact.github}`}>{contact.github}</a> ·{' '}
+            <a href={`https://${contact.site}`}>{contact.site}</a>
           </p>
         </header>
         <section>
-          <h2>Professional profile</h2>
-          <p>{profile.summary}</p>
+          <h2>Summary</h2>
+          <p>{summary.en}</p>
         </section>
         <section>
-          <h2>Experience in technology</h2>
-          {experience
-            .filter((item) =>
-              ['Desenvolvimento', 'Suporte de TI'].includes(item.category),
-            )
-            .map((item) => (
-              <div className={styles.entry} key={item.company}>
-                <h3>
-                  {item.role} · {item.company}
-                </h3>
-                <p>{item.period}</p>
-                {item.description && <p>{item.description}</p>}
-              </div>
-            ))}
+          <h2>Technology experience</h2>
+          {experience.map((item) => (
+            <div className={styles.entry} key={item.company}>
+              <h3>
+                {item.role.en} · {item.company}
+              </h3>
+              <p>
+                {item.period.en} · {item.location.en}
+              </p>
+              <ul className={styles.operations}>
+                {item.bullets.en.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </section>
         <section>
-          <h2>Selected projects</h2>
-          <div className={styles.entry}>
-            <h3>Caminhos de Mambucaba · published platform</h3>
-            <p>
-              Full-stack development of experiences, maps and community
-              participation forms. Next.js, React, TypeScript and
-              PostgreSQL/Supabase.
+          <h2>Projects</h2>
+          {projects.map((project) => (
+            <div className={styles.entry} key={project.name}>
+              <h3>
+                {project.name} · {project.status.en}
+              </h3>
+              <ul className={styles.operations}>
+                {project.bullets.en.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </section>
+        <section>
+          <h2>Skills</h2>
+          {skills.en.map((group) => (
+            <p key={group.group}>
+              <strong>{group.group}:</strong> {group.items.join(', ')}
             </p>
-            <a href="https://caminhosdemambucaba.live">
-              caminhosdemambucaba.live
-            </a>{' '}
-            ·{' '}
-            <a href="https://github.com/luis-botelho/instituto-platform">
-              Code on GitHub
-            </a>
-          </div>
-          <div className={styles.entry}>
-            <h3>Mini Kanban Veritas · full-stack MVP</h3>
-            <p>
-              Task CRUD, a Go/Chi REST API, React/TypeScript interface and
-              Docker. In-memory data, backend tests and a keyboard alternative
-              to drag-and-drop.
-            </p>
-            <a href="https://github.com/luis-botelho/desafio-fullstack-veritas">
-              github.com/luis-botelho/desafio-fullstack-veritas
-            </a>
-          </div>
-        </section>
-        <section>
-          <h2>Business and customer service experience</h2>
-          <ul className={styles.operations}>
-            {experience
-              .filter(
-                (item) =>
-                  !['Desenvolvimento', 'Suporte de TI'].includes(item.category),
-              )
-              .sort((a, b) => b.start.localeCompare(a.start))
-              .map((item) => (
-                <li key={`${item.company}-${item.start}`}>
-                  <strong>{item.company}</strong> · {item.role} · {item.period}
-                </li>
-              ))}
-          </ul>
-        </section>
-        <section>
-          <h2>Institutional role</h2>
-          <p>
-            <strong>
-              {institutionalExperience.role} · {institutionalExperience.company}
-            </strong>{' '}
-            · Current role, formalized through appointment minutes.
-          </p>
+          ))}
         </section>
         <section>
           <h2>Education</h2>
-          <p>
-            <strong>Software Engineering</strong> · Degree in progress.
-          </p>
-          <p>
-            <strong>Blue EdTech</strong> · Complementary training in
-            programming, web and full-stack development (2021).{' '}
-            <strong>DIO</strong> · Security and best practices (2026).
-          </p>
-          <a href={`${profile.site}/en/certificados`}>
-            Certificates and documents:
-            {new URL(profile.site).hostname}/en/certificados
-          </a>
+          {education.en.map((item) => (
+            <div className={styles.entry} key={item.title}>
+              <h3>{item.title}</h3>
+              {item.detail && <p>{item.detail}</p>}
+            </div>
+          ))}
         </section>
         <section>
-          <h2>Skills used in the projects</h2>
-          <p>{profile.skills.join(' · ')}</p>
+          <h2>Other experience</h2>
+          {other.en.map((item) => (
+            <div className={styles.entry} key={item.title}>
+              <h3>{item.title}</h3>
+              <ul className={styles.operations}>
+                {item.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </section>
       </article>
     </main>

@@ -15,7 +15,7 @@ export function Header() {
       </a>
       <header className={styles.header}>
         <Link href={localizedPath(locale, '/')} className={styles.brand}>
-          LUIS BOTELHO<span>.</span>
+          LUIS FELLYPE BOTELHO<span>.</span>
         </Link>
         <nav aria-label={english ? 'Main navigation' : 'Navegação principal'}>
           <Link href={localizedPath(locale, '/#projetos')}>
@@ -34,7 +34,7 @@ export function Header() {
             {english ? 'Contact' : 'Contato'}
           </Link>
           <a
-            href={`/cv/luis-botelho-${english ? 'resume-en' : 'curriculo'}.pdf`}
+            href={`/cv/luis-botelho-${english ? 'resume' : 'curriculo'}.pdf`}
             download
           >
             {english ? 'Resume PDF ↓' : 'Currículo PDF ↓'}
