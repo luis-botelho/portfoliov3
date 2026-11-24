@@ -1,4 +1,9 @@
-export type ProjectStatus = 'Em produção' | 'MVP concluído' | 'Em construção' | 'Fundação' | 'Laboratório' | 'Legado' | 'Arquivado'
+export type ProjectStatus =
+  | 'Em produção'
+  | 'MVP concluído'
+  | 'Fundação'
+  | 'Laboratório'
+  | 'Legado'
 
 export type Project = {
   slug: string
@@ -15,9 +20,8 @@ export type Project = {
   validation: string
   currentState: string
   limitations: string[]
-  nextSteps: string[]
   stack: string[]
-  repository: string
+  repository?: string
   readme?: {
     repository: string
     branch: string

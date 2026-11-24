@@ -1,399 +1,252 @@
 import { projects, featuredProjects } from './projects'
 import type { Project } from '@/types/project'
 
-type Translation = Pick<
-  Project,
+type Translatable =
   | 'eyebrow'
   | 'summary'
   | 'problem'
   | 'role'
-  | 'scope'
-  | 'constraints'
   | 'architecture'
   | 'decisions'
   | 'validation'
   | 'currentState'
-  | 'limitations'
-  | 'nextSteps'
-> & { name?: string; stack?: string[] }
-const reviewed =
-  'Public code and documentation reviewed on September 7, 2026. Running this project is outside the portfolio validation scope.'
-const next = ['Expand test coverage and document upcoming deliveries.']
-const study = 'Development and documentation of the learning project.'
+type ListKey = 'scope' | 'constraints' | 'limitations' | 'stack'
+type Translation = Partial<Pick<Project, Translatable | ListKey>> & {
+  name?: string
+}
+
 const translations: Record<string, Translation> = {
-  'formulario-dinamico': {
-    name: 'Dynamic Form · GetNinjas',
-    eyebrow: 'Data-driven interface',
+  'caminhos-de-mambucaba': {
+    eyebrow: 'Territorial platform',
     summary:
-      'A JSON-driven, multi-step form with validation, error recovery and a native Node.js server.',
+      'Territorial platform in production, with an MVP published at caminhosdemambucaba.live.',
     problem:
-      'Build an interface that adapts to changes in its fields without rebuilding the form by hand.',
-    role: study,
+      'Bring the experiences, map, initiatives and requests of the Mambucaba territory together in one place.',
+    role: 'Product conception, interface, content modeling and full-stack implementation.',
     scope: [
-      'JSON-driven field generation',
-      'Wizard with forward, back and progress controls',
-      'Required-field validation',
-      'HTTP and validation tests with node:test',
+      'Experiences and map',
+      'Registration of initiatives and requests with protocol numbers',
+      'Export of records to text, JSON and PDF',
+      'Observatory and technical SEO',
+      'Redirects from the previous WordPress site',
     ],
-    constraints: [
-      'Demonstration only: no submission or persistence.',
-      'Existing tests do not cover the entire browser journey.',
-    ],
+    constraints: ['Published MVP', 'No access metrics in the case'],
     architecture:
-      'Node.js serves the API and static files. JavaScript interprets JSON and creates fields using DOM APIs.',
-    decisions: 'Explore HTTP, DOM and state fundamentals without frameworks.',
-    validation: reviewed,
-    currentState:
-      'A JSON-driven, multi-step form with validation, error recovery and a native Node.js server.',
-    limitations: [
-      'Demonstration only: no submission or persistence.',
-      'Existing tests do not cover the entire browser journey.',
+      'Next.js 16, React 19, TypeScript, Tailwind, Leaflet and Supabase/PostgreSQL with RLS, published on Vercel.',
+    decisions:
+      'Keep experiences, map, registrations and the observatory in one territorial platform with its own content model.',
+    validation: 'MVP published at caminhosdemambucaba.live.',
+    currentState: 'Platform in production, with a published MVP.',
+    limitations: ['There are no access metrics in the case.'],
+    stack: [
+      'Next.js 16',
+      'React 19',
+      'TypeScript',
+      'Tailwind',
+      'Leaflet',
+      'Supabase/PostgreSQL with RLS',
+      'Vercel',
     ],
-    nextSteps: next,
   },
   'goomer-menu-api': {
-    eyebrow: 'Backend and domain modeling',
+    eyebrow: 'Menu API',
     summary:
-      'A complete RESTful API to manage a restaurant menu: products, promotions with schedules, and a consolidated menu endpoint with real-time active promotions.',
-    problem:
-      'Represent products, promotions and availability in a restaurant menu.',
-    role: 'Backend development and documentation of its evolution.',
+      'REST menu API with products and time-based promotions. Completed MVP, running locally and with no deployment.',
+    problem: 'Represent products and time-based promotions in a menu API.',
+    role: 'Implementation of the API and unit tests.',
     scope: [
-      'Full product CRUD (name, price, category, visible)',
-      'Full promotion CRUD with schedules per weekday',
-      'GET /menu endpoint that returns only visible products plus the best currently active promotion (LEFT JOIN LATERAL)',
-      'Schema validation with TypeBox',
-      'PostgreSQL transactions when creating/updating promotions',
-      'Layered architecture (Routes → Controllers → Services → Repositories)',
-      'Prisma used only for schema and migrations; queries in raw SQL',
-      'Service unit tests',
-      'Docker Compose for the database',
-      'Health check',
+      'Products and time-based promotions',
+      'Plain SQL, with Prisma only for migrations',
+      'TypeBox and manual transactions',
+      'Layered architecture',
+      'Unit tests with Vitest',
+      'Docker Compose',
     ],
-    constraints: [
-      'Technical-challenge MVP scope.',
-      'No authentication or authorization in this version.',
-      'Local demonstration, not deployed to production.',
-    ],
+    constraints: ['Runs locally, with no deployment', 'No authentication', 'No pagination'],
     architecture:
-      'Fastify organizes HTTP in layers (Routes → Controllers → Services → Repositories). Prisma handles only the schema and migrations; product, promotion and menu queries are written in raw SQL on the PostgreSQL pool.',
+      'TypeScript, Fastify, Node.js and PostgreSQL 16, with plain SQL and Prisma only for migrations.',
     decisions:
-      'I keep Prisma (schema and migrations) separate from raw SQL queries for full control and performance. The LEFT JOIN LATERAL picks the best active promotion in a single query. Manual pg transactions keep promotion and schedule creation atomic. Validation happens in two layers: TypeBox on the schema and business rules in the service (15-minute minimum window, end after start).',
-    validation:
-      'Service unit tests for products, promotions and menu with Vitest, plus a review of public code and documentation on September 22, 2026. Running this project is outside the portfolio validation scope.',
-    currentState:
-      'Completed MVP with full product and promotion CRUD, a /menu endpoint with real-time active promotions and service unit tests.',
-    limitations: [
-      'No authentication or authorization in this version.',
-      'No pagination on list endpoints.',
-      'Local demonstration environment (not deployed to production).',
-    ],
-    nextSteps: ['Authentication', 'Pagination and filters', 'Deployment + CI'],
-  },
-  'jogo-do-humor': {
-    name: 'Mood Game',
-    eyebrow: 'Web fundamentals · 2021',
-    summary:
-      'A Blue EdTech project exploring interaction by changing a character’s visual state.',
-    problem:
-      'Connect HTML structure, CSS presentation and JavaScript interaction on a small page.',
-    role: study,
-    scope: [
-      'Static page',
-      'Character and visual-state changes',
-      'Local styles and images',
-    ],
-    constraints: [
-      'An educational project from 2021; no current deployment is claimed.',
-    ],
-    architecture: 'Separate HTML, CSS and JavaScript, without a framework.',
-    decisions: 'Learn interface manipulation through direct interaction.',
-    validation: reviewed,
-    currentState:
-      'A Blue EdTech project exploring interaction by changing a character’s visual state.',
-    limitations: [
-      'An educational project from 2021; no current deployment is claimed.',
-    ],
-    nextSteps: next,
-  },
-  bluesoul: {
-    eyebrow: 'Interactive narrative · Python',
-    summary:
-      'A narrative game in Python with story, character and status modules, accompanied by audio using PyGame.',
-    problem: 'Organize narrative, choices and state in a programming project.',
-    role: study,
-    scope: [
-      'Story, function and class modules',
-      'Game state',
-      'Audio resources',
-    ],
-    constraints: [
-      'A learning project from 2021.',
-      'Current compatibility and game execution have not been verified.',
-    ],
-    architecture:
-      'Python organizes the story, classes and functions; the README lists PyGame, random and time.',
-    decisions:
-      'Split the game into modules to practice logic and code organization.',
-    validation: reviewed,
-    currentState:
-      'A narrative game in Python with story, character and status modules, accompanied by audio using PyGame.',
-    limitations: [
-      'A learning project from 2021.',
-      'Current compatibility and game execution have not been verified.',
-    ],
-    nextSteps: next,
-  },
-  'caminhos-de-mambucaba': {
-    eyebrow: 'Local discovery and community',
-    summary:
-      'A published platform bringing together local experiences, community participation and data from the Mambucaba Observatory.',
-    problem:
-      'Experiences, initiatives, community requests and public information about Mambucaba were scattered across different channels.',
-    role: 'Product conception, interface development, content modeling and full-stack implementation.',
-    scope: [
-      'Experiences, map, accommodation and personalized itineraries',
-      'Initiative and community-request registration with tracking numbers',
-      'Observatory, library and public dashboards',
-      'Technical SEO and redirects from the legacy website',
-    ],
-    constraints: [
-      'Start with an MVP scope',
-      'Use real project data and images',
-      'Keep deployment simple',
-    ],
-    architecture:
-      'Next.js 16 and React 19 render pages and APIs; Supabase/PostgreSQL stores registrations and requests on the server; Leaflet supports maps, while Vercel deploys and monitors the application.',
-    decisions:
-      'Prioritize direct discovery, form privacy and a content structure that can grow without hiding the community behind visual effects.',
-    validation:
-      'Lint and production build, use of published flows and review of the main navigation paths.',
-    currentState: 'MVP published at caminhosdemambucaba.live.',
-    limitations: [
-      'The product depends on the continued development and curation of local content.',
-    ],
-    nextSteps: [
-      'Expand the catalog',
-      'Develop community participation features further',
+      'Keep plain SQL for operations, use Prisma only for migrations and organize the code in layers.',
+    validation: 'Unit tests with Vitest.',
+    currentState: 'Completed MVP, running locally and with no deployment.',
+    limitations: ['No authentication.', 'No pagination.', 'No deployment.'],
+    stack: [
+      'TypeScript',
+      'Fastify',
+      'Node.js',
+      'PostgreSQL 16',
+      'Plain SQL',
+      'Prisma (migrations)',
+      'TypeBox',
+      'Vitest',
+      'Docker Compose',
     ],
   },
   'mini-kanban-veritas': {
-    eyebrow: 'Workflow and API',
+    eyebrow: 'API and interface',
     summary:
-      'A full-stack MVP that turns CRUD operations into a navigable, testable workflow.',
+      'Go API with Chi, React/TypeScript interface, Docker, backend tests and a keyboard alternative to drag-and-drop. Completed MVP.',
     problem:
-      'A team needs to create, edit, move and delete tasks predictably, without keeping state only in the interface.',
-    role: 'Frontend and backend implementation, flow design and technical documentation.',
+      'Provide a navigable task board with an API, an interface and backend tests.',
+    role: 'Implementation of the Go API and the React/TypeScript interface.',
     scope: [
-      'Task CRUD',
-      'REST API',
-      'Accessible drag-and-drop',
-      'User Flow and Data Flow',
+      'Go API with Chi',
+      'React/TypeScript interface',
+      'Backend tests',
+      'Docker',
+      'Keyboard alternative to drag-and-drop',
     ],
-    constraints: [
-      'Current storage is in memory',
-      'Keep concurrency safe with RWMutex',
-      'Deliver a small, understandable feature set',
+    constraints: ['Completed MVP'],
+    architecture: 'Go API with Chi and a React/TypeScript interface, run with Docker.',
+    decisions: 'Include a keyboard alternative to drag-and-drop on the task board.',
+    validation: 'Backend tests.',
+    currentState: 'Completed MVP.',
+    limitations: [],
+    stack: ['Go', 'Chi', 'React', 'TypeScript', 'Docker'],
+  },
+  safeanchor: {
+    eyebrow: 'Boats and inspections',
+    summary:
+      'System for boats, maintenance and inspections. Completed MVP, with a published web demo.',
+    problem: 'Organize boats, maintenance and inspections in a web system.',
+    role: 'Implementation of the interface and API, plus documented domain modeling.',
+    scope: [
+      'Boats, maintenance and inspections',
+      'React 19 and Vite on the interface',
+      'Node.js and Express 5 on the API',
+      'Documented domain modeling',
+      'Experimental intake agent with LangGraph, Ollama and Supabase',
     ],
+    constraints: ['Completed MVP', 'Published web demo'],
     architecture:
-      'React and TypeScript power the interface; Go with Chi exposes the REST API; RWMutex protects in-memory storage; Docker reproduces the environment.',
+      'React 19 and Vite interface with a Node.js and Express 5 API, plus documented domain modeling.',
     decisions:
-      'Treat in-memory storage as an explicit MVP limitation, while separating UI, API and domain to make a future storage replacement clear.',
-    validation:
-      'Backend tests, CRUD flow checks and accessibility review of the board.',
-    currentState: 'MVP completed; data does not survive restarts.',
-    limitations: ['This version has no persistent database.'],
-    nextSteps: ['Add persistence', 'Develop authentication and collaboration'],
+      'Document the domain of boats, maintenance and inspections and keep the intake agent experimental.',
+    validation: 'Completed MVP, with a published web demo.',
+    currentState: 'Completed MVP, with a published web demo.',
+    limitations: [],
+    stack: [
+      'React 19',
+      'Vite',
+      'Node.js',
+      'Express 5',
+      'LangGraph',
+      'Ollama',
+      'Supabase',
+    ],
   },
   itera: {
     eyebrow: 'MMORPG companion',
-    summary:
-      'A web MVP that compares progression paths and explains a character’s next step using auditable rules.',
-    problem:
-      'MMORPG guides offer many options but rarely explain which path matches the character, goal and acceptable risk at a given moment.',
-    role: 'Product vision, rule definition, initial architecture and interface implementation.',
-    scope: [
-      'Character profile and goal selection',
-      'Validated forms',
-      'Comparison of three paths',
-      'Accessible recommendations with explanations',
-    ],
-    constraints: [
-      'Small local catalog without dynamic data',
-      'No backend, database or AI yet',
-      'Explore the hypothesis before expanding the scope',
-    ],
-    architecture:
-      'React and TypeScript with Vite form the web application in a pnpm workspace; Sass styles the interface; React Hook Form and Zod validate data; the Path Engine filters eligibility and calculates a deterministic ranking entirely in the browser.',
-    decisions:
-      'Keep rules auditable before adding AI to reduce risk, explain recommendations and validate the journey before building an API and persistence.',
-    validation:
-      'The repository includes Path Engine tests, lint and build commands, and inline form validation.',
-    currentState:
-      'Web MVP with a local Path Engine: eligibility, scoring and up to three explained recommendations.',
-    limitations: [
-      'Limited local catalog; no backend, database, authentication or AI.',
-    ],
-    nextSteps: [
-      'Validate path comparisons with players',
-      'Define the API and persistence after validating the journey',
-    ],
-  },
-  safeanchor: {
-    eyebrow: 'Vessel maintenance',
-    summary:
-      'A system to organize vessels, maintenance and inspection routines with a live web demonstration.',
-    problem:
-      'Scattered maintenance and inspection records make operations less reliable for owners and small fleets.',
-    role: 'Product design and implementation of the frontend, backend and persistence.',
-    scope: [
-      'Vessel CRUD and details',
-      'Corrective and preventive maintenance',
-      'Dashboard and maintenance histories',
-      'Checklist templates and runs',
-      'Inspection history',
-      'Reproducible development seed',
-    ],
-    constraints: [
-      'Static/SPA demonstration published on GitHub Pages',
-      'Complete authentication, document management and the maritime academy have not been delivered',
-      'No mobile application or AI features at this stage',
-    ],
-    architecture:
-      'React 19 frontend with Vite and MVVM architecture; Node.js API with Express 5, controllers and services; PostgreSQL on Supabase with Prisma 7.',
-    decisions:
-      'Start with structured vessel, maintenance and inspection records to build a reliable source before expanding the product.',
-    validation:
-      'API tests with the native Node.js runner, persistence smoke test, Prisma validation and generation, and frontend build.',
-    currentState:
-      'Web application published on GitHub Pages for demonstration; vessel, maintenance, and checklist workflows integrated.',
-    limitations: [
-      'The final experience and functional coverage are still evolving.',
-      'The documented Next.js/NestJS architecture is a future direction, not the current implementation.',
-    ],
-    nextSteps: [
-      'Consolidate the main flows',
-      'Validate with users from the domain',
-    ],
+    summary: 'MMORPG companion web app with auditable rules. Completed MVP.',
+    problem: 'Present auditable rules in an MMORPG companion web app.',
+    role: 'Implementation of the interface and rules.',
+    scope: ['MMORPG companion web app', 'Auditable rules'],
+    constraints: ['Completed MVP'],
+    architecture: 'React 19, TypeScript, Vite and Sass.',
+    decisions: 'Keep the companion rules auditable.',
+    validation: 'Completed MVP.',
+    currentState: 'Completed MVP.',
+    limitations: [],
+    stack: ['React 19', 'TypeScript', 'Vite', 'Sass'],
   },
   lia: {
-    eyebrow: 'Local employment and services',
+    eyebrow: 'Local services',
     summary:
-      'From local needs to architecture: product vision, journeys, data modeling and technical decisions to connect talent and opportunities in Mambucaba.',
+      'Local services platform in its foundation: documentation, domain modeling and parts of the code.',
     problem:
-      'Connecting opportunities, services and people requires understanding the community, its trust relationships and local talent before building a platform.',
-    role: 'Research, product vision, domain modeling and foundation documentation.',
+      'Structure a local services platform from documentation and domain modeling.',
+    role: 'Documentation, domain modeling and parts of the code.',
     scope: [
-      'Product vision, personas and indicators for Mambucaba',
-      'Nine user flows: registration, services, jobs, reviews and communication',
-      'Data model, API specification and ten architecture decision records',
-      'Epics, user stories and foundation sprint planning',
-      'Community employment',
-      'Local services',
-      'Trust between participants',
-      'Talent-pool conception',
+      'Documentation',
+      'Domain modeling',
+      'Parts of the code with Fastify, Prisma, PostgreSQL, React and TanStack Query',
     ],
-    constraints: [
-      'No product is in production yet',
-      'The implementation stack is planned, not demonstrated in product code',
-    ],
+    constraints: ['In its foundation'],
     architecture:
-      'The documentation foundation is complete. React, React Native, Node.js, Prisma and PostgreSQL appear only as planned architecture for a later stage.',
-    decisions:
-      'Document the community, trust relationships, opportunities and services before promising a finished platform.',
-    validation:
-      'Review of the documentation foundation, product artifacts and scope recorded in the repository.',
-    currentState:
-      'Documentation foundation completed; no product is in production yet.',
-    limitations: [
-      'No product implementation is in production.',
-      'Planned technologies must not be presented as delivered.',
-    ],
-    nextSteps: [
-      'Validate needs with the Mambucaba community',
-      'Prioritize the first employment and services scope',
-      'Define an MVP based on local evidence',
-    ],
-    stack: ['Documentation', 'Product research', 'Domain modeling'],
+      'Fastify, Prisma, PostgreSQL, React and TanStack Query appear in the code produced so far.',
+    decisions: 'Start with documentation and domain modeling for the platform.',
+    validation: 'Documentation, domain modeling and parts of the code.',
+    currentState: 'In its foundation.',
+    limitations: [],
+    stack: ['Fastify', 'Prisma', 'PostgreSQL', 'React', 'TanStack Query'],
   },
-  'frostycamp-home': {
-    eyebrow: 'Landing page and digital communities',
+  'lia-operating-system': {
+    eyebrow: 'Agent architecture',
     summary:
-      'An institutional landing page presenting FrostyCamp’s proposition, services and methodology.',
+      'Documented and paused architecture study of AI agent orchestration with n8n, Docker and PostgreSQL.',
     problem:
-      'FrostyCamp needed to communicate its work in communities, growth and digital strategy through an organized, responsive web presence.',
-    role: 'Interface development, section organization, responsive design and visual component integration.',
+      'Document AI agent orchestration with GitHub Issues as the source of truth.',
+    role: 'Architecture study.',
     scope: [
-      'Hero and responsive navigation',
-      'Services and methodology presentation',
-      'Strategy section',
-      'Team carousel',
-      'Contact interface',
+      'Orchestration with n8n, Docker and PostgreSQL',
+      'Workers for analysis, code generation and GitOps',
+      'GitHub Issues as the source of truth',
     ],
-    constraints: [
-      'Originally developed in 2023',
-      'Create React App codebase retained as a legacy project',
-      'Some media depends on external services',
-      'The current form submission flow needs review',
-    ],
-    architecture:
-      'A React 18 SPA with Create React App, styled-components, react-awesome-reveal and react-slick.',
-    decisions:
-      'Organize the narrative as a landing page with sections, using motion to support the presentation of services and community.',
-    validation:
-      'Review of the code, responsive components and flows in the repository. No automated test coverage is claimed.',
-    currentState:
-      'A 2023 landing page with an active public URL, verified in September 2026. Retained as a legacy project; form submission still needs review.',
-    limitations: [
-      'The original README still has little documentation',
-      'External media may stop working',
-      'The contact flow needs review before reuse',
-      'The stack and dependencies are a legacy codebase',
-    ],
-    nextSteps: [
-      'Improve the repository README',
-      'Replace external media with local assets',
-    ],
+    constraints: ['Documented and paused study'],
+    architecture: 'n8n, Docker and PostgreSQL, with GitHub Issues as the source of truth.',
+    decisions: 'Record the architecture as a study, not as a product.',
+    validation: 'Documented architecture.',
+    currentState: 'Paused architecture study.',
+    limitations: [],
+    stack: ['n8n', 'Docker', 'PostgreSQL', 'GitHub Issues'],
+  },
+  'formulario-dinamico': {
+    eyebrow: 'Lab',
+    summary: 'Laboratory project kept among the studies.',
+    currentState: 'Laboratory project.',
   },
   'secureauth-web3': {
-    eyebrow: 'Academic study',
-    summary: 'An academic study of authentication and Web3.',
-    problem:
-      'Investigate identity and authentication concepts in an academic context.',
-    role: 'Research and experimental implementation.',
-    scope: [
-      'Technical research',
-      'Express backend with authentication routes',
-      'JWT generation and security middleware',
-    ],
-    constraints: ['Not presented as a professional product'],
-    architecture:
-      'Node.js and Express backend with JWT and security middleware. The reviewed tree contains authentication code and tests; it does not contain the React interface described in the README vision.',
-    decisions:
-      'Keep this project separate from the main products to preserve its academic context.',
-    validation:
-      'Reading and running the study according to the repository documentation.',
-    currentState: 'Academic study.',
-    limitations: ['Not a product in production.'],
-    nextSteps: ['Consolidate lessons in the study archive'],
+    eyebrow: 'Lab',
+    summary: 'Laboratory project kept among the studies.',
+    currentState: 'Laboratory project.',
+  },
+  'frostycamp-home': {
+    eyebrow: 'Legacy',
+    summary: 'Legacy project.',
+    currentState: 'Legacy project.',
+  },
+  bluesoul: {
+    eyebrow: 'Legacy',
+    summary: 'Legacy project.',
+    currentState: 'Legacy project.',
+  },
+  'jogo-do-humor': {
+    name: 'Mood Game',
+    eyebrow: 'Legacy',
+    summary: 'Legacy project.',
+    currentState: 'Legacy project.',
   },
 }
-export const englishProjects: Project[] = projects.map((project) => ({
-  ...project,
-  ...translations[project.slug],
-  cover: project.cover
+
+const textKeys: Translatable[] = [
+  'eyebrow',
+  'summary',
+  'problem',
+  'role',
+  'architecture',
+  'decisions',
+  'validation',
+  'currentState',
+]
+const listKeys: ListKey[] = ['scope', 'constraints', 'limitations', 'stack']
+
+function localize(project: Project): Project {
+  const translation = translations[project.slug] ?? {}
+  const result: Project = { ...project, ...translation }
+  for (const key of textKeys) result[key] = translation[key] ?? ''
+  for (const key of listKeys) result[key] = translation[key] ?? []
+  result.cover = project.cover
     ? {
         ...project.cover,
-        alt: `${translations[project.slug].name ?? project.name} — ${project.cover.src.endsWith('.svg') ? 'editorial illustration' : 'project interface'}`,
-        caption:
-          project.slug === 'frostycamp-home'
-            ? 'Published landing page, verified in September 2026.'
-            : project.cover.src.endsWith('.svg')
-              ? 'Editorial illustration of the project concept.'
-              : 'Project interface image.',
+        alt: `${translation.name ?? project.name} — project image`,
+        caption: 'Project image.',
       }
-    : undefined,
-}))
-export const englishFeaturedProjects = featuredProjects.map((project) =>
-  englishProjects.find((item) => item.slug === project.slug)!,
+    : undefined
+  return result
+}
+
+export const englishProjects: Project[] = projects.map(localize)
+export const englishFeaturedProjects = featuredProjects.map(localize)
+export const englishStudyProjects = englishProjects.filter(
+  (project) => !featuredProjects.some((item) => item.slug === project.slug),
 )
