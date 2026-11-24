@@ -10,7 +10,8 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "stylelint": "stylelint \"src/**/*.scss\"",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:cv": "node scripts/build-cv.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "1.6.1",
@@ -28,6 +29,7 @@
     "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "docx": "^9.16.0",
     "eslint": "latest",
     "eslint-config-next": "16.2.6",
     "sass": "latest",

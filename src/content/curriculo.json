@@ -1,0 +1,271 @@
+{
+  "identity": {
+    "name": "Luis Fellype Botelho",
+    "tagline": {
+      "pt": "Desenvolvedor Full-stack Júnior | React, TypeScript, Next.js, Node.js, Go, PostgreSQL",
+      "en": "Junior Full-stack Developer | React, TypeScript, Next.js, Node.js, Go, PostgreSQL"
+    },
+    "contacts": {
+      "phone": "(24) 99277-2357",
+      "email": "botelho.techie@outlook.com",
+      "city": { "pt": "Angra dos Reis, RJ", "en": "Angra dos Reis, RJ, Brazil" },
+      "linkedin": "linkedin.com/in/luis-botelho",
+      "github": "github.com/luis-botelho",
+      "site": "luis-botelho.tech"
+    }
+  },
+  "summary": {
+    "pt": "Desenvolvedor full-stack júnior e estudante de Engenharia de Software (Estácio). Publiquei uma plataforma territorial em produção (Caminhos de Mambucaba) com Next.js, React, TypeScript e Supabase/PostgreSQL, e construí APIs e MVPs com Node.js, Fastify, Go e Docker. Passagem como front-end júnior na OSF Digital e em suporte de TI, somada a anos de atendimento, vendas B2B e rotina de licitações. Inglês avançado.",
+    "en": "Junior full-stack developer and Software Engineering student at Estácio. I published a territorial platform in production (Caminhos de Mambucaba) with Next.js, React, TypeScript and Supabase/PostgreSQL, and built APIs and MVPs with Node.js, Fastify, Go and Docker. Experience as a junior front-end developer at OSF Digital and in IT support, alongside years of customer service, B2B sales and public tender work. Advanced English."
+  },
+  "experience": [
+    {
+      "company": "ICPT / Caminhos de Mambucaba",
+      "role": { "pt": "Diretor Financeiro", "en": "Finance Director" },
+      "period": { "pt": "Atual", "en": "Current" },
+      "location": { "pt": "Angra dos Reis, RJ", "en": "Angra dos Reis, RJ, Brazil" },
+      "bullets": {
+        "pt": [
+          "Administrei a gestão financeira e a prestação de contas do instituto, com posse formalizada por ata e estatuto.",
+          "Responsável pelas plataformas digitais do Caminhos de Mambucaba, com articulação institucional junto à TurisAngra."
+        ],
+        "en": [
+          "Handled financial management and accountability at the institute, with appointment recorded in official minutes and bylaws.",
+          "Was responsible for the digital platforms of Caminhos de Mambucaba, with institutional coordination with TurisAngra."
+        ]
+      }
+    },
+    {
+      "company": "OSF Digital",
+      "role": { "pt": "Desenvolvedor Front-End Júnior", "en": "Junior Front-End Developer" },
+      "period": { "pt": "05/01/2022 a 23/06/2022", "en": "05 Jan 2022 – 23 Jun 2022" },
+      "location": { "pt": "São Paulo, SP (remoto)", "en": "São Paulo, SP (remote)" },
+      "bullets": {
+        "pt": [
+          "Ajustei interfaces em ambiente Salesforce (CRM).",
+          "Atualizei o catálogo de produtos e corrigi bugs de interface."
+        ],
+        "en": [
+          "Adjusted interfaces in a Salesforce CRM environment.",
+          "Updated the product catalog and fixed interface bugs."
+        ]
+      }
+    },
+    {
+      "company": "Virtua Max Comunicação",
+      "role": { "pt": "Técnico de Apoio ao Usuário de Informática (Help Desk I)", "en": "IT User Support Technician (Help Desk I)" },
+      "period": { "pt": "20/07/2021 a 20/12/2021", "en": "20 Jul 2021 – 20 Dec 2021" },
+      "location": { "pt": "Bom Jardim de Minas, MG", "en": "Bom Jardim de Minas, MG, Brazil" },
+      "bullets": {
+        "pt": [
+          "Prestei suporte de 1º nível com diagnóstico e solução de problemas em sistemas, equipamentos e infraestrutura.",
+          "Registrei chamados e acompanhei a resolução junto aos usuários."
+        ],
+        "en": [
+          "Provided first-level support, diagnosing and resolving issues with systems, equipment and infrastructure.",
+          "Logged tickets and followed up on resolutions with users."
+        ]
+      }
+    }
+  ],
+  "projects": [
+    {
+      "name": "Caminhos de Mambucaba",
+      "status": { "pt": "Plataforma em produção · MVP publicado", "en": "Platform in production · MVP published" },
+      "bullets": {
+        "pt": [
+          "Publiquei plataforma territorial com concepção, interface, modelagem de conteúdo e implementação full-stack em Next.js 16, React 19, TypeScript, Tailwind, Leaflet e Supabase/PostgreSQL com RLS.",
+          "Entreguei experiências, mapa, cadastro de iniciativas e demandas com protocolo e exportação em texto, JSON e PDF, observatório, SEO técnico e redirecionamentos do WordPress antigo.",
+          "Operação publicada na Vercel, em caminhosdemambucaba.live."
+        ],
+        "en": [
+          "Published a territorial platform covering concept, interface, content modeling and full-stack implementation with Next.js 16, React 19, TypeScript, Tailwind, Leaflet and Supabase/PostgreSQL with RLS.",
+          "Delivered experiences, a map, registration of initiatives and requests with protocol and export to text, JSON and PDF, an observatory, technical SEO and redirects from the previous WordPress site.",
+          "Published on Vercel at caminhosdemambucaba.live."
+        ]
+      }
+    },
+    {
+      "name": "Goomer Menu API",
+      "status": { "pt": "MVP concluído · execução local · sem deploy", "en": "MVP completed · runs locally · no deployment" },
+      "bullets": {
+        "pt": [
+          "Implementei API REST de cardápio com produtos e promoções por horário em TypeScript, Fastify, Node.js e PostgreSQL 16.",
+          "Apliquei SQL puro com Prisma apenas para migrations, TypeBox, transações manuais, arquitetura em camadas, testes com Vitest e Docker Compose.",
+          "Não há autenticação nem paginação na API."
+        ],
+        "en": [
+          "Implemented a REST menu API with products and time-based promotions using TypeScript, Fastify, Node.js and PostgreSQL 16.",
+          "Applied plain SQL with Prisma only for migrations, TypeBox, manual transactions, layered architecture, Vitest tests and Docker Compose.",
+          "The API has no authentication and no pagination."
+        ]
+      }
+    },
+    {
+      "name": "Mini Kanban Veritas",
+      "status": { "pt": "MVP concluído", "en": "MVP completed" },
+      "bullets": {
+        "pt": [
+          "Implementei API em Go com Chi e interface em React/TypeScript.",
+          "Incluí Docker, testes de backend e alternativa de teclado ao drag-and-drop."
+        ],
+        "en": [
+          "Implemented a Go API with Chi and a React/TypeScript interface.",
+          "Included Docker, backend tests and a keyboard alternative to drag-and-drop."
+        ]
+      }
+    },
+    {
+      "name": "SafeAnchor",
+      "status": { "pt": "MVP concluído · demo web publicada", "en": "MVP completed · web demo published" },
+      "bullets": {
+        "pt": [
+          "Desenvolvi sistema para embarcações, manutenções e inspeções com React 19, Vite, Node.js e Express 5.",
+          "Documentei a modelagem de domínio e um agente de intake experimental com LangGraph, Ollama e Supabase."
+        ],
+        "en": [
+          "Developed a system for boats, maintenance and inspections with React 19, Vite, Node.js and Express 5.",
+          "Documented domain modeling and an experimental intake agent with LangGraph, Ollama and Supabase."
+        ]
+      }
+    },
+    {
+      "name": "Itera",
+      "status": { "pt": "MVP concluído", "en": "MVP completed" },
+      "bullets": {
+        "pt": [
+          "Implementei companion web de MMORPG com regras auditáveis em React 19, TypeScript, Vite e Sass."
+        ],
+        "en": [
+          "Implemented an MMORPG companion web app with auditable rules in React 19, TypeScript, Vite and Sass."
+        ]
+      }
+    }
+  ],
+  "skills": {
+    "pt": [
+      { "group": "Linguagens", "items": ["TypeScript", "JavaScript", "Go", "SQL"] },
+      { "group": "Front-end", "items": ["React", "Next.js", "HTML", "CSS/Sass"] },
+      { "group": "Back-end e dados", "items": ["Node.js", "Fastify", "PostgreSQL", "MySQL", "Prisma", "Supabase", "APIs REST"] },
+      { "group": "Ferramentas", "items": ["Docker", "Docker Compose", "Git/GitHub", "n8n", "Vercel", "Excel/planilhas", "Salesforce (nível júnior: catálogo e interface)"] },
+      { "group": "Atuação", "items": ["Suporte de 1º nível", "Atendimento presencial, telefônico e de salão", "Vendas B2B e carteira de clientes", "Controle de estoque", "Prestação de contas", "Licitações (do edital à entrega)"] },
+      { "group": "Idiomas", "items": ["Inglês avançado"] }
+    ],
+    "en": [
+      { "group": "Languages", "items": ["TypeScript", "JavaScript", "Go", "SQL"] },
+      { "group": "Front-end", "items": ["React", "Next.js", "HTML", "CSS/Sass"] },
+      { "group": "Back-end and data", "items": ["Node.js", "Fastify", "PostgreSQL", "MySQL", "Prisma", "Supabase", "REST APIs"] },
+      { "group": "Tools", "items": ["Docker", "Docker Compose", "Git/GitHub", "n8n", "Vercel", "Excel/spreadsheets", "Salesforce (junior level: catalog and interface)"] },
+      { "group": "Work experience", "items": ["First-level support", "In-person, phone and table-side customer service", "B2B sales and client portfolio", "Inventory control", "Financial accountability", "Public tenders (from notice to delivery)"] },
+      { "group": "Languages spoken", "items": ["Advanced English"] }
+    ]
+  },
+  "education": {
+    "pt": [
+      { "title": "Engenharia de Software — Universidade Estácio de Sá (cursando)", "detail": "" },
+      { "title": "Desenvolvimento Web e Full-Stack — Blue EdTech (2021)", "detail": "Módulos de 100h com projetos destaque." },
+      { "title": "Boas Práticas de Segurança em Vibe Coding; Segurança e Boas Práticas em Projetos Feitos com Vibe Code — DIO (set/2026)", "detail": "" },
+      { "title": "Ensino médio completo", "detail": "" },
+      { "title": "Inglês avançado", "detail": "" }
+    ],
+    "en": [
+      { "title": "Software Engineering — Estácio de Sá University (in progress)", "detail": "" },
+      { "title": "Web and Full-Stack Development — Blue EdTech (2021)", "detail": "100-hour modules with featured projects." },
+      { "title": "Security Best Practices in Vibe Coding; Security and Best Practices in Vibe-Coded Projects — DIO (Sep 2026)", "detail": "" },
+      { "title": "High school diploma", "detail": "" },
+      { "title": "Advanced English", "detail": "" }
+    ]
+  },
+  "other": {
+    "pt": [
+      {
+        "title": "Licitações — Rede Fortaco Angraluz, Angra dos Reis (desde out/2026)",
+        "bullets": [
+          "Busquei editais, analisei exigências e montei pasta padronizada com cotação, provas de preço e anexos assinados.",
+          "Participei do pregão e acompanhei a entrega de materiais de construção a prefeituras."
+        ]
+      },
+      {
+        "title": "Atendente de Call Center — Frade Spot Participações S/A (18/05/2026 a 01/07/2026)",
+        "bullets": ["Realizei atendimento telefônico."]
+      },
+      {
+        "title": "Garçom — Bar do Nelson, Ilha do Cedro, Angra dos Reis (ago/2025 a mai/2026, datas aproximadas; sem carteira assinada)",
+        "bullets": ["Atendi salão de restaurante e bar com alto movimento."]
+      },
+      {
+        "title": "Atendente de Loja — KAL Atacado 2 (Box Atacadista), Angra dos Reis (15/01/2024 a 24/05/2024 e 18/09/2024 a 29/08/2025)",
+        "bullets": [
+          "Atuei com carteira de clientes com CNPJ em pré-venda e pós-venda; cargo registrado na CTPS: Atendente de Loja."
+        ]
+      },
+      {
+        "title": "Repositor — Santa Rita Serviços Prestados, Angra dos Reis (03/10/2023 a 31/10/2023)",
+        "bullets": ["Organizei reposição e conferência de mercadorias."]
+      },
+      {
+        "title": "Encarregado de Loja (atuação como subgerente) — Poupe Areal Comércio de Alimentos, Angra dos Reis (16/02/2023 a 08/09/2023)",
+        "bullets": [
+          "Coordenei equipe, estoque e indicadores da rotina da loja; cargo registrado na CTPS: Encarregado de Loja."
+        ]
+      },
+      {
+        "title": "Tentativa de agência de turismo — iniciativa própria (jun/2022 a fev/2023)",
+        "bullets": [
+          "Concebi uma agência de turismo que não saiu da fase de concepção; o aprendizado contribuiu para o Caminhos de Mambucaba."
+        ]
+      },
+      {
+        "title": "Poupe Mais Comércio de Alimentos, Volta Redonda/RJ (19/05/2018 a 12/07/2021)",
+        "bullets": [
+          "Comecei como Repositor e passei a atuar como Auxiliar de Escritório no CPD, ajustando procedimentos e conferindo dados."
+        ]
+      }
+    ],
+    "en": [
+      {
+        "title": "Public tenders — Rede Fortaco Angraluz, Angra dos Reis (since Oct 2026)",
+        "bullets": [
+          "Searched for notices, reviewed requirements and assembled standard files with quotes, price evidence and signed attachments.",
+          "Took part in bidding and followed delivery of construction materials to city governments."
+        ]
+      },
+      {
+        "title": "Call Center Agent — Frade Spot Participações S/A (18 May 2026 – 01 Jul 2026)",
+        "bullets": ["Provided telephone customer service."]
+      },
+      {
+        "title": "Waiter — Bar do Nelson, Ilha do Cedro, Angra dos Reis (approx. Aug 2025 – May 2026; no formal registration)",
+        "bullets": ["Served a busy restaurant and bar floor."]
+      },
+      {
+        "title": "Store Attendant — KAL Atacado 2 (Box Atacadista), Angra dos Reis (15 Jan 2024 – 24 May 2024 and 18 Sep 2024 – 29 Aug 2025)",
+        "bullets": [
+          "Handled a business client portfolio in pre-sales and after-sales; role recorded in the work card: Store Attendant."
+        ]
+      },
+      {
+        "title": "Stocker — Santa Rita Serviços Prestados, Angra dos Reis (03 Oct 2023 – 31 Oct 2023)",
+        "bullets": ["Organized stock replenishment and goods checking."]
+      },
+      {
+        "title": "Store Manager (acting as assistant manager) — Poupe Areal Comércio de Alimentos, Angra dos Reis (16 Feb 2023 – 08 Sep 2023)",
+        "bullets": [
+          "Coordinated staff, inventory and store routine indicators; role recorded in the work card: Store Manager."
+        ]
+      },
+      {
+        "title": "Travel agency attempt — personal initiative (Jun 2022 – Feb 2023)",
+        "bullets": [
+          "Conceived a travel agency that never left the planning stage; the learning contributed to Caminhos de Mambucaba."
+        ]
+      },
+      {
+        "title": "Poupe Mais Comércio de Alimentos, Volta Redonda/RJ (19 May 2018 – 12 Jul 2021)",
+        "bullets": [
+          "Started as a stocker and later worked as Office Assistant at the data processing center, adjusting procedures and checking data."
+        ]
+      }
+    ]
+  }
+}
