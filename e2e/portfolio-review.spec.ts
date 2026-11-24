@@ -24,6 +24,11 @@ test('identidade, projetos sólidos, formação e canonical refletem a revisão'
     expect(headings).toContain(name)
   }
   expect(headings).not.toContain('Liahona (LIA)')
+  await expect(page.locator('#projetos article[aria-labelledby] h3')).toHaveText('Formulário Dinâmico.')
+  await page.goto('/projetos')
+  await expect(
+    page.locator('section:has(> h2#estudos-legado) h3').first(),
+  ).toHaveText('Formulário Dinâmico')
   for (const slug of ['lia', 'goomer-menu-api']) {
     await page.goto(`/projetos/${slug}`)
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://luis-botelho.tech/projetos/${slug}`)
